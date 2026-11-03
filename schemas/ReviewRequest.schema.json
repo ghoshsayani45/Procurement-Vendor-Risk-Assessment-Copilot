@@ -1,0 +1,82 @@
+{
+  "$defs": {
+    "RequestKind": {
+      "enum": [
+        "FULL_REVIEW",
+        "COMPARISON",
+        "QUESTION"
+      ],
+      "title": "RequestKind",
+      "type": "string"
+    },
+    "ReviewType": {
+      "enum": [
+        "NEW_VENDOR",
+        "RENEWAL"
+      ],
+      "title": "ReviewType",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "request_kind": {
+      "$ref": "#/$defs/RequestKind"
+    },
+    "review_type": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ReviewType"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "vendor_ids": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 3,
+      "minItems": 1,
+      "title": "Vendor Ids",
+      "type": "array"
+    },
+    "question": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Question"
+    },
+    "requester_role": {
+      "enum": [
+        "procurement_analyst",
+        "risk_reviewer",
+        "category_manager",
+        "legal_finance_reviewer"
+      ],
+      "title": "Requester Role",
+      "type": "string"
+    },
+    "as_of": {
+      "default": "2026-11-01",
+      "format": "date",
+      "title": "As Of",
+      "type": "string"
+    }
+  },
+  "required": [
+    "request_kind",
+    "vendor_ids",
+    "requester_role"
+  ],
+  "title": "ReviewRequest",
+  "type": "object"
+}

@@ -1,0 +1,633 @@
+{
+  "$defs": {
+    "Amendment": {
+      "additionalProperties": false,
+      "properties": {
+        "amendment_id": {
+          "title": "Amendment Id",
+          "type": "string"
+        },
+        "effective_date": {
+          "format": "date",
+          "title": "Effective Date",
+          "type": "string"
+        },
+        "changes": {
+          "additionalProperties": true,
+          "title": "Changes",
+          "type": "object"
+        },
+        "doc_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Doc Id"
+        }
+      },
+      "required": [
+        "amendment_id",
+        "effective_date",
+        "changes"
+      ],
+      "title": "Amendment",
+      "type": "object"
+    },
+    "CaiqClaims": {
+      "additionalProperties": false,
+      "properties": {
+        "completed_date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Completed Date"
+        },
+        "soc2_type2": {
+          "default": false,
+          "title": "Soc2 Type2",
+          "type": "boolean"
+        },
+        "iso27001_certified": {
+          "default": false,
+          "title": "Iso27001 Certified",
+          "type": "boolean"
+        },
+        "encryption_at_rest": {
+          "default": true,
+          "title": "Encryption At Rest",
+          "type": "boolean"
+        },
+        "mfa_enforced": {
+          "default": true,
+          "title": "Mfa Enforced",
+          "type": "boolean"
+        },
+        "data_residency": {
+          "default": "India",
+          "title": "Data Residency",
+          "type": "string"
+        },
+        "subprocessors_disclosed": {
+          "default": true,
+          "title": "Subprocessors Disclosed",
+          "type": "boolean"
+        }
+      },
+      "title": "CaiqClaims",
+      "type": "object"
+    },
+    "ContractTerms": {
+      "additionalProperties": false,
+      "properties": {
+        "agreement_type": {
+          "title": "Agreement Type",
+          "type": "string"
+        },
+        "doc_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Doc Id"
+        },
+        "governing_law": {
+          "default": "India",
+          "title": "Governing Law",
+          "type": "string"
+        },
+        "vendor_liability_cap_months_fees": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": 12,
+          "title": "Vendor Liability Cap Months Fees"
+        },
+        "customer_liability_capped": {
+          "default": true,
+          "title": "Customer Liability Capped",
+          "type": "boolean"
+        },
+        "auto_renewal": {
+          "default": false,
+          "title": "Auto Renewal",
+          "type": "boolean"
+        },
+        "renewal_notice_days": {
+          "default": 30,
+          "title": "Renewal Notice Days",
+          "type": "integer"
+        },
+        "termination_for_convenience": {
+          "default": true,
+          "title": "Termination For Convenience",
+          "type": "boolean"
+        },
+        "audit_rights": {
+          "default": true,
+          "title": "Audit Rights",
+          "type": "boolean"
+        },
+        "annual_price_escalation_pct": {
+          "default": 5.0,
+          "title": "Annual Price Escalation Pct",
+          "type": "number"
+        },
+        "breach_notification_hours": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": 24,
+          "title": "Breach Notification Hours"
+        },
+        "data_location": {
+          "default": "India",
+          "title": "Data Location",
+          "type": "string"
+        },
+        "cross_border_safeguards": {
+          "default": true,
+          "title": "Cross Border Safeguards",
+          "type": "boolean"
+        },
+        "subprocessor_approval": {
+          "default": true,
+          "title": "Subprocessor Approval",
+          "type": "boolean"
+        },
+        "dpa_signed": {
+          "default": true,
+          "title": "Dpa Signed",
+          "type": "boolean"
+        },
+        "amendments": {
+          "items": {
+            "$ref": "#/$defs/Amendment"
+          },
+          "title": "Amendments",
+          "type": "array"
+        }
+      },
+      "required": [
+        "agreement_type"
+      ],
+      "title": "ContractTerms",
+      "type": "object"
+    },
+    "DataAccess": {
+      "enum": [
+        "NONE",
+        "INTERNAL",
+        "PERSONAL",
+        "SENSITIVE_PERSONAL"
+      ],
+      "title": "DataAccess",
+      "type": "string"
+    },
+    "EvidenceItem": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence_id": {
+          "title": "Evidence Id",
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/$defs/EvidenceType"
+        },
+        "doc_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Doc Id"
+        },
+        "issuer": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Issuer"
+        },
+        "issue_date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Issue Date"
+        },
+        "period_start": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Period Start"
+        },
+        "period_end": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Period End"
+        },
+        "expiry_date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Expiry Date"
+        },
+        "coverage_inr": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Coverage Inr"
+        },
+        "open_critical_findings": {
+          "default": 0,
+          "title": "Open Critical Findings",
+          "type": "integer"
+        },
+        "findings": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Findings",
+          "type": "array"
+        },
+        "superseded_by": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Superseded By"
+        }
+      },
+      "required": [
+        "evidence_id",
+        "type"
+      ],
+      "title": "EvidenceItem",
+      "type": "object"
+    },
+    "EvidenceType": {
+      "enum": [
+        "SOC2_TYPE2",
+        "ISO27001",
+        "CAIQ",
+        "PENTEST",
+        "CYBER_INSURANCE",
+        "BCP_DR_TEST",
+        "DPA",
+        "FINANCIALS",
+        "SECURITY_ATTESTATION"
+      ],
+      "title": "EvidenceType",
+      "type": "string"
+    },
+    "FinancialYear": {
+      "additionalProperties": false,
+      "properties": {
+        "fiscal_year": {
+          "title": "Fiscal Year",
+          "type": "string"
+        },
+        "revenue_inr": {
+          "title": "Revenue Inr",
+          "type": "integer"
+        },
+        "revenue_growth_pct": {
+          "title": "Revenue Growth Pct",
+          "type": "number"
+        },
+        "operating_margin_pct": {
+          "title": "Operating Margin Pct",
+          "type": "number"
+        },
+        "current_ratio": {
+          "title": "Current Ratio",
+          "type": "number"
+        },
+        "debt_to_equity": {
+          "title": "Debt To Equity",
+          "type": "number"
+        },
+        "doc_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Doc Id"
+        }
+      },
+      "required": [
+        "fiscal_year",
+        "revenue_inr",
+        "revenue_growth_pct",
+        "operating_margin_pct",
+        "current_ratio",
+        "debt_to_equity"
+      ],
+      "title": "FinancialYear",
+      "type": "object"
+    },
+    "Performance": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "title": "Period",
+          "type": "string"
+        },
+        "sla_target_pct": {
+          "default": 99.5,
+          "title": "Sla Target Pct",
+          "type": "number"
+        },
+        "sla_attainment_pct": {
+          "title": "Sla Attainment Pct",
+          "type": "number"
+        },
+        "p1_incidents_12m": {
+          "title": "P1 Incidents 12M",
+          "type": "integer"
+        },
+        "late_delivery_pct": {
+          "title": "Late Delivery Pct",
+          "type": "number"
+        },
+        "open_disputes": {
+          "default": 0,
+          "title": "Open Disputes",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period",
+        "sla_attainment_pct",
+        "p1_incidents_12m",
+        "late_delivery_pct"
+      ],
+      "title": "Performance",
+      "type": "object"
+    },
+    "ReviewType": {
+      "enum": [
+        "NEW_VENDOR",
+        "RENEWAL"
+      ],
+      "title": "ReviewType",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "vendor_id": {
+      "title": "Vendor Id",
+      "type": "string"
+    },
+    "legal_name": {
+      "title": "Legal Name",
+      "type": "string"
+    },
+    "category": {
+      "title": "Category",
+      "type": "string"
+    },
+    "comparison_group": {
+      "title": "Comparison Group",
+      "type": "string"
+    },
+    "hq_country": {
+      "title": "Hq Country",
+      "type": "string"
+    },
+    "incorporation_year": {
+      "title": "Incorporation Year",
+      "type": "integer"
+    },
+    "employees": {
+      "title": "Employees",
+      "type": "integer"
+    },
+    "review_type": {
+      "$ref": "#/$defs/ReviewType"
+    },
+    "data_access": {
+      "$ref": "#/$defs/DataAccess"
+    },
+    "business_critical": {
+      "title": "Business Critical",
+      "type": "boolean"
+    },
+    "annual_value_inr": {
+      "title": "Annual Value Inr",
+      "type": "integer"
+    },
+    "business_owner": {
+      "title": "Business Owner",
+      "type": "string"
+    },
+    "contract_start": {
+      "anyOf": [
+        {
+          "format": "date",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Contract Start"
+    },
+    "contract_end": {
+      "anyOf": [
+        {
+          "format": "date",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Contract End"
+    },
+    "evidence": {
+      "items": {
+        "$ref": "#/$defs/EvidenceItem"
+      },
+      "title": "Evidence",
+      "type": "array"
+    },
+    "caiq": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/CaiqClaims"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "contract": {
+      "$ref": "#/$defs/ContractTerms"
+    },
+    "financials": {
+      "items": {
+        "$ref": "#/$defs/FinancialYear"
+      },
+      "title": "Financials",
+      "type": "array"
+    },
+    "performance": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Performance"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "debarred": {
+      "default": false,
+      "title": "Debarred",
+      "type": "boolean"
+    },
+    "conflict_of_interest": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Conflict Of Interest"
+    },
+    "planted_issues": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Planted Issues",
+      "type": "array"
+    },
+    "traps": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Traps",
+      "type": "array"
+    },
+    "adversarial": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Adversarial",
+      "type": "array"
+    },
+    "notes": {
+      "default": "",
+      "title": "Notes",
+      "type": "string"
+    }
+  },
+  "required": [
+    "vendor_id",
+    "legal_name",
+    "category",
+    "comparison_group",
+    "hq_country",
+    "incorporation_year",
+    "employees",
+    "review_type",
+    "data_access",
+    "business_critical",
+    "annual_value_inr",
+    "business_owner",
+    "evidence",
+    "contract",
+    "financials"
+  ],
+  "title": "VendorFacts",
+  "type": "object"
+}

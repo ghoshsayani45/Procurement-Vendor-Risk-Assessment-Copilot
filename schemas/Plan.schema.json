@@ -1,0 +1,72 @@
+{
+  "$defs": {
+    "PlanStep": {
+      "additionalProperties": false,
+      "properties": {
+        "step": {
+          "maximum": 6,
+          "minimum": 1,
+          "title": "Step",
+          "type": "integer"
+        },
+        "tool": {
+          "enum": [
+            "vendor_search",
+            "document_search",
+            "compliance_checker",
+            "financial_risk_calculator",
+            "vendor_compare"
+          ],
+          "title": "Tool",
+          "type": "string"
+        },
+        "arguments": {
+          "additionalProperties": true,
+          "title": "Arguments",
+          "type": "object"
+        },
+        "purpose": {
+          "maxLength": 200,
+          "title": "Purpose",
+          "type": "string"
+        }
+      },
+      "required": [
+        "step",
+        "tool",
+        "arguments",
+        "purpose"
+      ],
+      "title": "PlanStep",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "review_template": {
+      "enum": [
+        "new_vendor_full",
+        "renewal_full",
+        "comparison",
+        "single_question"
+      ],
+      "title": "Review Template",
+      "type": "string"
+    },
+    "steps": {
+      "items": {
+        "$ref": "#/$defs/PlanStep"
+      },
+      "maxItems": 6,
+      "minItems": 1,
+      "title": "Steps",
+      "type": "array"
+    }
+  },
+  "required": [
+    "review_template",
+    "steps"
+  ],
+  "title": "Plan",
+  "type": "object"
+}

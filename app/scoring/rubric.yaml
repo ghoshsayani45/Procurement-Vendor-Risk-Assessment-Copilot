@@ -1,0 +1,124 @@
+# Vendor risk scoring rubric v1.0 (Week 1, step 1.2)
+# Deterministic: same vendor facts + same as_of date => same score, always.
+# Every number here is a design decision; change it only through docs/decisions.md.
+
+version: "1.0"
+review_as_of: "2026-11-01"     # fixed date used for all expiry and age checks in eval_v1
+currency: INR                   # 1 lakh = 100,000; 1 crore = 10,000,000
+
+# ---------------------------------------------------------------- tiering
+# Inherent-risk tier decides which evidence is required.
+tiering:
+  tier_1:   # any condition is enough
+    data_access_in: [SENSITIVE_PERSONAL]
+    business_critical: true
+    annual_value_inr_gte: 50000000        # >= 5 crore
+  tier_2:
+    data_access_in: [PERSONAL]
+    annual_value_inr_gte: 5000000         # >= 50 lakh
+  tier_3: default
+
+# ---------------------------------------------------------------- evidence
+expiring_soon_days: 60
+evidence_rules:
+  SOC2_TYPE2:        {max_age_days_from_period_end: 365}
+  ISO27001:          {uses_expiry_date: true}
+  CAIQ:              {max_age_days: 365}
+  PENTEST:           {max_age_days: 365, fail_if_open_critical_findings: true}
+  CYBER_INSURANCE:   {uses_expiry_date: true, min_coverage_inr_by_tier: {1: 100000000, 2: 50000000, 3: 10000000}}
+  BCP_DR_TEST:       {max_age_days: 365}
+  DPA:               {required_if_data_access_in: [PERSONAL, SENSITIVE_PERSONAL]}
+  FINANCIALS:        {min_years_by_tier: {1: 2, 2: 1, 3: 1}}
+
+required_evidence:
+  1: [SOC2_TYPE2, ISO27001, CAIQ, PENTEST, CYBER_INSURANCE, BCP_DR_TEST, DPA, FINANCIALS]
+  2: [SECURITY_ATTESTATION, CAIQ, CYBER_INSURANCE, DPA, FINANCIALS]   # SECURITY_ATTESTATION = valid SOC2_TYPE2 OR ISO27001
+  3: [CAIQ, CYBER_INSURANCE, FINANCIALS]
+
+# Checklist status precedence when several facts apply (worst wins)
+status_precedence: [CONTRADICTORY, MISSING, EXPIRED, EXPIRING_SOON, VERIFIED, NOT_REQUIRED]
+
+# ---------------------------------------------------------------- dimensions
+# Each dimension produces 0-100 risk points (capped). Higher = riskier.
+weights:
+  security_compliance: 30
+  data_protection: 20
+  contract_terms: 20
+  financial_health: 15
+  operational_performance: 15   # NEW_VENDOR reviews have no history: weight is redistributed pro rata
+
+points:
+  security_compliance:
+    evidence_missing: 25
+    evidence_expired: 25
+    evidence_contradictory: 20
+    evidence_expiring_soon: 5
+    pentest_open_critical: 20
+    insurance_below_minimum: 15
+  data_protection:          # only scored when data_access is PERSONAL or SENSITIVE_PERSONAL
+    no_signed_dpa: 40
+    breach_notice_absent: 30
+    breach_notice_over_limit: 20      # limit below
+    offshore_without_safeguards: 25
+    no_subprocessor_approval: 15
+  contract_terms:
+    customer_liability_uncapped: 30
+    vendor_cap_below_12_months_fees: 25
+    auto_renewal_long_notice: 15      # notice > 90 days
+    no_termination_for_convenience: 15
+    no_audit_rights: 15
+    price_escalation_above_limit: 10  # > 8% per year
+  financial_health:
+    statements_missing: 50            # no financial statements at all
+    statements_incomplete: 20         # fewer years than the tier requires
+    current_ratio_below_1_0: 30
+    current_ratio_below_1_2: 15
+    debt_to_equity_above_2_0: 25
+    debt_to_equity_above_1_5: 10
+    operating_loss: 25
+    revenue_decline_over_10pct: 20
+  operational_performance:  # RENEWAL only, trailing 12 months
+    sla_below_99_0: 35
+    sla_below_target: 20             # target 99.5
+    p1_incidents_3_or_more: 30
+    p1_incidents_1_or_2: 10
+    late_delivery_over_10pct: 15
+    open_dispute: 20
+
+limits:
+  breach_notice_max_hours: 48        # vendor -> customer; lets us meet DPDP Rules 2025 r.7 (72h to Board)
+  renewal_notice_max_days: 90
+  price_escalation_max_pct: 8.0
+  sla_target_pct: 99.5
+
+# ---------------------------------------------------------------- bands
+bands:            # overall weighted score 0-100; lower bound inclusive
+  - {band: LOW,      min: 0}
+  - {band: MEDIUM,   min: 10}
+  - {band: HIGH,     min: 25}
+  - {band: CRITICAL, min: 45}
+
+# Knockouts raise the band to at least the stated level, whatever the score.
+knockouts:
+  - {code: KO-DEBARRED,               min_band: CRITICAL, when: vendor on internal debarment list}
+  - {code: KO-NO-SECURITY-ATTESTATION, min_band: HIGH,    when: tier 1 or 2 and no VERIFIED/EXPIRING_SOON SOC2 or ISO27001}
+  - {code: KO-PERSONAL-DATA-NO-DPA,    min_band: HIGH,    when: personal data and no signed DPA}
+  - {code: KO-CONFLICT-OF-INTEREST,    min_band: HIGH,    when: undisclosed conflict of interest recorded}
+
+# ---------------------------------------------------------------- recommendation (advisory only)
+recommendation_rules:   # first match wins
+  - {if: "band is HIGH or CRITICAL",                                 then: ESCALATE_HIGH_RISK}
+  - {if: "any required checklist item is MISSING or CONTRADICTORY",  then: HOLD_PENDING_EVIDENCE}
+  - {if: "band is MEDIUM, or any required item EXPIRED or EXPIRING_SOON, or any finding at all", then: PROCEED_WITH_CONDITIONS}
+  - {if: "no findings",                                              then: PROCEED}
+
+# ---------------------------------------------------------------- approval routing (from synthetic internal policy)
+approval_matrix:        # by annual contract value; the copilot names approvers, never approves
+  - {max_inr: 2500000,  approvers: [Category Manager]}                                  # <= 25 lakh
+  - {max_inr: 50000000, approvers: [Head of Procurement, Finance Controller]}           # <= 5 crore
+  - {max_inr: null,     approvers: [Chief Financial Officer, Procurement Committee]}    # > 5 crore
+additional_approvers:
+  band_high_or_critical: Third-Party Risk Committee
+  any_contract_terms_finding: Legal Counsel
+  any_data_protection_finding: Data Protection Officer
+  conflict_of_interest: Ethics & Compliance Officer

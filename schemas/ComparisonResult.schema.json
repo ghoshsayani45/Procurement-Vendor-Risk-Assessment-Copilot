@@ -1,0 +1,96 @@
+{
+  "$defs": {
+    "ComparisonRow": {
+      "additionalProperties": false,
+      "properties": {
+        "vendor_id": {
+          "title": "Vendor Id",
+          "type": "string"
+        },
+        "tier": {
+          "enum": [
+            1,
+            2,
+            3
+          ],
+          "title": "Tier",
+          "type": "integer"
+        },
+        "overall": {
+          "title": "Overall",
+          "type": "number"
+        },
+        "band": {
+          "$ref": "#/$defs/RiskBand"
+        },
+        "dimension_points": {
+          "additionalProperties": {
+            "type": "integer"
+          },
+          "title": "Dimension Points",
+          "type": "object"
+        },
+        "key_findings": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Key Findings",
+          "type": "array"
+        }
+      },
+      "required": [
+        "vendor_id",
+        "tier",
+        "overall",
+        "band",
+        "dimension_points",
+        "key_findings"
+      ],
+      "title": "ComparisonRow",
+      "type": "object"
+    },
+    "RiskBand": {
+      "enum": [
+        "LOW",
+        "MEDIUM",
+        "HIGH",
+        "CRITICAL"
+      ],
+      "title": "RiskBand",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "behaviour": {
+      "enum": [
+        "ANSWER",
+        "PARTIAL"
+      ],
+      "title": "Behaviour",
+      "type": "string"
+    },
+    "rows": {
+      "items": {
+        "$ref": "#/$defs/ComparisonRow"
+      },
+      "maxItems": 3,
+      "minItems": 2,
+      "title": "Rows",
+      "type": "array"
+    },
+    "caveats": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Caveats",
+      "type": "array"
+    }
+  },
+  "required": [
+    "behaviour",
+    "rows"
+  ],
+  "title": "ComparisonResult",
+  "type": "object"
+}

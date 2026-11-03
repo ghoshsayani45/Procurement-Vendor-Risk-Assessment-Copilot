@@ -1,0 +1,472 @@
+{
+  "$defs": {
+    "ApprovalRouting": {
+      "additionalProperties": false,
+      "properties": {
+        "required_approvers": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Required Approvers",
+          "type": "array"
+        },
+        "human_decision": {
+          "anyOf": [
+            {
+              "enum": [
+                "APPROVED",
+                "REJECTED",
+                "MORE_INFO"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Human Decision"
+        },
+        "decided_by": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Decided By"
+        }
+      },
+      "required": [
+        "required_approvers"
+      ],
+      "title": "ApprovalRouting",
+      "type": "object"
+    },
+    "ChecklistItem": {
+      "additionalProperties": false,
+      "properties": {
+        "item": {
+          "$ref": "#/$defs/EvidenceType"
+        },
+        "required": {
+          "title": "Required",
+          "type": "boolean"
+        },
+        "status": {
+          "$ref": "#/$defs/ChecklistStatus"
+        },
+        "evidence_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "reason": {
+          "maxLength": 300,
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "item",
+        "required",
+        "status",
+        "reason"
+      ],
+      "title": "ChecklistItem",
+      "type": "object"
+    },
+    "ChecklistStatus": {
+      "enum": [
+        "VERIFIED",
+        "EXPIRING_SOON",
+        "EXPIRED",
+        "MISSING",
+        "CONTRADICTORY",
+        "NOT_REQUIRED"
+      ],
+      "title": "ChecklistStatus",
+      "type": "string"
+    },
+    "Citation": {
+      "additionalProperties": false,
+      "properties": {
+        "source_id": {
+          "title": "Source Id",
+          "type": "string"
+        },
+        "doc_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Doc Id"
+        },
+        "title": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Title"
+        },
+        "document_date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Document Date"
+        },
+        "evidence_type": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/EvidenceType"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "snippet": {
+          "anyOf": [
+            {
+              "maxLength": 400,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Snippet"
+        }
+      },
+      "required": [
+        "source_id"
+      ],
+      "title": "Citation",
+      "type": "object"
+    },
+    "Dimension": {
+      "enum": [
+        "security_compliance",
+        "data_protection",
+        "contract_terms",
+        "financial_health",
+        "operational_performance",
+        "governance"
+      ],
+      "title": "Dimension",
+      "type": "string"
+    },
+    "DimensionScore": {
+      "additionalProperties": false,
+      "properties": {
+        "dimension": {
+          "$ref": "#/$defs/Dimension"
+        },
+        "points": {
+          "maximum": 100,
+          "minimum": 0,
+          "title": "Points",
+          "type": "integer"
+        },
+        "weight": {
+          "title": "Weight",
+          "type": "number"
+        },
+        "applicable": {
+          "default": true,
+          "title": "Applicable",
+          "type": "boolean"
+        },
+        "triggered_rules": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Triggered Rules",
+          "type": "array"
+        }
+      },
+      "required": [
+        "dimension",
+        "points",
+        "weight"
+      ],
+      "title": "DimensionScore",
+      "type": "object"
+    },
+    "EvidenceType": {
+      "enum": [
+        "SOC2_TYPE2",
+        "ISO27001",
+        "CAIQ",
+        "PENTEST",
+        "CYBER_INSURANCE",
+        "BCP_DR_TEST",
+        "DPA",
+        "FINANCIALS",
+        "SECURITY_ATTESTATION"
+      ],
+      "title": "EvidenceType",
+      "type": "string"
+    },
+    "Finding": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "title": "Code",
+          "type": "string"
+        },
+        "dimension": {
+          "$ref": "#/$defs/Dimension"
+        },
+        "severity": {
+          "$ref": "#/$defs/Severity"
+        },
+        "kind": {
+          "enum": [
+            "observation",
+            "interpretation",
+            "recommendation"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "statement": {
+          "maxLength": 500,
+          "title": "Statement",
+          "type": "string"
+        },
+        "citations": {
+          "items": {
+            "$ref": "#/$defs/Citation"
+          },
+          "minItems": 1,
+          "title": "Citations",
+          "type": "array"
+        },
+        "needs_legal_review": {
+          "default": false,
+          "title": "Needs Legal Review",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "code",
+        "dimension",
+        "severity",
+        "kind",
+        "statement",
+        "citations"
+      ],
+      "title": "Finding",
+      "type": "object"
+    },
+    "Recommendation": {
+      "enum": [
+        "PROCEED",
+        "PROCEED_WITH_CONDITIONS",
+        "HOLD_PENDING_EVIDENCE",
+        "ESCALATE_HIGH_RISK"
+      ],
+      "title": "Recommendation",
+      "type": "string"
+    },
+    "ReviewType": {
+      "enum": [
+        "NEW_VENDOR",
+        "RENEWAL"
+      ],
+      "title": "ReviewType",
+      "type": "string"
+    },
+    "RiskBand": {
+      "enum": [
+        "LOW",
+        "MEDIUM",
+        "HIGH",
+        "CRITICAL"
+      ],
+      "title": "RiskBand",
+      "type": "string"
+    },
+    "RiskScore": {
+      "additionalProperties": false,
+      "properties": {
+        "overall": {
+          "maximum": 100,
+          "minimum": 0,
+          "title": "Overall",
+          "type": "number"
+        },
+        "band": {
+          "$ref": "#/$defs/RiskBand"
+        },
+        "raw_band": {
+          "$ref": "#/$defs/RiskBand"
+        },
+        "dimensions": {
+          "items": {
+            "$ref": "#/$defs/DimensionScore"
+          },
+          "title": "Dimensions",
+          "type": "array"
+        },
+        "knockouts": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Knockouts",
+          "type": "array"
+        },
+        "rubric_version": {
+          "default": "1.0",
+          "title": "Rubric Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "overall",
+        "band",
+        "raw_band",
+        "dimensions"
+      ],
+      "title": "RiskScore",
+      "type": "object"
+    },
+    "Severity": {
+      "enum": [
+        "INFO",
+        "LOW",
+        "MEDIUM",
+        "HIGH",
+        "CRITICAL"
+      ],
+      "title": "Severity",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "behaviour": {
+      "enum": [
+        "ANSWER",
+        "PARTIAL"
+      ],
+      "title": "Behaviour",
+      "type": "string"
+    },
+    "vendor_id": {
+      "title": "Vendor Id",
+      "type": "string"
+    },
+    "review_type": {
+      "$ref": "#/$defs/ReviewType"
+    },
+    "as_of": {
+      "format": "date",
+      "title": "As Of",
+      "type": "string"
+    },
+    "tier": {
+      "enum": [
+        1,
+        2,
+        3
+      ],
+      "title": "Tier",
+      "type": "integer"
+    },
+    "summary": {
+      "maxLength": 800,
+      "title": "Summary",
+      "type": "string"
+    },
+    "findings": {
+      "items": {
+        "$ref": "#/$defs/Finding"
+      },
+      "title": "Findings",
+      "type": "array"
+    },
+    "checklist": {
+      "items": {
+        "$ref": "#/$defs/ChecklistItem"
+      },
+      "title": "Checklist",
+      "type": "array"
+    },
+    "score": {
+      "$ref": "#/$defs/RiskScore"
+    },
+    "recommendation": {
+      "$ref": "#/$defs/Recommendation"
+    },
+    "conditions": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Conditions",
+      "type": "array"
+    },
+    "approval": {
+      "$ref": "#/$defs/ApprovalRouting"
+    },
+    "gaps_and_uncertainties": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Gaps And Uncertainties",
+      "type": "array"
+    },
+    "partial_reason": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Partial Reason"
+    }
+  },
+  "required": [
+    "behaviour",
+    "vendor_id",
+    "review_type",
+    "as_of",
+    "tier",
+    "summary",
+    "findings",
+    "checklist",
+    "score",
+    "recommendation",
+    "approval"
+  ],
+  "title": "Report",
+  "type": "object"
+}

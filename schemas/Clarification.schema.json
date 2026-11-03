@@ -1,0 +1,29 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "behaviour": {
+      "const": "CLARIFY",
+      "title": "Behaviour",
+      "type": "string"
+    },
+    "question": {
+      "maxLength": 300,
+      "title": "Question",
+      "type": "string"
+    },
+    "options": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 5,
+      "title": "Options",
+      "type": "array"
+    }
+  },
+  "required": [
+    "behaviour",
+    "question"
+  ],
+  "title": "Clarification",
+  "type": "object"
+}

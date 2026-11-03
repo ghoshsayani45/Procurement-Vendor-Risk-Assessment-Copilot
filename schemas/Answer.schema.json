@@ -1,0 +1,125 @@
+{
+  "$defs": {
+    "Citation": {
+      "additionalProperties": false,
+      "properties": {
+        "source_id": {
+          "title": "Source Id",
+          "type": "string"
+        },
+        "doc_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Doc Id"
+        },
+        "title": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Title"
+        },
+        "document_date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Document Date"
+        },
+        "evidence_type": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/EvidenceType"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "snippet": {
+          "anyOf": [
+            {
+              "maxLength": 400,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Snippet"
+        }
+      },
+      "required": [
+        "source_id"
+      ],
+      "title": "Citation",
+      "type": "object"
+    },
+    "EvidenceType": {
+      "enum": [
+        "SOC2_TYPE2",
+        "ISO27001",
+        "CAIQ",
+        "PENTEST",
+        "CYBER_INSURANCE",
+        "BCP_DR_TEST",
+        "DPA",
+        "FINANCIALS",
+        "SECURITY_ATTESTATION"
+      ],
+      "title": "EvidenceType",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "behaviour": {
+      "enum": [
+        "ANSWER",
+        "PARTIAL"
+      ],
+      "title": "Behaviour",
+      "type": "string"
+    },
+    "answer": {
+      "maxLength": 1200,
+      "title": "Answer",
+      "type": "string"
+    },
+    "citations": {
+      "items": {
+        "$ref": "#/$defs/Citation"
+      },
+      "minItems": 1,
+      "title": "Citations",
+      "type": "array"
+    }
+  },
+  "required": [
+    "behaviour",
+    "answer",
+    "citations"
+  ],
+  "title": "Answer",
+  "type": "object"
+}

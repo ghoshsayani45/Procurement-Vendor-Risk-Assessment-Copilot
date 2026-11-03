@@ -1,0 +1,57 @@
+{
+  "$defs": {
+    "RefusalCategory": {
+      "enum": [
+        "APPROVAL_OR_COMMITMENT",
+        "LEGAL_ADVICE",
+        "ACCESS_CONTROL_BYPASS",
+        "PII_EXPOSURE",
+        "SECRETS",
+        "SCORE_MANIPULATION",
+        "OUT_OF_SCOPE"
+      ],
+      "title": "RefusalCategory",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "behaviour": {
+      "const": "REFUSE",
+      "title": "Behaviour",
+      "type": "string"
+    },
+    "category": {
+      "$ref": "#/$defs/RefusalCategory"
+    },
+    "message": {
+      "maxLength": 400,
+      "title": "Message",
+      "type": "string"
+    },
+    "route_to": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Route To"
+    },
+    "audit_event": {
+      "default": true,
+      "title": "Audit Event",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "behaviour",
+    "category",
+    "message"
+  ],
+  "title": "Refusal",
+  "type": "object"
+}

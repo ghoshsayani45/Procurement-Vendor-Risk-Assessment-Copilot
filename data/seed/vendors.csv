@@ -1,0 +1,36 @@
+id,name,category,status,owner
+V001,Quillmoor People Cloud Pvt Ltd,HRMS and payroll SaaS,ACTIVE,HR Operations
+V002,Brightvale HR Systems Ltd,HRMS and payroll SaaS,PROSPECT,HR Operations
+V003,Payvanta Workforce Solutions Pvt Ltd,HRMS and payroll SaaS,ACTIVE,HR Operations
+V004,Stratonimbus Hosting Pvt Ltd,Cloud hosting (IaaS),ACTIVE,IT Infrastructure
+V005,Cirrolux Infrastructure Pte Ltd,Cloud hosting (IaaS),PROSPECT,IT Infrastructure
+V006,Sentrivane Cyber Defence Pvt Ltd,Managed security (SOC) services,ACTIVE,Information Security
+V007,Wardlock Security Operations LLC,Managed security (SOC) services,PROSPECT,Information Security
+V008,Orbelle CRM Inc,CRM SaaS,PROSPECT,Sales Operations
+V009,Kestrion Customer Cloud Pvt Ltd,CRM SaaS,ACTIVE,Sales Operations
+V010,Lumetric Insights GmbH,Data analytics and BI,PROSPECT,Data & Analytics
+V011,Datafjord Analytics Pvt Ltd,Data analytics and BI,ACTIVE,Data & Analytics
+V012,Tessaline IT Services Pvt Ltd,IT staffing and managed services,ACTIVE,IT Service Delivery
+V013,Corvanta Talent Partners Pvt Ltd,IT staffing and managed services,PROSPECT,IT Service Delivery
+V014,Ferrolink Networks Pvt Ltd,Network hardware and AMC,ACTIVE,IT Infrastructure
+V015,Rivenhall Network Solutions Ltd,Network hardware and AMC,PROSPECT,IT Infrastructure
+V016,Endura Device Management Inc,Endpoint management SaaS,ACTIVE,End-User Computing
+V017,Patchwell Endpoint Systems Pvt Ltd,Endpoint management SaaS,PROSPECT,End-User Computing
+V018,Scribewise AI Pvt Ltd,AI document processing,PROSPECT,Finance Operations
+V019,Parsenova Document Intelligence Pte Ltd,AI document processing,PROSPECT,Finance Operations
+V020,Vaultaire Backup Pvt Ltd,Backup and disaster recovery,ACTIVE,IT Infrastructure
+V021,Recoverly DR Services Ltd,Backup and disaster recovery,ACTIVE,IT Infrastructure
+V022,Hollowpine Workspace Inc,Collaboration and email SaaS,ACTIVE,Workplace Technology
+V023,Paytrove Gateway Pvt Ltd,Payment gateway,PROSPECT,Treasury
+V024,Coinharbor Payments Pte Ltd,Payment gateway,PROSPECT,Treasury
+V025,Meridux Telecom Pvt Ltd,Telecom and connectivity,ACTIVE,Network Services
+V026,Skyquill Connect Pvt Ltd,Telecom and connectivity,ACTIVE,Network Services
+V027,Codeweft Technologies Pvt Ltd,Software development outsourcing,ACTIVE,Engineering
+V028,Bytemarsh Software Labs Pvt Ltd,Software development outsourcing,PROSPECT,Engineering
+V029,Learnstead Academy Pvt Ltd,E-learning SaaS,PROSPECT,Learning & Development
+V030,Calldrift BPO Services Pvt Ltd,Customer support outsourcing (BPO),ACTIVE,Customer Service
+V031,Voxenta Contact Centres Pvt Ltd,Customer support outsourcing (BPO),PROSPECT,Customer Service
+V032,Keyloom Identity Inc,Identity and SSO SaaS,ACTIVE,Information Security
+V033,Passgrove Access Pvt Ltd,Identity and SSO SaaS,PROSPECT,Information Security
+V034,Opticrest Surveillance Systems Pvt Ltd,CCTV and facility IoT,PROSPECT,Facilities Management
+V035,Gridwatch Facility Tech Pvt Ltd,CCTV and facility IoT,ACTIVE,Facilities Management
