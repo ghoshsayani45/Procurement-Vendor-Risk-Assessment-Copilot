@@ -1,0 +1,511 @@
+cuad_title,contract_type,words,include,reason,tech_terms_per_1k,labelled_clauses
+LIMEENERGYCO_09_09_1999-EX-10-DISTRIBUTOR AGREEMENT,,5998,no,type not tech-vendor relevant,0.2,Renewal Term;Insurance
+"WHITESMOKE,INC_11_08_2011-EX-10.26-PROMOTION AND DISTRIBUTION AGREEMENT",,11313,no,out-of-scope contract type,13.4,Uncapped Liability;Cap On Liability;Audit Rights;Change Of Control
+LohaCompanyltd_20191209_F-1_EX-10.16_11917878_EX-10.16_Supply Agreement,SUPPLY,1880,no,low IT content or pharma/biotech/goods focus,1.6,Insurance
+CENTRACKINTERNATIONALINC_10_29_1999-EX-10.3-WEB SITE HOSTING AGREEMENT,HOSTING,2280,yes,tech-vendor contract type with IT/services content,40.4,Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Termination For Convenience
+NELNETINC_04_08_2020-EX-1-JOINT FILING AGREEMENT,,170,no,type not tech-vendor relevant,0.0,
+ADAMSGOLFINC_03_21_2005-EX-10.17-ENDORSEMENT AGREEMENT,,3770,no,out-of-scope contract type,0.0,
+"KIROMICBIOPHARMA,INC_05_11_2020-EX-10.23-CONSULTING AGREEMENT",CONSULT,2766,no,low IT content or pharma/biotech/goods focus,1.4,Termination For Convenience
+"VEONEER,INC_02_21_2020-EX-10.11-JOINT VENTURE AGREEMENT",,1334,no,out-of-scope contract type,2.2,
+DovaPharmaceuticalsInc_20181108_10-Q_EX-10.2_11414857_EX-10.2_Promotion Agreement,,26789,no,out-of-scope contract type,2.4,Uncapped Liability;Cap On Liability;Audit Rights;Termination For Convenience;Change Of Control;Insurance;Liquidated Damages
+"PACIRA PHARMACEUTICALS, INC. - A_R STRATEGIC LICENSING, DISTRIBUTION AND MARKETING AGREEMENT ",LICENS,22756,no,low IT content or pharma/biotech/goods focus,2.5,Uncapped Liability;Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Termination For Convenience;Change Of Control;Insurance
+"MetLife, Inc. - Remarketing Agreement",,17518,no,type not tech-vendor relevant,0.4,Cap On Liability;Insurance
+"FTENETWORKS,INC_02_18_2016-EX-99.4-STRATEGIC ALLIANCE AGREEMENT",,5761,no,type not tech-vendor relevant,0.9,Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Termination For Convenience;Insurance;Liquidated Damages
+DOMINIADVISORTRUST_02_18_2005-EX-99.(H)(2)-SPONSORSHIP AGREEMENT,IP AGREEMENT,1847,no,out-of-scope contract type,0.5,Cap On Liability;Termination For Convenience
+PfHospitalityGroupInc_20150923_10-12G_EX-10.1_9266710_EX-10.1_Franchise Agreement3,,1014,no,out-of-scope contract type,3.9,
+CerenceInc_20191002_8-K_EX-10.4_11827494_EX-10.4_Intellectual Property Agreement,INTELLECTUAL PROPERTY,9608,yes,tech-vendor contract type with IT/services content,12.7,Cap On Liability;Termination For Convenience;Change Of Control
+ThriventVariableInsuranceAccountB_20190701_N-6_EX-99.D(IV)_11720968_EX-99.D(IV)_Endorsement Agreement,,735,no,out-of-scope contract type,2.7,
+ReynoldsConsumerProductsInc_20191115_S-1_EX-10.18_11896469_EX-10.18_Supply Agreement,SUPPLY,9599,no,low IT content or pharma/biotech/goods focus,0.6,Uncapped Liability;Cap On Liability;Change Of Control;Insurance
+IntegrityFunds_20200121_485BPOS_EX-99.E UNDR CONTR_11948727_EX-99.E UNDR CONTR_Service Agreement,SERVICE,3784,no,low IT content or pharma/biotech/goods focus,0.5,Renewal Term;Audit Rights
+PREMIERBIOMEDICALINC_05_14_2020-EX-10.2-INTELLECTUAL PROPERTY AGREEMENT,INTELLECTUAL PROPERTY,3596,yes,tech-vendor contract type with IT/services content,7.5,
+"SIBANNAC,INC_12_04_2017-EX-2.1-Strategic Alliance Agreement",,1236,no,type not tech-vendor relevant,1.6,Renewal Term;Notice Period To Terminate Renewal;Termination For Convenience
+INTRICONCORP_03_10_2009-EX-10.22-Strategic Alliance Agreement,,7774,no,type not tech-vendor relevant,17.9,Cap On Liability;Audit Rights;Termination For Convenience
+BONTONSTORESINC_04_20_2018-EX-99.3-AGENCY AGREEMENT,,26842,no,out-of-scope contract type,1.1,Audit Rights;Termination For Convenience;Insurance;Liquidated Damages
+"ON2TECHNOLOGIES,INC_11_17_2006-EX-10.3-SUPPORT AND MAINTENANCE AGREEMENT",SUPPORT,8844,yes,tech-vendor contract type with IT/services content,7.1,
+Freecook_20180605_S-1_EX-10.3_11233807_EX-10.3_Hosting Agreement,HOSTING,997,yes,tech-vendor contract type with IT/services content,25.1,Termination For Convenience
+OPERALTD_04_30_2020-EX-4.14-SERVICE AGREEMENT,SERVICE,3326,yes,tech-vendor contract type with IT/services content,7.2,Uncapped Liability;Cap On Liability;Renewal Term;Audit Rights
+"BORROWMONEYCOM,INC_06_11_2020-EX-10.1-JOINT VENTURE AGREEMENT",,3507,no,out-of-scope contract type,1.1,Audit Rights;Insurance
+ZEBRATECHNOLOGIESCORP_04_16_2014-EX-10.1-INTELLECTUAL PROPERTY AGREEMENT,INTELLECTUAL PROPERTY,19581,yes,tech-vendor contract type with IT/services content,8.9,Cap On Liability;Change Of Control
+ChinaRealEstateInformationCorp_20090929_F-1_EX-10.32_4771615_EX-10.32_Content License Agreement,LICENS,7522,no,low IT content or pharma/biotech/goods focus,3.5,Change Of Control
+"HERTZGLOBALHOLDINGS,INC_07_07_2016-EX-10.4-INTELLECTUAL PROPERTY AGREEMENT",INTELLECTUAL PROPERTY,4904,no,low IT content or pharma/biotech/goods focus,1.4,Insurance
+GLOBALTECHNOLOGIESLTD_06_08_2020-EX-10.16-CONSULTING AGREEMENT,CONSULT,3199,no,low IT content or pharma/biotech/goods focus,0.3,
+PfHospitalityGroupInc_20150923_10-12G_EX-10.1_9266710_EX-10.1_Franchise Agreement1,,24389,no,out-of-scope contract type,5.5,Cap On Liability;Renewal Term;Audit Rights;Termination For Convenience;Change Of Control;Insurance;Liquidated Damages
+CORIOINC_07_20_2000-EX-10.5-LICENSE AND HOSTING AGREEMENT,LICENS,8396,yes,tech-vendor contract type with IT/services content,24.5,Uncapped Liability;Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Change Of Control;Source Code Escrow
+TUNIUCORP_03_06_2014-EX-10-COOPERATION AGREEMENT,,2760,no,type not tech-vendor relevant,10.9,Cap On Liability;Termination For Convenience;Liquidated Damages
+CYBERIANOUTPOSTINC_07_09_1998-EX-10.13-PROMOTION AGREEMENT,,3450,no,out-of-scope contract type,5.8,Cap On Liability;Audit Rights;Termination For Convenience
+SENMIAOTECHNOLOGYLTD_02_19_2019-EX-10.5-Collaboration Agreement,,11876,no,type not tech-vendor relevant,4.1,Cap On Liability;Termination For Convenience;Liquidated Damages
+HealthcareIntegratedTechnologiesInc_20190812_8-K_EX-10.1_11776966_EX-10.1_Reseller Agreement,RESELL,3519,no,low IT content or pharma/biotech/goods focus,4.0,Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Termination For Convenience
+LOYALTYPOINTINC_11_16_2004-EX-10.2-RESELLER AGREEMENT,RESELL,12890,no,low IT content or pharma/biotech/goods focus,0.8,Cap On Liability;Audit Rights;Insurance
+BNCMORTGAGEINC_05_17_1999-EX-10.4-LICENSING AND WEB SITE HOSTING AGREEMENT,LICENS,4739,yes,tech-vendor contract type with IT/services content,24.7,Cap On Liability;Renewal Term;Notice Period To Terminate Renewal
+ENERGOUSCORP_03_16_2017-EX-10.24-STRATEGIC ALLIANCE AGREEMENT,,12422,no,type not tech-vendor relevant,3.3,Uncapped Liability;Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Termination For Convenience;Change Of Control;Source Code Escrow;Insurance
+CytodynInc_20200109_10-Q_EX-10.5_11941634_EX-10.5_License Agreement,LICENS,24801,no,low IT content or pharma/biotech/goods focus,1.3,Uncapped Liability;Cap On Liability;Audit Rights;Termination For Convenience;Change Of Control;Insurance
+MSCIINC_02_28_2008-EX-10.10-,,1851,no,type not tech-vendor relevant,7.6,Cap On Liability
+NICELTD_06_26_2003-EX-4.5-OUTSOURCING AGREEMENT,OUTSOURC,18608,no,low IT content or pharma/biotech/goods focus,2.5,Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Termination For Convenience;Insurance;Liquidated Damages
+ImpresseCorp_20000322_S-1A_EX-10.11_5199234_EX-10.11_Co-Branding Agreement,,7249,no,out-of-scope contract type,5.9,Uncapped Liability;Cap On Liability;Audit Rights
+AlliedEsportsEntertainmentInc_20190815_8-K_EX-10.19_11788293_EX-10.19_Content License Agreement,LICENS,5471,no,low IT content or pharma/biotech/goods focus,1.5,Uncapped Liability;Cap On Liability;Renewal Term;Audit Rights;Insurance
+CHERRYHILLMORTGAGEINVESTMENTCORP_09_26_2013-EX-10.1-Strategic Alliance Agreement,,4441,no,type not tech-vendor relevant,0.0,
+CreditcardscomInc_20070810_S-1_EX-10.33_362297_EX-10.33_Affiliate Agreement,,4045,no,type not tech-vendor relevant,8.9,Cap On Liability;Termination For Convenience
+GALACTICOMMTECHNOLOGIESINC_11_07_1997-EX-10.46-WEB HOSTING AGREEMENT,HOSTING,223,yes,tech-vendor contract type with IT/services content,22.4,
+"Zounds Hearing, Inc. - MANUFACTURING DESIGN MARKETING AGREEMENT",,6897,no,type not tech-vendor relevant,1.6,Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Change Of Control;Liquidated Damages
+CUROGROUPHOLDINGSCORP_05_04_2020-EX-10.3-SERVICING AGREEMENT,,5793,no,type not tech-vendor relevant,0.3,Audit Rights
+SouthernStarEnergyInc_20051202_SB-2A_EX-9_801890_EX-9_Affiliate Agreement,,3607,no,type not tech-vendor relevant,29.1,Cap On Liability;Termination For Convenience
+ConformisInc_20191101_10-Q_EX-10.6_11861402_EX-10.6_Development Agreement,DEVELOPMENT,9583,no,low IT content or pharma/biotech/goods focus,2.0,Uncapped Liability;Cap On Liability;Change Of Control
+Principal Life Insurance Company - Broker Dealer Marketing and Servicing Agreement,,4366,no,type not tech-vendor relevant,0.9,Termination For Convenience;Insurance
+LegacyEducationAllianceInc_20200330_10-K_EX-10.18_12090678_EX-10.18_Development Agreement,DEVELOPMENT,7337,no,low IT content or pharma/biotech/goods focus,1.6,Uncapped Liability;Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Insurance
+VerizonAbsLlc_20200123_8-K_EX-10.4_11952335_EX-10.4_Service Agreement,SERVICE,45143,no,low IT content or pharma/biotech/goods focus,0.7,Cap On Liability;Audit Rights;Change Of Control
+VERICELCORP_08_06_2019-EX-10.10-SUPPLY AGREEMENT,SUPPLY,15862,no,low IT content or pharma/biotech/goods focus,0.8,Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Termination For Convenience;Insurance
+WPPPLC_04_30_2020-EX-4.28-SERVICE AGREEMENT,SERVICE,10958,no,low IT content or pharma/biotech/goods focus,1.8,Termination For Convenience;Insurance
+"WASTE2ENERGYHOLDINGS,INC_06_03_2010-EX-10.2-STRATEGIC ALLIANCE AGREEMENT",,6187,no,type not tech-vendor relevant,1.8,
+WORLDWIDESTRATEGIESINC_11_02_2005-EX-10-RESELLER AGREEMENT,RESELL,10830,yes,tech-vendor contract type with IT/services content,24.6,Cap On Liability;Termination For Convenience;Insurance
+FEDERATEDGOVERNMENTINCOMESECURITIESINC_04_28_2020-EX-99.SERV AGREE-SERVICES AGREEMENT_SECONDAMENDMENT,SERVICE,820,no,low IT content or pharma/biotech/goods focus,0.0,
+AzulSa_20170303_F-1A_EX-10.3_9943903_EX-10.3_Maintenance Agreement2,MAINTENANCE,2549,yes,tech-vendor contract type with IT/services content,5.5,
+PelicanDeliversInc_20200211_S-1_EX-10.3_11975895_EX-10.3_Development Agreement1,DEVELOPMENT,2820,yes,tech-vendor contract type with IT/services content,13.5,
+ORBSATCORP_08_17_2007-EX-7.3-STRATEGIC ALLIANCE AGREEMENT,,2909,no,type not tech-vendor relevant,8.9,Termination For Convenience
+DRAGONSYSTEMSINC_01_08_1999-EX-10.17-OUTSOURCING AGREEMENT,OUTSOURC,1088,no,low IT content or pharma/biotech/goods focus,0.0,Cap On Liability;Termination For Convenience;Insurance
+SEPARATEACCOUNTIIOFAGL_05_02_2011-EX-99.(J)(4)-UNCONDITIONAL CAPITAL MAINTENANCE AGREEMENT,MAINTENANCE,2845,no,low IT content or pharma/biotech/goods focus,1.1,Cap On Liability;Termination For Convenience
+GridironBionutrientsInc_20171206_8-K_EX-10.2_10972556_EX-10.2_Endorsement Agreement,,529,no,out-of-scope contract type,0.0,
+ImperialGardenResortInc_20161028_DRS (on F-1)_EX-10.13_9963189_EX-10.13_Outsourcing Agreement,OUTSOURC,1849,yes,tech-vendor contract type with IT/services content,6.5,
+"VIRGINGALACTICHOLDINGS,INC_04_08_2020-EX-99.1-JOINT FILING STATEMENT",,188,no,type not tech-vendor relevant,0.0,
+FuseMedicalInc_20190321_10-K_EX-10.43_11575454_EX-10.43_Distributor Agreement,,5339,no,type not tech-vendor relevant,0.9,Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Insurance
+ASPIRITYHOLDINGSLLC_05_07_2012-EX-10.6-OUTSOURCING AGREEMENT,OUTSOURC,10095,no,low IT content or pharma/biotech/goods focus,1.7,Audit Rights;Termination For Convenience;Insurance
+"OASYSMOBILE,INC_07_05_2001-EX-10.17-OUTSOURCING AGREEMENT",OUTSOURC,8147,yes,tech-vendor contract type with IT/services content,20.9,Cap On Liability;Audit Rights
+MEDIWOUNDLTD_01_15_2014-EX-10.6-SUPPLY AGREEMENT,SUPPLY,7708,no,low IT content or pharma/biotech/goods focus,0.9,Uncapped Liability;Cap On Liability;Audit Rights;Termination For Convenience;Insurance
+UpjohnInc_20200121_10-12G_EX-2.6_11948692_EX-2.6_Manufacturing Agreement_ Supply Agreement,SUPPLY,33948,no,low IT content or pharma/biotech/goods focus,1.0,Uncapped Liability;Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Insurance
+"Antares Pharma, Inc. - Manufacturing Agreement",,16365,no,type not tech-vendor relevant,0.4,Cap On Liability;Audit Rights;Insurance
+RareElementResourcesLtd_20171019_SC 13D_EX-99.4_10897534_EX-99.4_Intellectual Property Agreement,INTELLECTUAL PROPERTY,5415,no,low IT content or pharma/biotech/goods focus,2.8,
+VARIABLESEPARATEACCOUNT_04_30_2014-EX-13.C-UNCONDITIONAL CAPITAL MAINTENANCE AGREEMENT,MAINTENANCE,2381,no,low IT content or pharma/biotech/goods focus,1.3,Notice Period To Terminate Renewal
+ABILITYINC_06_15_2020-EX-4.25-SERVICES AGREEMENT,SERVICE,4115,no,low IT content or pharma/biotech/goods focus,2.9,Termination For Convenience
+ELECTRAMECCANICA VEHICLES CORP. - Manufacturing Agreement,,7251,no,type not tech-vendor relevant,1.2,Renewal Term;Audit Rights
+GopageCorp_20140221_10-K_EX-10.1_8432966_EX-10.1_Content License Agreement,LICENS,6030,no,low IT content or pharma/biotech/goods focus,1.8,Uncapped Liability;Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Change Of Control
+BICYCLETHERAPEUTICSPLC_03_10_2020-EX-10.11-SERVICE AGREEMENT,SERVICE,9252,no,low IT content or pharma/biotech/goods focus,3.4,Termination For Convenience
+FreezeTagInc_20180411_8-K_EX-10.1_11139603_EX-10.1_Sponsorship Agreement,IP AGREEMENT,4102,no,out-of-scope contract type,1.0,Change Of Control;Insurance
+TELEGLOBEINTERNATIONALHOLDINGSLTD_03_29_2004-EX-10.10-CONSTRUCTION AND MAINTENANCE AGREEMENT,MAINTENANCE,15095,yes,tech-vendor contract type with IT/services content,7.9,Cap On Liability;Audit Rights;Termination For Convenience
+WEBHELPCOMINC_03_22_2000-EX-10.8-HOSTING AGREEMENT,HOSTING,2955,yes,tech-vendor contract type with IT/services content,38.9,Uncapped Liability;Cap On Liability;Renewal Term;Notice Period To Terminate Renewal
+INTERNATIONALFASTFOODCORP_04_04_1997-EX-99-FRANCHISE AGREEMENT,,16157,no,out-of-scope contract type,2.9,Audit Rights;Change Of Control;Insurance
+BIOCEPTINC_08_19_2013-EX-10-COLLABORATION AGREEMENT,,12142,no,type not tech-vendor relevant,3.1,Uncapped Liability;Cap On Liability;Termination For Convenience;Change Of Control;Insurance
+PACIFICSYSTEMSCONTROLTECHNOLOGYINC_08_24_2000-EX-10.53-SPONSORSHIP AGREEMENT,IP AGREEMENT,682,no,out-of-scope contract type,0.0,
+NANOPHASETECHNOLOGIESCORP_11_01_2005-EX-99.1-DISTRIBUTOR AGREEMENT,,7663,no,type not tech-vendor relevant,1.4,Uncapped Liability;Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Termination For Convenience;Insurance
+AzulSa_20170303_F-1A_EX-10.3_9943903_EX-10.3_Maintenance Agreement1,MAINTENANCE,34155,yes,tech-vendor contract type with IT/services content,7.4,Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Termination For Convenience;Change Of Control;Insurance
+PelicanDeliversInc_20200211_S-1_EX-10.3_11975895_EX-10.3_Development Agreement2,DEVELOPMENT,4870,yes,tech-vendor contract type with IT/services content,4.1,Termination For Convenience
+"NETGEAR,INC_04_21_2003-EX-10.16-AMENDMENT TO THE DISTRIBUTOR AGREEMENT BETWEEN INGRAM MICRO AND NETGEAR",,973,no,type not tech-vendor relevant,0.0,
+NEONSYSTEMSINC_03_01_1999-EX-10.5-DISTRIBUTOR AGREEMENT_Amendment,,2848,no,type not tech-vendor relevant,2.1,Renewal Term;Notice Period To Terminate Renewal;Change Of Control
+"Columbia Laboratories, (Bermuda) Ltd. - AMEND NO. 2 TO MANUFACTURING AND SUPPLY AGREEMENT",SUPPLY,7145,yes,tech-vendor contract type with IT/services content,4.2,Audit Rights;Change Of Control;Insurance
+SPARKLINGSPRINGWATERHOLDINGSLTD_07_03_2002-EX-10.13-SOFTWARE LICENSE AND MAINTENANCE AGREEMENT,LICENS,3885,yes,tech-vendor contract type with IT/services content,22.9,Cap On Liability;Renewal Term;Termination For Convenience;Source Code Escrow
+N2KINC_10_16_1997-EX-10.16-SPONSORSHIP AGREEMENT,IP AGREEMENT,5558,no,out-of-scope contract type,3.4,Uncapped Liability;Cap On Liability;Audit Rights
+NUVEEN - REMARKETING AGREEMENT,,11298,no,type not tech-vendor relevant,0.3,Audit Rights
+ArconicRolledProductsCorp_20191217_10-12B_EX-2.7_11923804_EX-2.7_Trademark License Agreement,LICENS,2828,no,low IT content or pharma/biotech/goods focus,0.7,Audit Rights;Change Of Control
+SECURIANFUNDSTRUST_05_01_2012-EX-99.28.H.9-NET INVESTMENT INCOME MAINTENANCE AGREEMENT,MAINTENANCE,1538,no,low IT content or pharma/biotech/goods focus,3.3,Renewal Term
+WELLSFARGOMORTGAGEBACKEDSECURITIES2006-6TRUST_05_11_2006-EX-10.3-Yield Maintenance Agreement,MAINTENANCE,5299,no,low IT content or pharma/biotech/goods focus,0.4,Cap On Liability
+REWALKROBOTICSLTD_07_10_2014-EX-10.2-STRATEGIC ALLIANCE AGREEMENT,,2320,no,type not tech-vendor relevant,0.9,Termination For Convenience
+PenntexMidstreamPartnersLp_20150416_S-1A_EX-10.4_9042833_EX-10.4_Transportation Agreement,,7965,no,out-of-scope contract type,6.0,Uncapped Liability;Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights
+FerroglobePlc_20150624_F-4A_EX-10.20_9154746_EX-10.20_Outsourcing Agreement,OUTSOURC,4627,yes,tech-vendor contract type with IT/services content,17.3,Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Termination For Convenience
+TodosMedicalLtd_20190328_20-F_EX-4.10_11587157_EX-4.10_Marketing Agreement_ Reseller Agreement,RESELL,5066,no,low IT content or pharma/biotech/goods focus,1.6,Uncapped Liability;Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Insurance
+PrecheckHealthServicesInc_20200320_8-K_EX-99.2_12070169_EX-99.2_Distributor Agreement,SERVICE,970,no,low IT content or pharma/biotech/goods focus,0.0,Termination For Convenience
+INKTOMICORP_06_08_1998-EX-10.14-SOFTWARE HOSTING AGREEMENT,HOSTING,9916,yes,tech-vendor contract type with IT/services content,18.0,Uncapped Liability;Cap On Liability;Audit Rights;Termination For Convenience;Change Of Control;Source Code Escrow;Insurance;Liquidated Damages
+"OAKTREECAPITALGROUP,LLC_03_02_2020-EX-10.8-Services Agreement",SERVICE,3194,no,low IT content or pharma/biotech/goods focus,0.3,Audit Rights;Termination For Convenience
+BANGIINC_05_25_2005-EX-10-Premium Managed Hosting Agreement,HOSTING,302,yes,tech-vendor contract type with IT/services content,66.2,
+AMERICANPHYSICIANSCAPITALINC_03_31_2003-EX-10.26-AGENCY AGREEMENT,,2901,no,out-of-scope contract type,2.4,Renewal Term;Notice Period To Terminate Renewal;Insurance
+GULFSOUTHMEDICALSUPPLYINC_12_24_1997-EX-4-AFFILIATE AGREEMENT,SUPPLY,2765,no,low IT content or pharma/biotech/goods focus,0.0,
+"BELLRINGBRANDS,INC_02_07_2020-EX-10.18-MASTER SUPPLY AGREEMENT",SUPPLY,5813,no,low IT content or pharma/biotech/goods focus,1.0,Uncapped Liability;Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Insurance
+AimmuneTherapeuticsInc_20200205_8-K_EX-10.3_11967170_EX-10.3_Development Agreement,DEVELOPMENT,25298,no,low IT content or pharma/biotech/goods focus,3.1,Uncapped Liability;Cap On Liability;Audit Rights;Termination For Convenience;Insurance
+HEALTHGATEDATACORP_11_24_1999-EX-10.1-HOSTING AND MANAGEMENT AGREEMENT (1),HOSTING,17975,yes,tech-vendor contract type with IT/services content,10.5,Cap On Liability;Renewal Term;Audit Rights;Change Of Control;Source Code Escrow;Liquidated Damages
+"INTELLIGENTHIGHWAYSOLUTIONS,INC_01_18_2018-EX-10.1-Strategic Alliance Agreement",,1217,no,type not tech-vendor relevant,1.6,Renewal Term;Notice Period To Terminate Renewal;Termination For Convenience
+ATMOSENERGYCORP_11_22_2002-EX-10.17-TRANSPORTATION SERVICE AGREEMENT,SERVICE,2588,no,out-of-scope contract type,1.9,Renewal Term;Notice Period To Terminate Renewal
+PacificapEntertainmentHoldingsInc_20051115_8-KA_EX-1.01_4300894_EX-1.01_Content License Agreement,LICENS,2500,yes,tech-vendor contract type with IT/services content,5.2,Renewal Term;Notice Period To Terminate Renewal
+ReedsInc_20191113_10-Q_EX-10.4_11888303_EX-10.4_Development Agreement,DEVELOPMENT,4301,no,low IT content or pharma/biotech/goods focus,0.2,Uncapped Liability;Cap On Liability
+RgcResourcesInc_20151216_8-K_EX-10.3_9372751_EX-10.3_Franchise Agreement,,805,no,out-of-scope contract type,1.2,
+"BELLICUMPHARMACEUTICALS,INC_05_07_2019-EX-10.1-Supply Agreement",SUPPLY,28275,no,low IT content or pharma/biotech/goods focus,1.3,Uncapped Liability;Cap On Liability;Renewal Term;Audit Rights;Termination For Convenience;Insurance
+MARTINMIDSTREAMPARTNERSLP_01_23_2004-EX-10.3-TRANSPORTATION SERVICES AGREEMENT,SERVICE,2175,no,out-of-scope contract type,0.0,Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Insurance
+RUBIOSRESTAURANTSINC_03_31_2008-EX-10.75-SPONSORSHIP AGREEMENT,IP AGREEMENT,5760,no,out-of-scope contract type,0.3,Cap On Liability;Insurance
+CardlyticsInc_20180112_S-1_EX-10.16_11002987_EX-10.16_Maintenance Agreement2,MAINTENANCE,387,yes,tech-vendor contract type with IT/services content,15.5,
+"XLITECHNOLOGIES,INC_12_11_2015-EX-10.1-Sponsorship Agreement",IP AGREEMENT,2851,no,out-of-scope contract type,2.5,Insurance
+ScansourceInc_20190822_10-K_EX-10.38_11793958_EX-10.38_Distributor Agreement2,,2044,no,type not tech-vendor relevant,35.7,Cap On Liability;Audit Rights;Termination For Convenience
+VERTEXENERGYINC_08_14_2014-EX-10.24-OPERATION AND MAINTENANCE AGREEMENT,MAINTENANCE,8601,yes,tech-vendor contract type with IT/services content,4.7,Cap On Liability;Audit Rights;Termination For Convenience;Insurance
+NYLIACVARIABLEANNUITYSEPARATEACCOUNTIII_04_10_2020-EX-99.8.KK-SERVICE AGREEMENT,SERVICE,1072,no,low IT content or pharma/biotech/goods focus,0.0,Termination For Convenience
+STWRESOURCESHOLDINGCORP_08_06_2014-EX-10.1-COOPERATION AGREEMENT,,4448,no,type not tech-vendor relevant,0.9,Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Insurance
+AlliedEsportsEntertainmentInc_20190815_8-K_EX-10.34_11788308_EX-10.34_Sponsorship Agreement,IP AGREEMENT,5852,no,out-of-scope contract type,1.5,Uncapped Liability;Cap On Liability;Termination For Convenience
+SLOVAKWIRELESSFINANCECOBV_03_28_2001-EX-4.(B)(II).3-Maintenance and support contract for SICAP(R) modules,MAINTENANCE,3435,yes,tech-vendor contract type with IT/services content,25.6,Cap On Liability;Renewal Term;Notice Period To Terminate Renewal
+ANIXABIOSCIENCESINC_06_09_2020-EX-10.1-COLLABORATION AGREEMENT,,6178,no,type not tech-vendor relevant,1.9,Cap On Liability;Audit Rights;Termination For Convenience;Insurance
+"ELFBEAUTY,INC_07_02_2020-EX-10.1-COOPERATION AGREEMENT",,7265,no,type not tech-vendor relevant,0.3,
+HarpoonTherapeuticsInc_20200312_10-K_EX-10.18_12051356_EX-10.18_Development Agreement,DEVELOPMENT,38518,no,low IT content or pharma/biotech/goods focus,2.9,Uncapped Liability;Cap On Liability;Audit Rights;Termination For Convenience;Change Of Control;Insurance
+DigitalCinemaDestinationsCorp_20111220_S-1_EX-10.10_7346719_EX-10.10_Affiliate Agreement,,16673,no,type not tech-vendor relevant,22.0,Uncapped Liability;Cap On Liability;Audit Rights;Change Of Control;Insurance
+VERTICALNETINC_04_01_2002-EX-10.19-MAINTENANCE AND SUPPORT AGREEMENT,MAINTENANCE,10705,yes,tech-vendor contract type with IT/services content,9.1,Cap On Liability;Renewal Term;Change Of Control
+TcPipelinesLp_20160226_10-K_EX-99.12_9454048_EX-99.12_Transportation Agreement,,916,no,out-of-scope contract type,0.0,
+HUBEIMINKANGPHARMACEUTICALLTD_09_19_2006-EX-10.1-OUTSOURCING AGREEMENT,OUTSOURC,1836,no,low IT content or pharma/biotech/goods focus,1.1,Cap On Liability;Audit Rights
+CardlyticsInc_20180112_S-1_EX-10.16_11002987_EX-10.16_Maintenance Agreement3,MAINTENANCE,251,yes,tech-vendor contract type with IT/services content,35.9,
+ACCURAYINC_09_01_2010-EX-10.31-DISTRIBUTOR AGREEMENT,,13349,no,type not tech-vendor relevant,5.3,Uncapped Liability;Cap On Liability
+"MIDDLEBROOKPHARMACEUTICALS,INC_03_18_2010-EX-10.1-PROMOTION AGREEMENT",,8879,no,out-of-scope contract type,2.4,Cap On Liability;Renewal Term;Audit Rights;Change Of Control;Liquidated Damages
+AIRSPANNETWORKSINC_04_11_2000-EX-10.5-Distributor Agreement,,10292,no,type not tech-vendor relevant,8.5,Cap On Liability;Audit Rights
+ArcGroupInc_20171211_8-K_EX-10.1_10976103_EX-10.1_Sponsorship Agreement,IP AGREEMENT,2622,no,out-of-scope contract type,0.4,
+AtnInternationalInc_20191108_10-Q_EX-10.1_11878541_EX-10.1_Maintenance Agreement,MAINTENANCE,34973,yes,tech-vendor contract type with IT/services content,6.3,Uncapped Liability;Cap On Liability;Audit Rights;Change Of Control;Insurance
+"SightLife Surgical, Inc. - STRATEGIC SALES _ MARKETING AGREEMENT",,3604,no,type not tech-vendor relevant,0.8,Termination For Convenience;Insurance
+InmodeLtd_20190729_F-1A_EX-10.9_11743243_EX-10.9_Manufacturing Agreement,,6122,no,type not tech-vendor relevant,1.1,Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Termination For Convenience;Insurance
+GRANTIERRAENERGYINC_05_07_2012-EX-10.6-TRANSPORTATION CONTRACT,,35339,no,out-of-scope contract type,1.6,Cap On Liability;Insurance;Liquidated Damages
+"VIVINT SOLAR, INC. - NON-COMPETITION AGREEMENT",,506,no,type not tech-vendor relevant,0.0,
+FUSIONPHARMACEUTICALSINC_06_05_2020-EX-10.17-Supply Agreement - FUSION,SUPPLY,6318,no,low IT content or pharma/biotech/goods focus,0.2,Uncapped Liability;Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Termination For Convenience;Insurance
+CHIPMOSTECHNOLOGIESBERMUDALTD_04_18_2016-EX-4.72-Strategic Alliance Agreement,,2026,no,type not tech-vendor relevant,0.5,Renewal Term
+URSCORPNEW_03_17_2014-EX-99-COOPERATION AGREEMENT,,6004,no,type not tech-vendor relevant,1.3,
+GpaqAcquisitionHoldingsInc_20200123_S-4A_EX-10.6_11951677_EX-10.6_License Agreement,LICENS,7187,no,low IT content or pharma/biotech/goods focus,0.1,Renewal Term;Notice Period To Terminate Renewal;Change Of Control
+SalesforcecomInc_20171122_10-Q_EX-10.1_10961535_EX-10.1_Reseller Agreement,RESELL,435,no,low IT content or pharma/biotech/goods focus,0.0,
+SLINGERBAGINC_05_27_2020-EX-10.7-CONSULTING AGREEMENT,CONSULT,5346,no,low IT content or pharma/biotech/goods focus,0.2,Termination For Convenience;Change Of Control
+RitterPharmaceuticalsInc_20200313_S-4A_EX-10.54_12055220_EX-10.54_Development Agreement,DEVELOPMENT,18871,no,low IT content or pharma/biotech/goods focus,1.1,Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Termination For Convenience;Insurance;Liquidated Damages
+IGENEBIOTECHNOLOGYINC_05_13_2003-EX-1-JOINT VENTURE AGREEMENT,,11330,no,out-of-scope contract type,2.3,Audit Rights
+ENERGYXXILTD_05_08_2015-EX-10.13-Transportation AGREEMENT,,9243,no,out-of-scope contract type,4.1,Uncapped Liability;Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Termination For Convenience
+EtonPharmaceuticalsInc_20191114_10-Q_EX-10.1_11893941_EX-10.1_Development Agreement,DEVELOPMENT,10256,no,low IT content or pharma/biotech/goods focus,0.9,Cap On Liability;Audit Rights;Termination For Convenience;Change Of Control;Insurance
+ScansourceInc_20190822_10-K_EX-10.38_11793958_EX-10.38_Distributor Agreement1,,12904,no,type not tech-vendor relevant,10.5,Uncapped Liability;Cap On Liability;Renewal Term;Audit Rights;Termination For Convenience;Insurance
+CardlyticsInc_20180112_S-1_EX-10.16_11002987_EX-10.16_Maintenance Agreement1,MAINTENANCE,25087,yes,tech-vendor contract type with IT/services content,12.7,Uncapped Liability;Cap On Liability;Audit Rights;Termination For Convenience;Change Of Control;Source Code Escrow;Insurance
+"NETGEAR,INC_04_21_2003-EX-10.16-DISTRIBUTOR AGREEMENT",,6029,no,type not tech-vendor relevant,7.0,Uncapped Liability;Cap On Liability;Renewal Term;Audit Rights;Termination For Convenience;Insurance
+EcoScienceSolutionsInc_20171117_8-K_EX-10.1_10956472_EX-10.1_Endorsement Agreement,,2843,no,out-of-scope contract type,0.7,Renewal Term;Notice Period To Terminate Renewal
+AMERICASSHOPPINGMALLINC_12_10_1999-EX-10.2-SITE DEVELOPMENT AND HOSTING AGREEMENT,DEVELOPMENT,2892,yes,tech-vendor contract type with IT/services content,8.6,Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Liquidated Damages
+DataCallTechnologies_20060918_SB-2A_EX-10.9_944510_EX-10.9_Content License Agreement,LICENS,1666,yes,tech-vendor contract type with IT/services content,4.8,Renewal Term;Notice Period To Terminate Renewal;Audit Rights
+JINGWEIINTERNATIONALLTD_10_04_2007-EX-10.7-INTELLECTUAL PROPERTY AGREEMENT,INTELLECTUAL PROPERTY,2356,yes,tech-vendor contract type with IT/services content,6.8,Termination For Convenience
+FEDERATEDGOVERNMENTINCOMESECURITIESINC_04_28_2020-EX-99.SERV AGREE-SERVICES AGREEMENT,SERVICE,1762,no,low IT content or pharma/biotech/goods focus,1.7,Cap On Liability;Audit Rights
+AMBASSADOREYEWEARGROUPINC_11_17_1997-EX-10.28-ENDORSEMENT AGREEMENT,,5780,no,out-of-scope contract type,0.2,Audit Rights;Insurance
+MRSFIELDSORIGINALCOOKIESINC_01_29_1998-EX-10-FRANCHISE AGREEMENT,,33705,no,out-of-scope contract type,2.0,Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Termination For Convenience;Change Of Control;Insurance
+PalmerSquareCapitalBdcInc_20200116_10-12GA_EX-10.6_11949289_EX-10.6_Trademark License Agreement,LICENS,2306,no,low IT content or pharma/biotech/goods focus,0.0,Termination For Convenience
+LUCIDINC_04_15_2011-EX-10.9-DISTRIBUTOR AGREEMENT,,2351,no,type not tech-vendor relevant,1.7,Cap On Liability;Renewal Term;Termination For Convenience;Change Of Control
+UsioInc_20040428_SB-2_EX-10.11_1723988_EX-10.11_Affiliate Agreement 2,,3740,no,type not tech-vendor relevant,33.2,Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Liquidated Damages
+EmmisCommunicationsCorp_20191125_8-K_EX-10.6_11906433_EX-10.6_Marketing Agreement,,2709,no,type not tech-vendor relevant,0.4,
+ENTERTAINMENTGAMINGASIAINC_02_15_2005-EX-10.5-DISTRIBUTOR AGREEMENT,,6920,no,type not tech-vendor relevant,0.7,Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Termination For Convenience;Change Of Control
+"Magenta Therapeutics, Inc. - Master Development and Manufacturing Agreement",DEVELOPMENT,11308,no,low IT content or pharma/biotech/goods focus,1.8,Uncapped Liability;Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Termination For Convenience;Insurance
+"GRIDIRONBIONUTRIENTS,INC_02_05_2020-EX-10.3-SUPPLY AGREEMENT",SUPPLY,903,no,low IT content or pharma/biotech/goods focus,0.0,Termination For Convenience
+PapaJohnsInternationalInc_20190617_8-K_EX-10.1_11707365_EX-10.1_Endorsement Agreement,,10661,no,out-of-scope contract type,0.3,Cap On Liability;Renewal Term;Insurance
+SUMMAFOURINC_06_19_1998-EX-10.3-SOFTWARE LICENSE AND MAINTENANCE AGREEMENT,LICENS,14158,yes,tech-vendor contract type with IT/services content,20.3,Cap On Liability;Audit Rights;Termination For Convenience;Source Code Escrow;Liquidated Damages
+MACROGENICSINC_08_02_2013-EX-10-COLLABORATION AGREEMENT,,25333,no,type not tech-vendor relevant,3.0,Uncapped Liability;Cap On Liability;Audit Rights;Change Of Control
+GSVINC_05_15_1998-EX-10-SPONSORSHIP AGREEMENT,IP AGREEMENT,5880,no,out-of-scope contract type,5.8,Cap On Liability;Audit Rights
+MorganStanleyDirectLendingFund_20191119_10-12GA_EX-10.5_11898508_EX-10.5_Trademark License Agreement,LICENS,2438,no,low IT content or pharma/biotech/goods focus,0.0,Uncapped Liability;Cap On Liability;Termination For Convenience;Change Of Control
+ELANDIAINTERNATIONALINC_04_25_2007-EX-10.21-Outsourcing Agreement,OUTSOURC,12396,yes,tech-vendor contract type with IT/services content,20.7,Renewal Term;Audit Rights;Termination For Convenience;Change Of Control;Insurance;Liquidated Damages
+PareteumCorp_20081001_8-K_EX-99.1_2654808_EX-99.1_Hosting Agreement,HOSTING,10213,yes,tech-vendor contract type with IT/services content,16.1,Uncapped Liability;Cap On Liability;Renewal Term;Termination For Convenience;Liquidated Damages
+PhasebioPharmaceuticalsInc_20200330_10-K_EX-10.21_12086810_EX-10.21_Development Agreement,DEVELOPMENT,45650,no,low IT content or pharma/biotech/goods focus,2.9,Cap On Liability;Audit Rights;Change Of Control;Insurance;Liquidated Damages
+USASYNTHETICFUELCORP_10_21_2010-EX-10.10-STRATEGIC ALLIANCE AGREEMENT,,8033,no,type not tech-vendor relevant,1.2,Cap On Liability;Renewal Term
+"KUBIENT,INC_07_02_2020-EX-10.14-MASTER SERVICES AGREEMENT_Part2",SERVICE,1185,no,low IT content or pharma/biotech/goods focus,2.5,
+EdietsComInc_20001030_10QSB_EX-10.4_2606646_EX-10.4_Co-Branding Agreement,,9075,no,out-of-scope contract type,4.2,Uncapped Liability;Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Change Of Control
+WESTERN COPPER - NON-COMPETITION AGREEMENT,,2626,no,type not tech-vendor relevant,0.0,
+LECLANCHÉ S.A. - JOINT DEVELOPMENT AND MARKETING AGREEMENT,DEVELOPMENT,3207,no,low IT content or pharma/biotech/goods focus,2.2,Change Of Control;Insurance
+"HEMISPHERX - Sales, Marketing, Distribution, and Supply Agreement",SUPPLY,10901,no,low IT content or pharma/biotech/goods focus,1.4,Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Liquidated Damages
+CardlyticsInc_20180112_S-1_EX-10.16_11002987_EX-10.16_Maintenance Agreement4,MAINTENANCE,756,yes,tech-vendor contract type with IT/services content,41.0,Renewal Term;Termination For Convenience
+TomOnlineInc_20060501_20-F_EX-4.46_749700_EX-4.46_Co-Branding Agreement,,17487,no,out-of-scope contract type,14.8,Uncapped Liability;Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Change Of Control
+MphaseTechnologiesInc_20030911_10-K_EX-10.15_1560667_EX-10.15_Co-Branding Agreement,,1169,no,out-of-scope contract type,2.6,Cap On Liability;Renewal Term;Termination For Convenience;Change Of Control
+"CERES,INC_01_25_2012-EX-10.20-Collaboration Agreement",,45577,no,type not tech-vendor relevant,1.3,Cap On Liability;Audit Rights;Termination For Convenience
+"INTERSECTENT,INC_05_11_2020-EX-10.1-SUPPLY AGREEMENT",SUPPLY,5973,no,low IT content or pharma/biotech/goods focus,0.5,Cap On Liability;Audit Rights;Change Of Control;Insurance;Liquidated Damages
+"BABCOCK_WILCOXENTERPRISES,INC_08_04_2015-EX-10.17-INTELLECTUAL PROPERTY AGREEMENT between THE BABCOCK _ WILCOX COMPANY and BABCOCK _ WILCOX ENTERPRISES, INC.",INTELLECTUAL PROPERTY,16565,yes,tech-vendor contract type with IT/services content,5.2,Change Of Control
+"TRANSPHORM,INC_02_14_2020-EX-10.12(1)-JOINT VENTURE AGREEMENT",,15468,no,out-of-scope contract type,0.6,Audit Rights;Change Of Control
+EuromediaHoldingsCorp_20070215_10SB12G_EX-10.B(01)_525118_EX-10.B(01)_Content License Agreement,LICENS,4580,no,low IT content or pharma/biotech/goods focus,1.5,Uncapped Liability;Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Termination For Convenience
+"Sonos, Inc. - Manufacturing Agreement ",,17177,no,type not tech-vendor relevant,2.4,Uncapped Liability;Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Termination For Convenience;Insurance
+"ASHWORTHINC_01_29_1999-EX-10.(D)-PROMOTION AGREEMENT AND NANTZ COMMUNICATIONS, INC.",,3589,no,out-of-scope contract type,0.6,Change Of Control;Insurance
+"VAPOTHERM, INC. - Manufacturing and Supply Agreement",SUPPLY,11847,no,low IT content or pharma/biotech/goods focus,3.0,Uncapped Liability;Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Change Of Control;Insurance
+PLAYAHOTELS_RESORTSNV_03_14_2017-EX-10.22-STRATEGIC ALLIANCE AGREEMENT (Hyatt Ziva Cancun),,3543,no,type not tech-vendor relevant,0.3,Cap On Liability
+LIGHTBRIDGECORP_11_23_2015-EX-10.26-STRATEGIC ALLIANCE AGREEMENT,,3023,no,type not tech-vendor relevant,0.3,Termination For Convenience
+"XLITECHNOLOGIES,INC_12_02_2015-EX-10.02-STRATEGIC ALLIANCE AGREEMENT",,875,no,type not tech-vendor relevant,0.0,
+HYPERIONSOFTWARECORP_09_28_1994-EX-10.47-EXCLUSIVE DISTRIBUTOR AGREEMENT,,5290,no,type not tech-vendor relevant,6.0,Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights
+BUFFALOWILDWINGSINC_06_05_1998-EX-10.3-FRANCHISE AGREEMENT,,23663,no,out-of-scope contract type,5.2,Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Change Of Control;Insurance;Liquidated Damages
+ReynoldsConsumerProductsInc_20200121_S-1A_EX-10.22_11948918_EX-10.22_Service Agreement,SERVICE,17207,yes,tech-vendor contract type with IT/services content,6.0,Cap On Liability;Audit Rights;Termination For Convenience;Insurance
+"GWG HOLDINGS, INC. - ORDERLY MARKETING AGREEMENT",,4177,no,type not tech-vendor relevant,0.5,Termination For Convenience
+BLACKROCKMUNIHOLDINGSINVESTMENTQUALITYFUND_04_07_2020-EX-99.01-JOINT FILING AGREEMENT,,201,no,type not tech-vendor relevant,0.0,
+ALLISONTRANSMISSIONHOLDINGSINC_12_15_2014-EX-99.1-COOPERATION AGREEMENT,,5202,no,type not tech-vendor relevant,0.2,
+"SPOKHOLDINGS,INC_06_19_2020-EX-10.1-COOPERATION AGREEMENT",,2842,no,type not tech-vendor relevant,0.4,
+WARNINGMANAGEMENTSERVICESINC_12_10_1999-EX-10-ENDORSEMENT AGREEMENT,SERVICE,4602,no,out-of-scope contract type,0.2,Cap On Liability;Audit Rights;Change Of Control;Insurance
+LinkPlusCorp_20050802_8-K_EX-10_3240252_EX-10_Affiliate Agreement,,2899,no,type not tech-vendor relevant,7.6,Cap On Liability;Audit Rights;Termination For Convenience
+RMRGROUPINC_01_22_2020-EX-99.1-JOINT FILING AGREEMENT,,109,no,type not tech-vendor relevant,0.0,
+SMITHELECTRICVEHICLESCORP_04_04_2012-EX-10.26-FLEET MAINTENANCE AGREEMENT,MAINTENANCE,13201,yes,tech-vendor contract type with IT/services content,8.9,Cap On Liability;Termination For Convenience;Insurance
+CHINARECYCLINGENERGYCORP_11_14_2013-EX-10.6-Cooperation Agreement,,2664,no,type not tech-vendor relevant,18.0,
+"KUBIENT,INC_07_02_2020-EX-10.14-MASTER SERVICES AGREEMENT_Part1",SERVICE,4014,yes,tech-vendor contract type with IT/services content,5.5,Uncapped Liability;Cap On Liability;Renewal Term;Termination For Convenience
+NeoformaInc_19991202_S-1A_EX-10.26_5224521_EX-10.26_Co-Branding Agreement,,13370,no,out-of-scope contract type,0.8,Uncapped Liability;Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights
+AULAMERICANUNITTRUST_04_24_2020-EX-99.8.77-SERVICING AGREEMENT,,5607,no,type not tech-vendor relevant,3.2,Cap On Liability;Audit Rights;Termination For Convenience
+VIOLINMEMORYINC_12_12_2012-EX-10.14-SPONSORSHIP AGREEMENT,IP AGREEMENT,8499,no,out-of-scope contract type,0.6,Cap On Liability;Insurance
+RaeSystemsInc_20001114_10-Q_EX-10.57_2631790_EX-10.57_Co-Branding Agreement,,5582,no,out-of-scope contract type,2.3,Uncapped Liability;Cap On Liability;Renewal Term;Audit Rights;Termination For Convenience;Change Of Control
+QBIOMEDINC_04_08_2020-EX-99.1-JOINT FILING AGREEMENT,,429,no,type not tech-vendor relevant,0.0,
+ZogenixInc_20190509_10-Q_EX-10.2_11663313_EX-10.2_Distributor Agreement,,26626,no,type not tech-vendor relevant,3.2,Uncapped Liability;Cap On Liability;Audit Rights;Termination For Convenience;Change Of Control;Insurance
+LeadersonlineInc_20000427_S-1A_EX-10.8_4991089_EX-10.8_Co-Branding Agreement,,8078,no,out-of-scope contract type,3.1,Uncapped Liability;Cap On Liability;Renewal Term;Audit Rights
+PRIMEENERGYRESOURCESCORP_04_02_2007-EX-10.28-COMPLETION AND LIQUIDITY MAINTENANCE AGREEMENT,MAINTENANCE,742,yes,tech-vendor contract type with IT/services content,4.0,
+AgapeAtpCorp_20191202_10-KA_EX-10.1_11911128_EX-10.1_Supply Agreement,SUPPLY,3292,no,low IT content or pharma/biotech/goods focus,0.0,Renewal Term;Notice Period To Terminate Renewal;Change Of Control;Insurance
+ArcaUsTreasuryFund_20200207_N-2_EX-99.K5_11971930_EX-99.K5_Development Agreement,DEVELOPMENT,2316,no,low IT content or pharma/biotech/goods focus,1.7,Renewal Term
+BIOAMBERINC_04_10_2013-EX-10.34-DEVELOPMENT AGREEMENT - First Amendment,DEVELOPMENT,940,yes,tech-vendor contract type with IT/services content,5.3,
+"XACCT Technologies, Inc.SUPPORT AND MAINTENANCE AGREEMENT",SUPPORT,1796,yes,tech-vendor contract type with IT/services content,28.4,Cap On Liability;Renewal Term;Notice Period To Terminate Renewal
+CHANGEPOINTCORP_03_08_2000-EX-10.6-LICENSE AND HOSTING AGREEMENT,LICENS,18806,yes,tech-vendor contract type with IT/services content,23.6,Uncapped Liability;Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Source Code Escrow
+Apollo Endosurgery - Manufacturing and Supply Agreement,SUPPLY,7248,no,low IT content or pharma/biotech/goods focus,1.8,Uncapped Liability;Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Insurance
+"MJBIOTECH,INC_12_06_2018-EX-99.01-JOINT VENTURE AGREEMENT",,3709,no,out-of-scope contract type,0.3,Cap On Liability;Audit Rights;Termination For Convenience;Insurance
+IDREAMSKYTECHNOLOGYLTD_07_03_2014-EX-10.39-Cooperation Agreement on Mobile Game Business,,12072,no,type not tech-vendor relevant,10.9,Renewal Term;Change Of Control;Liquidated Damages
+"CANOPETROLEUM,INC_12_13_2007-EX-10.1-Sponsorship Agreement",IP AGREEMENT,1449,no,out-of-scope contract type,0.0,
+PhoenixNewMediaLtd_20110421_F-1_EX-10.17_6958322_EX-10.17_Content License Agreement,LICENS,3908,yes,tech-vendor contract type with IT/services content,6.4,Change Of Control
+"HOSPITALITYINVESTORSTRUST,INC_04_07_2014-EX-10.26-FRANCHISE AGREEMENT",,23061,no,out-of-scope contract type,6.2,Cap On Liability;Audit Rights;Change Of Control;Insurance;Liquidated Damages
+FulucaiProductionsLtd_20131223_10-Q_EX-10.9_8368347_EX-10.9_Content License Agreement,LICENS,2804,no,low IT content or pharma/biotech/goods focus,2.1,Renewal Term;Audit Rights
+"ONEMAINHOLDINGS,INC_02_20_2020-EX-99.D-JOINT FILING AGREEMENT",,944,no,type not tech-vendor relevant,0.0,
+MPLXLP_06_17_2015-EX-10.1-TRANSPORTATION SERVICES AGREEMENT,SERVICE,8966,no,out-of-scope contract type,2.0,Uncapped Liability;Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Termination For Convenience;Liquidated Damages
+LOGANSROADHOUSEINC_03_27_1998-EX-10.17-SPONSORSHIP AGREEMENT,IP AGREEMENT,2865,no,out-of-scope contract type,0.0,Insurance
+FuelcellEnergyInc_20191106_8-K_EX-10.1_11868007_EX-10.1_Development Agreement,DEVELOPMENT,15880,no,low IT content or pharma/biotech/goods focus,3.5,Uncapped Liability;Cap On Liability;Audit Rights;Termination For Convenience;Change Of Control
+"THERAVANCEBIOPHARMA,INC_05_08_2020-EX-10.2-SERVICE AGREEMENT",SERVICE,5294,no,low IT content or pharma/biotech/goods focus,1.1,Termination For Convenience
+BerkshireHillsBancorpInc_20120809_10-Q_EX-10.16_7708169_EX-10.16_Endorsement Agreement,,4466,no,out-of-scope contract type,1.3,Change Of Control
+DYNAMEXINC_06_06_1996-EX-10.4-TRANSPORTATION SERVICES AGREEMENT,SERVICE,6760,no,out-of-scope contract type,0.4,Cap On Liability;Audit Rights;Termination For Convenience;Change Of Control;Insurance;Liquidated Damages
+VALENCETECHNOLOGYINC_02_14_2003-EX-10-JOINT VENTURE CONTRACT,,11008,no,out-of-scope contract type,5.4,Audit Rights;Insurance
+ULTRAGENYXPHARMACEUTICALINC_12_23_2013-EX-10.9-SUPPLY AGREEMENT,SUPPLY,2274,no,low IT content or pharma/biotech/goods focus,0.4,Cap On Liability;Renewal Term;Notice Period To Terminate Renewal
+"NETGEAR,INC_04_21_2003-EX-10.16- AMENDMENT #2 TO THE DISTRIBUTION AGREEMENT",,555,no,type not tech-vendor relevant,0.0,
+SFGFINANCIALCORP_05_12_2009-EX-10.1-SOFTWARE LICENSE AND MAINTENANCE AGREEMENT,LICENS,7749,yes,tech-vendor contract type with IT/services content,17.2,Cap On Liability;Renewal Term;Audit Rights;Change Of Control
+"VAXCYTE,INC_05_22_2020-EX-10.19-SUPPLY AGREEMENT",SUPPLY,15227,no,low IT content or pharma/biotech/goods focus,1.1,Uncapped Liability;Cap On Liability;Audit Rights;Termination For Convenience;Change Of Control;Insurance
+"OTISWORLDWIDECORP_04_03_2020-EX-10.4-INTELLECTUAL PROPERTY AGREEMENT by and among UNITED TECHNOLOGIES CORPORATION, OTIS WORLDWIDE CORPORATION and CARRIER ~1",INTELLECTUAL PROPERTY,9672,no,low IT content or pharma/biotech/goods focus,1.9,Cap On Liability
+"GIGGLESN_HUGS,INC_06_23_2016-EX-10.2-STRATEGIC ALLIANCE AGREEMENT",,3430,no,type not tech-vendor relevant,0.9,
+ExactSciencesCorp_20180822_8-K_EX-10.1_11331629_EX-10.1_Promotion Agreement,,24685,no,out-of-scope contract type,0.8,Uncapped Liability;Cap On Liability;Audit Rights;Termination For Convenience;Change Of Control;Insurance
+Quaker Chemical Corporation - NON COMPETITION AND NON SOLICITATION AGREEMENT,,3488,no,type not tech-vendor relevant,0.0,
+GlobalTechnologiesGroupInc_20050928_10KSB_EX-10.9_4148808_EX-10.9_Content License Agreement,LICENS,5899,yes,tech-vendor contract type with IT/services content,5.4,Cap On Liability;Renewal Term
+GpaqAcquisitionHoldingsInc_20200123_S-4A_EX-10.8_11951679_EX-10.8_Service Agreement,SERVICE,8649,no,low IT content or pharma/biotech/goods focus,0.5,Audit Rights;Insurance
+HertzGroupRealtyTrustInc_20190920_S-11A_EX-10.8_11816941_EX-10.8_Trademark License Agreement,LICENS,2236,no,low IT content or pharma/biotech/goods focus,0.9,Cap On Liability;Termination For Convenience;Change Of Control
+QuantumGroupIncFl_20090120_8-K_EX-99.2_3672910_EX-99.2_Hosting Agreement,HOSTING,17414,yes,tech-vendor contract type with IT/services content,26.0,Uncapped Liability;Cap On Liability;Termination For Convenience;Insurance
+"SUCAMPOPHARMACEUTICALS,INC_11_04_2015-EX-10.2-STRATEGIC ALLIANCE AGREEMENT",,9629,no,type not tech-vendor relevant,0.5,Cap On Liability;Audit Rights
+KENTUCKYUTILITIESCO_03_25_2003-EX-10.65-TRANSPORTATION AGREEMENT,,2578,no,out-of-scope contract type,0.0,
+"PHREESIA,INC_05_28_2019-EX-10.18-STRATEGIC ALLIANCE AGREEMENT",,17703,no,type not tech-vendor relevant,16.2,Uncapped Liability;Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Termination For Convenience;Insurance
+"Array BioPharma Inc. - LICENSE, DEVELOPMENT AND COMMERCIALIZATION AGREEMENT",LICENS,42742,no,low IT content or pharma/biotech/goods focus,3.2,Cap On Liability;Audit Rights;Termination For Convenience;Liquidated Damages
+MERCATAINC_03_09_2000-EX-10.21-SPONSORSHIP AGREEMENT,IP AGREEMENT,3224,no,out-of-scope contract type,0.6,Cap On Liability
+"MEDALISTDIVERSIFIEDREIT,INC_05_18_2020-EX-10.1-CONSULTING AGREEMENT",CONSULT,3724,no,low IT content or pharma/biotech/goods focus,1.3,Renewal Term;Termination For Convenience;Change Of Control;Insurance;Liquidated Damages
+"FOUNDATIONMEDICINE,INC_02_02_2015-EX-10.2-Collaboration Agreement",,26407,no,type not tech-vendor relevant,4.4,Cap On Liability;Renewal Term;Audit Rights;Termination For Convenience
+RevolutionMedicinesInc_20200117_S-1_EX-10.1_11948417_EX-10.1_Development Agreement,DEVELOPMENT,40936,no,low IT content or pharma/biotech/goods focus,2.4,Uncapped Liability;Cap On Liability;Audit Rights;Termination For Convenience;Change Of Control;Insurance
+AFSALABANCORPINC_08_01_1996-EX-1.1-AGENCY AGREEMENT,,17813,no,out-of-scope contract type,3.8,Cap On Liability;Termination For Convenience;Insurance;Liquidated Damages
+"ETELOS,INC_03_09_2004-EX-10.8-DISTRIBUTOR AGREEMENT",,3863,no,type not tech-vendor relevant,2.1,Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Termination For Convenience
+LifewayFoodsInc_20160316_10-K_EX-10.24_9489766_EX-10.24_Endorsement Agreement,,1656,no,out-of-scope contract type,1.2,
+"LEGACYTECHNOLOGYHOLDINGS,INC_12_09_2005-EX-10.2-DISTRIBUTOR AGREEMENT",,1937,no,type not tech-vendor relevant,0.5,Renewal Term;Notice Period To Terminate Renewal;Insurance
+DeltathreeInc_19991102_S-1A_EX-10.19_6227850_EX-10.19_Co-Branding Agreement_ Service Agreement,SERVICE,4070,no,out-of-scope contract type,8.6,Cap On Liability;Change Of Control
+"SPRINGBANKPHARMACEUTICALS,INC_04_08_2020-EX-99.A-JOINT FILING AGREEMENT",,246,no,type not tech-vendor relevant,0.0,
+ImineCorp_20180725_S-1_EX-10.5_11275970_EX-10.5_Distributor Agreement,,5369,no,type not tech-vendor relevant,1.3,Cap On Liability;Audit Rights;Termination For Convenience
+CCAINDUSTRIESINC_04_14_2014-EX-10.1-OUTSOURCING AGREEMENT,OUTSOURC,4889,no,low IT content or pharma/biotech/goods focus,0.8,Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Termination For Convenience;Insurance;Liquidated Damages
+Microgenics Corporation - Collaborative Development and Commercialization Agreement,DEVELOPMENT,28415,no,low IT content or pharma/biotech/goods focus,1.9,Uncapped Liability;Cap On Liability;Audit Rights;Termination For Convenience;Insurance
+SigaTechnologiesInc_20190603_8-K_EX-10.1_11695818_EX-10.1_Promotion Agreement,,22348,no,out-of-scope contract type,1.4,Uncapped Liability;Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Termination For Convenience;Insurance
+VgrabCommunicationsInc_20200129_10-K_EX-10.33_11958828_EX-10.33_Development Agreement,DEVELOPMENT,2297,yes,tech-vendor contract type with IT/services content,8.7,Termination For Convenience
+AIRTECHINTERNATIONALGROUPINC_05_08_2000-EX-10.4-FRANCHISE AGREEMENT,,11368,no,out-of-scope contract type,1.9,Renewal Term;Audit Rights;Insurance
+IMMUNOMEDICSINC_08_07_2019-EX-10.1-PROMOTION AGREEMENT,,24022,no,out-of-scope contract type,2.8,Uncapped Liability;Cap On Liability;Audit Rights;Change Of Control;Insurance
+HPILHOLDING_01_07_2015-EX-99.1-COOPERATION AGREEMENT,,2626,no,type not tech-vendor relevant,2.3,Cap On Liability;Termination For Convenience
+BravatekSolutionsInc_20170418_8-K_EX-10.1_10205739_EX-10.1_Reseller Agreement,RESELL,2384,no,low IT content or pharma/biotech/goods focus,1.7,Cap On Liability;Renewal Term;Termination For Convenience
+SPORTHALEYINC_09_29_1997-EX-10.2-10-ENDORSEMENT AGREEMENT,,1537,no,out-of-scope contract type,0.0,
+XENCORINC_10_25_2013-EX-10.24-COLLABORATION AGREEMENT (3),,20117,no,type not tech-vendor relevant,5.1,Uncapped Liability;Cap On Liability;Insurance
+NETGROCERINC_07_31_1998-EX-10.15-SPONSORSHIP AGREEMENT,IP AGREEMENT,5206,no,out-of-scope contract type,2.5,Uncapped Liability;Cap On Liability;Audit Rights
+CoherusBiosciencesInc_20200227_10-K_EX-10.29_12021376_EX-10.29_Development Agreement,DEVELOPMENT,21991,no,low IT content or pharma/biotech/goods focus,2.2,Uncapped Liability;Cap On Liability;Renewal Term;Audit Rights;Termination For Convenience;Change Of Control
+FEDERATEDGOVERNMENTINCOMESECURITIESINC_04_28_2020-EX-99.SERV AGREE-SERVICES AGREEMENT_POWEROF,SERVICE,2213,no,low IT content or pharma/biotech/goods focus,0.0,
+DIVERSINETCORP_03_01_2012-EX-4-RESELLER AGREEMENT,RESELL,11296,yes,tech-vendor contract type with IT/services content,12.2,Uncapped Liability;Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Termination For Convenience;Source Code Escrow
+NmfSlfIInc_20200115_10-12GA_EX-10.5_11946987_EX-10.5_Trademark License Agreement,LICENS,2694,no,low IT content or pharma/biotech/goods focus,0.0,Termination For Convenience
+"CURAEGISTECHNOLOGIES,INC_05_26_2010-EX-1-CORPORATE SPONSORSHIP AGREEMENT",IP AGREEMENT,1975,no,out-of-scope contract type,0.5,Cap On Liability;Insurance
+KALLOINC_11_03_2011-EX-10.1-STRATEGIC ALLIANCE AGREEMENT,,11172,no,type not tech-vendor relevant,10.7,Cap On Liability;Audit Rights;Change Of Control;Insurance
+GridironBionutrientsInc_20171206_8-K_EX-10.1_10972555_EX-10.1_Endorsement Agreement,,4601,no,out-of-scope contract type,0.4,Cap On Liability;Insurance
+MOSSIMOINC_04_14_2000-EX-10.14-ENDORSEMENT AGREEMENT,,3480,no,out-of-scope contract type,0.3,Cap On Liability;Change Of Control;Insurance;Liquidated Damages
+FEDERATEDGOVERNMENTINCOMESECURITIESINC_04_28_2020-EX-99.SERV AGREE-SERVICES AGREEMENT_AMENDMENT,SERVICE,564,no,low IT content or pharma/biotech/goods focus,1.8,
+RandWorldwideInc_20010402_8-KA_EX-10.2_2102464_EX-10.2_Co-Branding Agreement,,6718,no,out-of-scope contract type,12.7,Uncapped Liability;Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Change Of Control
+GOLDRESOURCECORP_12_11_2008-EX-10.1-STRATEGIC ALLIANCE AGREEMENT,,8786,no,type not tech-vendor relevant,0.1,Audit Rights;Insurance
+"Loop Industries, Inc. - Marketing Agreement",,5244,no,type not tech-vendor relevant,0.2,Uncapped Liability;Cap On Liability
+BloomEnergyCorp_20180321_DRSA (on S-1)_EX-10_11240356_EX-10_Maintenance Agreement,MAINTENANCE,16116,yes,tech-vendor contract type with IT/services content,7.8,Uncapped Liability;Cap On Liability;Audit Rights;Insurance
+AudibleInc_20001113_10-Q_EX-10.32_2599586_EX-10.32_Co-Branding Agreement_ Marketing Agreement_ Investment Distribution Agreement,,11211,no,out-of-scope contract type,4.9,Uncapped Liability;Cap On Liability;Audit Rights;Insurance;Liquidated Damages
+HOLIDAYRVSUPERSTORESINC_04_15_2002-EX-10.13-ENDORSEMENT AGREEMENT,,2189,no,out-of-scope contract type,0.0,Termination For Convenience
+WOMENSGOLFUNLIMITEDINC_03_29_2000-EX-10.13-ENDORSEMENT AGREEMENT,,4539,no,out-of-scope contract type,1.1,Renewal Term;Insurance
+NeuroboPharmaceuticalsInc_20190903_S-4_EX-10.36_11802165_EX-10.36_Manufacturing Agreement_ Supply Agreement,SUPPLY,3094,no,low IT content or pharma/biotech/goods focus,0.3,Audit Rights
+SONUSCORP_03_12_1997-EX-10.11-SPONSORSHIP AGREEMENT,IP AGREEMENT,3891,no,out-of-scope contract type,0.0,
+RangeResourcesLouisianaInc_20150417_8-K_EX-10.5_9045501_EX-10.5_Transportation Agreement,,15659,no,out-of-scope contract type,4.9,Uncapped Liability;Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights
+CHAPARRALRESOURCESINC_03_30_2000-EX-10.66-TRANSPORTATION CONTRACT,,3865,no,out-of-scope contract type,0.5,Renewal Term;Notice Period To Terminate Renewal
+ScansourceInc_20190509_10-Q_EX-10.2_11661422_EX-10.2_Distributor Agreement,,2131,no,type not tech-vendor relevant,1.4,
+AURASYSTEMSINC_06_16_2010-EX-10.25-STRATEGIC ALLIANCE AGREEMENT,,6938,no,type not tech-vendor relevant,4.0,Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Termination For Convenience;Change Of Control;Insurance
+IpassInc_20181203_8-K_EX-99.1_11445874_EX-99.1_Reseller Agreement,RESELL,11394,yes,tech-vendor contract type with IT/services content,14.6,Uncapped Liability;Cap On Liability;Renewal Term;Notice Period To Terminate Renewal
+VERSOTECHNOLOGIESINC_12_28_2007-EX-99.3-INTELLECTUAL PROPERTY AGREEMENT,INTELLECTUAL PROPERTY,739,no,low IT content or pharma/biotech/goods focus,0.0,
+SoupmanInc_20150814_8-K_EX-10.1_9230148_EX-10.1_Franchise Agreement4,,492,no,out-of-scope contract type,2.0,
+EhaveInc_20190515_20-F_EX-4.44_11678816_EX-4.44_License Agreement_ Reseller Agreement,LICENS,13634,yes,tech-vendor contract type with IT/services content,7.4,Uncapped Liability;Cap On Liability;Audit Rights;Termination For Convenience;Change Of Control;Source Code Escrow;Insurance;Liquidated Damages
+BOLIVARMININGCORP_05_23_2003-EX-2.1-VISP WEB SITE BUILDING AND HOSTING AGREEMENT,HOSTING,1736,yes,tech-vendor contract type with IT/services content,9.2,Renewal Term;Notice Period To Terminate Renewal;Liquidated Damages
+"UNITEDNATIONALBANCORP_03_03_1999-EX-99-Outsourcing Agreement with the BISYS Group, Inc.",OUTSOURC,279,yes,tech-vendor contract type with IT/services content,7.2,
+"GALERATHERAPEUTICS,INC_02_14_2020-EX-99.A-JOINT FILING AGREEMENT",,623,no,type not tech-vendor relevant,0.0,
+VirtuosoSurgicalInc_20191227_1-A_EX1A-6 MAT CTRCT_11933379_EX1A-6 MAT CTRCT_License Agreement,LICENS,5675,no,low IT content or pharma/biotech/goods focus,2.5,Cap On Liability;Audit Rights;Termination For Convenience;Change Of Control;Insurance;Liquidated Damages
+"ROCKYMOUNTAINCHOCOLATEFACTORY,INC_12_23_2019-EX-10.2-STRATEGIC ALLIANCE AGREEMENT",,19420,no,type not tech-vendor relevant,0.3,Termination For Convenience;Insurance
+VITAMINSHOPPECOMINC_09_13_1999-EX-10.26-SPONSORSHIP AGREEMENT,IP AGREEMENT,8223,no,out-of-scope contract type,9.1,Uncapped Liability;Cap On Liability
+"SOLUTIONSVENDINGINTERNATIONAL,INC_03_31_2020-EX1A-1 UNDR AGMT-SERVICES AGREEMENT",SERVICE,1122,no,low IT content or pharma/biotech/goods focus,0.9,
+InnerscopeHearingTechnologiesInc_20181109_8-K_EX-10.6_11419704_EX-10.6_Distributor Agreement,,3360,no,type not tech-vendor relevant,0.6,Cap On Liability;Renewal Term;Audit Rights
+SmartRxSystemsInc_20180914_1-A_EX1A-6 MAT CTRCT_11351705_EX1A-6 MAT CTRCT_Distributor Agreement,,6123,no,type not tech-vendor relevant,2.1,Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Insurance
+"Reinsurance Group of America, Incorporated - A_R REMARKETING  AGREEMENT",,16074,no,type not tech-vendor relevant,0.8,Cap On Liability;Insurance
+BIOFRONTERAAG_04_29_2019-EX-4.17-SUPPLY AGREEMENT,SUPPLY,9771,no,low IT content or pharma/biotech/goods focus,0.5,Cap On Liability;Audit Rights;Insurance
+"CORALGOLDRESOURCES,LTD_05_28_2020-EX-4.1-CONSULTING AGREEMENT",CONSULT,4730,no,low IT content or pharma/biotech/goods focus,1.5,Cap On Liability;Termination For Convenience;Change Of Control;Liquidated Damages
+Cerus Corporation - FIRST AMEND TO SUPPLY AND MANUFACTURING AGREEMENT,SUPPLY,1796,no,low IT content or pharma/biotech/goods focus,0.0,
+OLDAPIWIND-DOWNLTD_01_08_2016-EX-1.3-AGENCY AGREEMENT2,,630,no,out-of-scope contract type,0.0,
+ATENTOSA_07_06_2020-EX-99.1-JOINT FILING AGREEMENT,,357,no,type not tech-vendor relevant,0.0,
+HealthcentralCom_19991108_S-1A_EX-10.27_6623292_EX-10.27_Co-Branding Agreement,,6492,no,out-of-scope contract type,7.7,Uncapped Liability;Cap On Liability;Audit Rights;Change Of Control
+GAINSCOINC_01_21_2010-EX-10.41-SPONSORSHIP AGREEMENT,IP AGREEMENT,2452,no,out-of-scope contract type,0.4,Cap On Liability;Termination For Convenience;Insurance
+"TURNKEYCAPITAL,INC_07_20_2017-EX-1.1-Strategic Alliance Agreement",,1988,no,type not tech-vendor relevant,0.0,
+IVILLAGEINC_03_17_1999-EX-10.16-SPONSORSHIP AGREEMENT,IP AGREEMENT,3407,no,out-of-scope contract type,4.1,Cap On Liability;Renewal Term;Audit Rights
+PaperexchangeComInc_20000322_S-1A_EX-10.4_5202103_EX-10.4_Co-Branding Agreement,,12480,no,out-of-scope contract type,1.3,Uncapped Liability;Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Liquidated Damages
+"IPAYMENT,INC_05_14_2007-EX-10.1-SPONSORSHIP AGREEMENT",IP AGREEMENT,14652,no,out-of-scope contract type,4.9,Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Termination For Convenience;Change Of Control
+BIOPURECORP_06_30_1999-EX-10.13-AGENCY AGREEMENT,,5757,no,out-of-scope contract type,0.5,Cap On Liability;Audit Rights;Termination For Convenience;Change Of Control;Insurance
+RISEEDUCATIONCAYMANLTD_04_17_2020-EX-4.23-SERVICE AGREEMENT,SERVICE,2394,yes,tech-vendor contract type with IT/services content,14.2,Renewal Term;Liquidated Damages
+STARTECGLOBALCOMMUNICATIONSCORP_11_16_1998-EX-10.30-CONSTRUCTION AND MAINTENANCE AGREEMENT,MAINTENANCE,14551,yes,tech-vendor contract type with IT/services content,8.4,Cap On Liability;Audit Rights;Termination For Convenience;Change Of Control;Insurance
+LejuHoldingsLtd_20140121_DRS (on F-1)_EX-10.26_8473102_EX-10.26_Content License Agreement2,LICENS,327,yes,tech-vendor contract type with IT/services content,12.2,
+TRIZETTOGROUPINC_08_18_1999-EX-10.17-TECHNICAL INFRASTRUCTURE MAINTENANCE AGREEMENT,MAINTENANCE,2208,yes,tech-vendor contract type with IT/services content,6.3,Cap On Liability;Notice Period To Terminate Renewal
+FIBROGENINC_10_01_2014-EX-10.11-COLLABORATION AGREEMENT,,24526,no,type not tech-vendor relevant,3.3,Cap On Liability;Audit Rights;Termination For Convenience;Insurance;Liquidated Damages
+"KNOWLABS,INC_08_15_2005-EX-10-INTELLECTUAL PROPERTY AGREEMENT",INTELLECTUAL PROPERTY,1970,yes,tech-vendor contract type with IT/services content,6.1,
+UAGHINC_04_14_2004-EX-10.18-MAINTENANCE AGREEMENT,MAINTENANCE,2676,yes,tech-vendor contract type with IT/services content,5.2,Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Termination For Convenience;Insurance
+"ARMSTRONGFLOORING,INC_01_07_2019-EX-10.2-INTELLECTUAL PROPERTY AGREEMENT",INTELLECTUAL PROPERTY,10349,no,low IT content or pharma/biotech/goods focus,1.3,
+"SPIENERGYCO,LTD_07_10_2014-EX-10-Cooperation Agreement of 50MWp Photovoltaic Grid-connected Power Generation Project in Yangqiao of~1",,413,no,type not tech-vendor relevant,2.4,
+VitalibisInc_20180316_8-K_EX-10.2_11100168_EX-10.2_Hosting Agreement,HOSTING,7045,yes,tech-vendor contract type with IT/services content,6.1,Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Termination For Convenience;Liquidated Damages
+SoupmanInc_20150814_8-K_EX-10.1_9230148_EX-10.1_Franchise Agreement1,,22750,no,out-of-scope contract type,5.4,Cap On Liability;Renewal Term;Audit Rights;Change Of Control;Insurance;Liquidated Damages
+HEALTHGATEDATACORP_11_24_1999-EX-10.1-HOSTING AND MANAGEMENT AGREEMENT - Escrow Agreement,HOSTING,4201,no,low IT content or pharma/biotech/goods focus,3.8,Cap On Liability;Termination For Convenience;Source Code Escrow
+BNLFINANCIALCORP_03_30_2007-EX-10.8-OUTSOURCING AGREEMENT,OUTSOURC,6470,yes,tech-vendor contract type with IT/services content,17.0,Uncapped Liability;Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Insurance;Liquidated Damages
+IntegrityMediaInc_20010329_10-K405_EX-10.17_2373875_EX-10.17_Co-Branding Agreement,,3545,no,out-of-scope contract type,1.7,Audit Rights
+"IOVANCEBIOTHERAPEUTICS,INC_08_03_2017-EX-10.1-STRATEGIC ALLIANCE AGREEMENT",,10693,no,type not tech-vendor relevant,2.9,Uncapped Liability;Cap On Liability;Audit Rights
+NEONSYSTEMSINC_03_01_1999-EX-10.5-DISTRIBUTOR AGREEMENT_New,,8888,no,type not tech-vendor relevant,2.3,Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Change Of Control
+TELKOMSALTD_01_30_2003-EX-10-LICENCE AND MAINTENANCE AGREEMENT,MAINTENANCE,16176,yes,tech-vendor contract type with IT/services content,19.3,Cap On Liability;Termination For Convenience;Source Code Escrow;Insurance
+"FIDELITYNATIONALINFORMATIONSERVICES,INC_08_05_2009-EX-10.3-INTELLECTUAL PROPERTY AGREEMENT",SERVICE,19341,yes,tech-vendor contract type with IT/services content,14.1,Cap On Liability;Audit Rights;Change Of Control
+WatchitMediaInc_20061201_8-K_EX-10.1_4148672_EX-10.1_Content License Agreement,LICENS,342,no,low IT content or pharma/biotech/goods focus,2.9,Liquidated Damages
+TRUENORTHENERGYCORP_02_08_2007-EX-10.1-DEVELOPMENT AGREEMENT,DEVELOPMENT,6961,no,low IT content or pharma/biotech/goods focus,2.2,Cap On Liability;Insurance;Liquidated Damages
+GentechHoldingsInc_20190808_1-A_EX1A-6 MAT CTRCT_11776814_EX1A-6 MAT CTRCT_Distributor Agreement,,4097,no,type not tech-vendor relevant,0.5,Cap On Liability;Renewal Term
+TICKETSCOMINC_06_22_1999-EX-10.22-SPONSORSHIP AGREEMENT,IP AGREEMENT,1155,no,out-of-scope contract type,3.5,Uncapped Liability;Cap On Liability;Renewal Term;Termination For Convenience
+"ADMA BioManufacturing, LLC -  Amendment #3 to Manufacturing Agreement ",,2478,no,type not tech-vendor relevant,0.0,Uncapped Liability;Cap On Liability;Liquidated Damages
+OFGBANCORP_03_28_2007-EX-10.23-OUTSOURCING AGREEMENT,OUTSOURC,24004,yes,tech-vendor contract type with IT/services content,18.6,Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Termination For Convenience;Change Of Control;Insurance;Liquidated Damages
+"OMINTO,INC_03_29_2004-EX-10-RESELLER AGREEMENT",RESELL,3983,yes,tech-vendor contract type with IT/services content,8.8,Cap On Liability;Renewal Term;Audit Rights;Termination For Convenience
+"DUOSTECHNOLOGIESGROUP,INC_04_21_2009-EX-10.1-STRATEGIC ALLIANCE AGREEMENT",,7148,no,type not tech-vendor relevant,3.4,Uncapped Liability;Cap On Liability;Renewal Term;Notice Period To Terminate Renewal
+OLDAPIWIND-DOWNLTD_01_08_2016-EX-1.3-AGENCY AGREEMENT1,,15521,no,out-of-scope contract type,0.6,
+"ADIANUTRITION,INC_04_01_2005-EX-10.D2-RESELLER AGREEMENT",RESELL,4051,no,low IT content or pharma/biotech/goods focus,3.0,Uncapped Liability;Cap On Liability;Audit Rights;Termination For Convenience
+"ATHENSBANCSHARESCORP_11_02_2009-EX-1.2-AGENCY AGREEMENT , 2009",,23419,no,out-of-scope contract type,2.3,Cap On Liability
+"GSITECHNOLOGYINC_11_16_2009-EX-10.2-INTELLECTUAL PROPERTY AGREEMENT between SONY ELECTRONICS INC. and GSI TECHNOLOGY, INC.",INTELLECTUAL PROPERTY,5558,no,low IT content or pharma/biotech/goods focus,2.3,Audit Rights;Change Of Control
+MusclepharmCorp_20170208_10-KA_EX-10.38_9893581_EX-10.38_Co-Branding Agreement,,13393,no,out-of-scope contract type,0.4,Cap On Liability;Renewal Term;Audit Rights;Change Of Control;Insurance
+"PAXMEDICA,INC_07_02_2020-EX-10.12-Master Service Agreement",SERVICE,2694,no,low IT content or pharma/biotech/goods focus,0.7,Uncapped Liability;Cap On Liability;Termination For Convenience
+SoupmanInc_20150814_8-K_EX-10.1_9230148_EX-10.1_Franchise Agreement3,,438,no,out-of-scope contract type,6.8,
+MOVADOGROUPINC_04_30_2003-EX-10.28-ENDORSEMENT AGREEMENT,,2710,no,out-of-scope contract type,0.4,
+StaarSurgicalCompany_20180801_10-Q_EX-10.37_11289449_EX-10.37_Distributor Agreement,,7649,no,type not tech-vendor relevant,5.6,Uncapped Liability;Cap On Liability;Renewal Term;Termination For Convenience;Insurance
+EmeraldHealthBioceuticalsInc_20200218_1-A_EX1A-6 MAT CTRCT_11987205_EX1A-6 MAT CTRCT_Development Agreement,DEVELOPMENT,2606,no,low IT content or pharma/biotech/goods focus,0.8,Renewal Term;Notice Period To Terminate Renewal;Termination For Convenience
+"DRIVENDELIVERIES,INC_05_22_2020-EX-10.4-CONSULTING AGREEMENT",CONSULT,4188,no,low IT content or pharma/biotech/goods focus,2.6,Cap On Liability;Termination For Convenience
+STAMPSCOMINC_06_24_1999-EX-10.18-SPONSORSHIP AGREEMENT,IP AGREEMENT,5496,no,out-of-scope contract type,3.1,Uncapped Liability;Cap On Liability;Audit Rights
+BEYONDCOMCORP_08_03_2000-EX-10.2-CO-HOSTING AGREEMENT,HOSTING,7991,yes,tech-vendor contract type with IT/services content,11.3,Uncapped Liability;Cap On Liability;Audit Rights;Liquidated Damages
+CHEETAHMOBILEINC_04_22_2014-EX-10.43-Cooperation Agreement,,6230,no,type not tech-vendor relevant,13.3,Renewal Term;Liquidated Damages
+ClickstreamCorp_20200330_1-A_EX1A-6 MAT CTRCT_12089935_EX1A-6 MAT CTRCT_Development Agreement,DEVELOPMENT,5445,yes,tech-vendor contract type with IT/services content,15.2,Termination For Convenience
+NEOMEDIATECHNOLOGIESINC_12_15_2005-EX-16.1-DISTRIBUTOR AGREEMENT,,4973,no,type not tech-vendor relevant,0.0,Cap On Liability;Renewal Term
+"ADUROBIOTECH,INC_06_02_2020-EX-10.7-CONSULTING AGREEMENT(1)",CONSULT,1850,no,low IT content or pharma/biotech/goods focus,2.2,Termination For Convenience
+LejuHoldingsLtd_20140121_DRS (on F-1)_EX-10.26_8473102_EX-10.26_Content License Agreement1,LICENS,7198,no,low IT content or pharma/biotech/goods focus,3.1,Change Of Control
+"VISIUMTECHNOLOGIES,INC_10_20_2004-EX-10.20-DISTRIBUTOR AGREEMENT",,7706,no,type not tech-vendor relevant,7.5,Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Insurance
+"HALITRON,INC_03_01_2005-EX-10.15-SPONSORSHIP AND DEVELOPMENT AGREEMENT",DEVELOPMENT,4429,no,out-of-scope contract type,2.3,Cap On Liability;Audit Rights;Change Of Control
+"INNOVIVA,INC_08_07_2014-EX-10.1-COLLABORATION AGREEMENT",,28937,no,type not tech-vendor relevant,2.6,Cap On Liability;Audit Rights;Change Of Control;Insurance
+SoupmanInc_20150814_8-K_EX-10.1_9230148_EX-10.1_Franchise Agreement2,,844,no,out-of-scope contract type,1.2,
+"ADUROBIOTECH,INC_06_02_2020-EX-10.7-CONSULTING AGREEMENT",CONSULT,1850,no,low IT content or pharma/biotech/goods focus,2.2,Termination For Convenience
+CybergyHoldingsInc_20140520_10-Q_EX-10.27_8605784_EX-10.27_Affiliate Agreement,,5326,no,type not tech-vendor relevant,18.4,Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights
+MANAKOASERVICESCORP_11_21_2007-EX-7.5-STRATEGIC ALLIANCE AGREEMENT,SERVICE,2355,yes,tech-vendor contract type with IT/services content,7.6,Termination For Convenience
+WestPharmaceuticalServicesInc_20200116_8-K_EX-10.1_11947529_EX-10.1_Supply Agreement,SERVICE,12651,no,low IT content or pharma/biotech/goods focus,2.5,Cap On Liability;Audit Rights;Change Of Control
+PANDIONTHERAPEUTICSHOLDCOLLC_05_22_2020-EX-10.17-CONSULTING AGREEMENT,CONSULT,3527,no,low IT content or pharma/biotech/goods focus,3.7,Renewal Term;Notice Period To Terminate Renewal;Termination For Convenience
+FLOTEKINDUSTRIESINCCN_05_09_2019-EX-10.1-SUPPLY AGREEMENT,SUPPLY,3037,no,low IT content or pharma/biotech/goods focus,0.3,Audit Rights;Insurance
+EUROPEANMICROHOLDINGSINC_03_06_1998-EX-10.6-DISTRIBUTOR AGREEMENT,,7939,no,type not tech-vendor relevant,5.9,Uncapped Liability;Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Termination For Convenience;Change Of Control;Liquidated Damages
+BizzingoInc_20120322_8-K_EX-10.17_7504499_EX-10.17_Endorsement Agreement,,3696,no,out-of-scope contract type,7.6,Renewal Term;Audit Rights;Termination For Convenience;Insurance
+KitovPharmaLtd_20190326_20-F_EX-4.15_11584449_EX-4.15_Manufacturing Agreement,,8964,no,type not tech-vendor relevant,1.2,Uncapped Liability;Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Change Of Control;Insurance
+BellringBrandsInc_20190920_S-1_EX-10.12_11817081_EX-10.12_Manufacturing Agreement3,,1240,no,type not tech-vendor relevant,0.0,
+GOCALLINC_03_30_2000-EX-10.7-Promotion Agreement,,2983,no,out-of-scope contract type,1.0,Cap On Liability;Renewal Term;Audit Rights
+LEJUHOLDINGSLTD_03_12_2014-EX-10.34-INTERNET CHANNEL COOPERATION AGREEMENT,,5930,no,type not tech-vendor relevant,6.2,
+BLACKSTONEGSOLONG-SHORTCREDITINCOMEFUND_05_11_2020-EX-99.(K)(1)-SERVICE AGREEMENT,SERVICE,8073,yes,tech-vendor contract type with IT/services content,6.3,Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Liquidated Damages
+PHLVARIABLEINSURANCECOCT_08_17_2009-EX-10.1-STRATEGIC ALLIANCE AGREEMENT,,15724,no,type not tech-vendor relevant,1.1,Cap On Liability;Audit Rights;Termination For Convenience;Change Of Control
+"MEETGROUP,INC_06_29_2017-EX-10.1-COOPERATION AGREEMENT",,9394,no,type not tech-vendor relevant,1.3,Change Of Control
+GluMobileInc_20070319_S-1A_EX-10.09_436630_EX-10.09_Content License Agreement3,LICENS,545,no,low IT content or pharma/biotech/goods focus,0.0,
+ADAPTIMMUNETHERAPEUTICSPLC_04_06_2017-EX-10.11-STRATEGIC ALLIANCE AGREEMENT,,15471,no,type not tech-vendor relevant,3.2,Cap On Liability;Audit Rights;Termination For Convenience;Insurance
+ENTRUSTINC_07_24_1998-EX-10.5-STRATEGIC ALLIANCE AGREEMENT,,5893,no,type not tech-vendor relevant,5.1,Uncapped Liability;Cap On Liability
+SYKESHEALTHPLANSERVICESINC_04_24_1998-EX-10.14-OUTSOURCING AGREEMENT,SERVICE,1876,no,low IT content or pharma/biotech/goods focus,1.1,Renewal Term;Notice Period To Terminate Renewal;Audit Rights
+NATIONALPROCESSINGINC_07_18_1996-EX-10.4-SPONSORSHIP AGREEMENT,IP AGREEMENT,4359,no,out-of-scope contract type,1.6,Renewal Term;Notice Period To Terminate Renewal
+"MFAFINANCIAL,INC_07_06_2020-EX-99.D-JOINT FILING AGREEMENT",,578,no,type not tech-vendor relevant,0.0,
+SimplicityEsportsGamingCompany_20181130_8-K_EX-10.1_11444071_EX-10.1_Franchise Agreement,,4347,no,out-of-scope contract type,0.9,Audit Rights;Insurance
+QIWI_06_16_2017-EX-99.(D)(2)-COOPERATION AGREEMENT,,4170,no,type not tech-vendor relevant,0.7,Cap On Liability
+RemarkHoldingsInc_20081114_10-Q_EX-10.24_2895649_EX-10.24_Content License Agreement,LICENS,9178,no,low IT content or pharma/biotech/goods focus,2.0,Uncapped Liability;Cap On Liability;Renewal Term;Audit Rights
+CnsPharmaceuticalsInc_20200326_8-K_EX-10.1_12079626_EX-10.1_Development Agreement,DEVELOPMENT,3260,no,low IT content or pharma/biotech/goods focus,4.6,Audit Rights
+GluMobileInc_20070319_S-1A_EX-10.09_436630_EX-10.09_Content License Agreement2,LICENS,1853,no,low IT content or pharma/biotech/goods focus,0.5,
+PROFOUNDMEDICALCORP_08_29_2019-EX-4.5-SUPPLY AGREEMENT,SUPPLY,10152,no,low IT content or pharma/biotech/goods focus,2.7,Termination For Convenience;Insurance
+TRICITYBANKSHARESCORP_05_15_1998-EX-10-OUTSOURCING AGREEMENT,OUTSOURC,15402,yes,tech-vendor contract type with IT/services content,9.4,Cap On Liability;Renewal Term;Audit Rights;Termination For Convenience;Change Of Control;Source Code Escrow;Insurance;Liquidated Damages
+"BLUEHILLSBANCORP,INC_05_20_2014-EX-1.1-AGENCY AGREEMENT",,21046,no,out-of-scope contract type,1.8,Cap On Liability;Insurance
+GarrettMotionInc_20181001_8-K_EX-2.4_11364532_EX-2.4_Intellectual Property Agreement,INTELLECTUAL PROPERTY,8757,no,low IT content or pharma/biotech/goods focus,2.7,Cap On Liability;Termination For Convenience;Change Of Control
+TheglobeComInc_19990503_S-1A_EX-10.20_5416126_EX-10.20_Co-Branding Agreement,,6614,no,out-of-scope contract type,6.0,Uncapped Liability;Cap On Liability;Audit Rights;Change Of Control
+EmbarkComInc_19991008_S-1A_EX-10.10_6487661_EX-10.10_Co-Branding Agreement,,5039,no,out-of-scope contract type,10.9,Cap On Liability
+"HC2HOLDINGS,INC_05_14_2020-EX-10.1-COOPERATION AGREEMENT",,8562,no,type not tech-vendor relevant,0.8,
+TRANSMONTAIGNEPARTNERSLLC_03_13_2020-EX-10.9-SERVICES AGREEMENT,SERVICE,880,no,low IT content or pharma/biotech/goods focus,0.0,Termination For Convenience
+"COOLTECHNOLOGIES,INC_10_25_2017-EX-10.71-Strategic Alliance Agreement",,2154,no,type not tech-vendor relevant,2.8,Renewal Term;Notice Period To Terminate Renewal;Termination For Convenience
+Monsanto Company - SECOND A_R EXCLUSIVE AGENCY AND MARKETING AGREEMENT ,,33833,no,out-of-scope contract type,1.7,Cap On Liability;Audit Rights;Change Of Control;Insurance;Liquidated Damages
+ALLIANCEBANCORPINCOFPENNSYLVANIA_10_18_2006-EX-1.2-AGENCY AGREEMENT,,20957,no,out-of-scope contract type,2.6,Insurance
+XpresspaGroupInc_20190401_10-K_EX-10.28_11599457_EX-10.28_Marketing Agreement,,8460,no,type not tech-vendor relevant,0.6,Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Change Of Control;Insurance
+ElPolloLocoHoldingsInc_20200306_10-K_EX-10.16_12041700_EX-10.16_Development Agreement,DEVELOPMENT,9315,no,low IT content or pharma/biotech/goods focus,2.1,Termination For Convenience;Change Of Control;Insurance
+BellringBrandsInc_20190920_S-1_EX-10.12_11817081_EX-10.12_Manufacturing Agreement2,,344,no,type not tech-vendor relevant,0.0,
+IdeanomicsInc_20160330_10-K_EX-10.26_9512211_EX-10.26_Content License Agreement,LICENS,6321,no,low IT content or pharma/biotech/goods focus,3.3,Uncapped Liability;Cap On Liability;Audit Rights
+BIOAMBERINC_04_10_2013-EX-10.34-DEVELOPMENT AGREEMENT (1),DEVELOPMENT,5818,no,low IT content or pharma/biotech/goods focus,3.8,Cap On Liability;Audit Rights
+ACCELERATEDTECHNOLOGIESHOLDINGCORP_04_24_2003-EX-10.13-JOINT VENTURE AGREEMENT,,1911,no,out-of-scope contract type,0.5,Audit Rights
+PrudentialBancorpInc_20170606_8-K_EX-10.4_10474434_EX-10.4_Endorsement Agreement,,2264,no,out-of-scope contract type,0.4,Termination For Convenience
+SEASPINEHOLDINGSCORP_10_10_2018-EX-10.1-SUPPLY AGREEMENT,SUPPLY,10675,no,low IT content or pharma/biotech/goods focus,12.9,Uncapped Liability;Cap On Liability;Audit Rights
+"BERKELEYLIGHTS,INC_06_26_2020-EX-10.12-COLLABORATION AGREEMENT",,32708,no,type not tech-vendor relevant,2.6,Uncapped Liability;Cap On Liability;Renewal Term;Audit Rights;Termination For Convenience;Insurance;Liquidated Damages
+UnionDentalHoldingsInc_20050204_8-KA_EX-10_3345577_EX-10_Affiliate Agreement,,1850,no,type not tech-vendor relevant,0.0,Audit Rights;Termination For Convenience
+WOMENSGOLFUNLIMITEDINC_03_29_2000-EX-10.13-ENDORSEMENT AGREEMENT - Intellectual Property Rights                 Confidentiality and Non-Use Obligations Agreement,INTELLECTUAL PROPERTY,940,no,out-of-scope contract type,4.3,
+SPHERE3DCORP_06_24_2020-EX-10.12-CONSULTING AGREEMENT,CONSULT,1897,no,low IT content or pharma/biotech/goods focus,0.0,Renewal Term;Notice Period To Terminate Renewal
+ENTERPRISEPRODUCTSPARTNERSLP_07_08_1998-EX-10.3-TRANSPORTATION CONTRACT,,11141,no,out-of-scope contract type,0.4,Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Termination For Convenience;Insurance
+HerImports_20161018_8-KA_EX-10.14_9765707_EX-10.14_Maintenance Agreement,MAINTENANCE,1595,yes,tech-vendor contract type with IT/services content,8.2,
+PROLONGINTERNATIONALCORP_03_23_1998-EX-10.16-SPONSORSHIP AGREEMENT,IP AGREEMENT,2180,no,out-of-scope contract type,0.0,Insurance
+DYNTEKINC_07_30_1999-EX-10-ONLINE HOSTING AGREEMENT,HOSTING,4009,yes,tech-vendor contract type with IT/services content,6.0,Renewal Term;Audit Rights;Termination For Convenience;Change Of Control
+ALAMOGORDOFINANCIALCORP_12_16_1999-EX-1-AGENCY AGREEMENT,,18815,no,out-of-scope contract type,2.8,Cap On Liability;Insurance
+StampscomInc_20001114_10-Q_EX-10.47_2631630_EX-10.47_Co-Branding Agreement,,11730,no,out-of-scope contract type,8.2,Cap On Liability;Renewal Term;Audit Rights;Change Of Control
+InvendaCorp_20000828_S-1A_EX-10.2_2588206_EX-10.2_Co-Branding Agreement,,14682,no,out-of-scope contract type,29.9,Uncapped Liability;Cap On Liability;Audit Rights;Change Of Control
+WebmdHealthCorp_20050908_S-1A_EX-10.7_1027007_EX-10.7_Content License Agreement,LICENS,2356,yes,tech-vendor contract type with IT/services content,5.9,Cap On Liability
+SANDRIDGEENERGYINC_08_06_2009-EX-10.6-OPERATIONS AND MAINTENANCE AGREEMENT,MAINTENANCE,10964,yes,tech-vendor contract type with IT/services content,7.4,Cap On Liability;Audit Rights;Termination For Convenience;Change Of Control;Insurance
+ON4COMMUNICATIONSINC_07_02_2009-EX-10.1-PROMOTION AGREEMENT,,2349,no,out-of-scope contract type,2.6,
+GluMobileInc_20070319_S-1A_EX-10.09_436630_EX-10.09_Content License Agreement1,LICENS,17147,no,low IT content or pharma/biotech/goods focus,2.6,Cap On Liability;Audit Rights;Change Of Control;Liquidated Damages
+HfEnterprisesInc_20191223_S-1_EX-10.22_11931299_EX-10.22_Development Agreement,DEVELOPMENT,2923,yes,tech-vendor contract type with IT/services content,17.4,Renewal Term;Notice Period To Terminate Renewal;Termination For Convenience;Change Of Control
+ICORECONNECTINC_10_13_2010-EX-7.1-Strategic Alliance Agreement,,3913,no,type not tech-vendor relevant,6.1,Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Termination For Convenience
+BANUESTRAFINANCIALCORP_09_08_2006-EX-10.16-AGENCY AGREEMENT,,7308,no,out-of-scope contract type,0.5,
+ArtaraTherapeuticsInc_20200110_8-K_EX-10.5_11943350_EX-10.5_License Agreement,LICENS,5818,no,low IT content or pharma/biotech/goods focus,9.5,Cap On Liability;Audit Rights;Termination For Convenience;Insurance
+NlsPharmaceuticsLtd_20200228_F-1_EX-10.14_12029046_EX-10.14_Development Agreement,DEVELOPMENT,10546,no,low IT content or pharma/biotech/goods focus,4.2,Cap On Liability;Audit Rights;Change Of Control
+TEARDROPGOLFCO_10_23_1996-EX-10.12-ENDORSEMENT AGREEMENT,,3682,no,out-of-scope contract type,0.5,Audit Rights;Liquidated Damages
+"VIRTUALSCOPICS,INC_11_12_2010-EX-10.1-STRATEGIC ALLIANCE AGREEMENT",,7273,no,type not tech-vendor relevant,2.3,Uncapped Liability;Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Termination For Convenience;Change Of Control;Insurance
+BellringBrandsInc_20190920_S-1_EX-10.12_11817081_EX-10.12_Manufacturing Agreement1,,6565,no,type not tech-vendor relevant,0.2,Audit Rights;Insurance
+BLUEFLYINC_03_27_2002-EX-10.27-e-business Hosting Agreement,HOSTING,5136,yes,tech-vendor contract type with IT/services content,8.6,Uncapped Liability;Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Termination For Convenience;Liquidated Damages
+ASIANDRAGONGROUPINC_08_11_2005-EX-10.5-Reseller Agreement,RESELL,7018,no,low IT content or pharma/biotech/goods focus,2.1,Cap On Liability;Renewal Term;Notice Period To Terminate Renewal
+MANUFACTURERSSERVICESLTD_06_05_2000-EX-10.14-OUTSOURCING AGREEMENT,SERVICE,41962,yes,tech-vendor contract type with IT/services content,6.0,Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Termination For Convenience;Change Of Control;Insurance;Liquidated Damages
+LiquidmetalTechnologiesInc_20200205_8-K_EX-10.1_11968198_EX-10.1_Development Agreement,DEVELOPMENT,12529,yes,tech-vendor contract type with IT/services content,4.1,Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Termination For Convenience;Insurance
+PlayboyEnterprisesInc_20090220_10-QA_EX-10.2_4091580_EX-10.2_Content License Agreement_ Marketing Agreement_ Sales-Purchase Agreement2,LICENS,526,no,low IT content or pharma/biotech/goods focus,0.0,
+ZtoExpressCaymanInc_20160930_F-1_EX-10.10_9752871_EX-10.10_Transportation Agreement,,1468,no,out-of-scope contract type,0.7,Insurance;Liquidated Damages
+ScansourceInc_20190822_10-K_EX-10.39_11793959_EX-10.39_Distributor Agreement,,1605,no,type not tech-vendor relevant,0.0,
+LOOKSMARTLTD_07_20_2012-EX-99.(D)(I)-SPONSORSHIP AGREEMENT,IP AGREEMENT,3945,no,out-of-scope contract type,0.0,
+2ThemartComInc_19990826_10-12G_EX-10.10_6700288_EX-10.10_Co-Branding Agreement_ Agency Agreement,,4467,no,out-of-scope contract type,1.3,Uncapped Liability;Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Change Of Control
+MOELIS_CO_03_24_2014-EX-10.19-STRATEGIC ALLIANCE AGREEMENT,,18625,no,type not tech-vendor relevant,0.3,Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Termination For Convenience;Change Of Control
+XYBERNAUTCORP_07_12_2002-EX-4-SPONSORSHIP AGREEMENT,IP AGREEMENT,6661,no,out-of-scope contract type,1.8,Cap On Liability
+"CARDAX,INC_08_19_2014-EX-10.1-COLLABORATION AGREEMENT",,8586,no,type not tech-vendor relevant,0.8,Uncapped Liability;Cap On Liability;Audit Rights;Insurance
+PcquoteComInc_19990721_S-1A_EX-10.11_6377149_EX-10.11_Co-Branding Agreement2,,123,no,out-of-scope contract type,0.0,
+"MACY_S,INC_05_11_2020-EX-99.4-JOINT FILING AGREEMENT",,216,no,type not tech-vendor relevant,0.0,
+TALCOTTRESOLUTIONLIFEINSURANCECO-SEPARATEACCOUNTTWELVE_04_30_2020-EX-99.8(L)-SERVICE AGREEMENT,SERVICE,4724,no,low IT content or pharma/biotech/goods focus,1.3,Cap On Liability;Audit Rights;Termination For Convenience
+ArmstrongFlooringInc_20190107_8-K_EX-10.2_11471795_EX-10.2_Intellectual Property Agreement,INTELLECTUAL PROPERTY,8284,no,low IT content or pharma/biotech/goods focus,1.6,
+PFSFUNDS_06_26_2020-EX-99.H OTH MAT CONT-SERVICES AGREEMENT,SERVICE,2435,no,low IT content or pharma/biotech/goods focus,0.8,Cap On Liability;Audit Rights;Termination For Convenience
+WaterNowInc_20191120_10-Q_EX-10.12_11900227_EX-10.12_Distributor Agreement,,7396,no,type not tech-vendor relevant,1.2,Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Change Of Control
+MTITECHNOLOGYCORP_11_16_2004-EX-10.102-Reseller Agreement Premier Addendum,RESELL,4685,yes,tech-vendor contract type with IT/services content,8.8,Uncapped Liability;Cap On Liability;Renewal Term;Termination For Convenience
+SCOUTCAMINC_05_12_2020-EX-10.22-SERVICES AGREEMENT,SERVICE,1305,no,low IT content or pharma/biotech/goods focus,3.1,Termination For Convenience
+PharmagenInc_20120803_8-KA_EX-10.1_7693204_EX-10.1_Endorsement Agreement,,2778,no,out-of-scope contract type,2.2,Insurance
+DRKOOPCOMINC_04_21_1999-EX-10.28-SPONSORSHIP AGREEMENT,IP AGREEMENT,5546,no,out-of-scope contract type,10.3,Uncapped Liability;Cap On Liability
+IMPCOTECHNOLOGIESINC_04_15_2003-EX-10.65-JOINT VENTURE AGREEMENT,,10211,no,out-of-scope contract type,0.8,Audit Rights
+EbixInc_20010515_10-Q_EX-10.3_4049767_EX-10.3_Co-Branding Agreement,,6272,no,out-of-scope contract type,13.2,Cap On Liability;Audit Rights;Termination For Convenience;Change Of Control
+"VNUE,INC_07_10_2015-EX-10.1-SPONSORSHIP AGREEMENT",IP AGREEMENT,3207,no,out-of-scope contract type,1.6,Uncapped Liability;Cap On Liability;Insurance
+LegacyEducationAllianceInc_20141110_8-K_EX-10.9_8828866_EX-10.9_Endorsement Agreement,,3149,no,out-of-scope contract type,0.0,Renewal Term;Audit Rights
+EcoScienceSolutionsInc_20180406_8-K_EX-10.1_11135398_EX-10.1_Sponsorship Agreement,IP AGREEMENT,1236,no,out-of-scope contract type,2.4,Insurance
+PcquoteComInc_19990721_S-1A_EX-10.11_6377149_EX-10.11_Co-Branding Agreement3,,395,no,out-of-scope contract type,0.0,
+GluMobileInc_20070319_S-1A_EX-10.09_436630_EX-10.09_Content License Agreement4,LICENS,291,no,low IT content or pharma/biotech/goods focus,0.0,
+"GOOSEHEADINSURANCE,INC_04_02_2018-EX-10.6-Franchise Agreement",,47733,no,out-of-scope contract type,4.7,Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Change Of Control;Insurance;Liquidated Damages
+"OPTIMIZEDTRANSPORTATIONMANAGEMENT,INC_07_26_2000-EX-6.6-DISTRIBUTOR AGREEMENT",,1367,no,out-of-scope contract type,3.7,Renewal Term;Termination For Convenience
+IMAGEWARESYSTEMSINC_12_20_1999-EX-10.22-MAINTENANCE AGREEMENT,MAINTENANCE,2925,yes,tech-vendor contract type with IT/services content,21.5,Cap On Liability;Renewal Term;Notice Period To Terminate Renewal
+NakedBrandGroupInc_20150731_POS AM (on S-1)_EX-10.75_9196027_EX-10.75_Endorsement Agreement,,7601,no,out-of-scope contract type,2.9,Renewal Term
+IdeanomicsInc_20151124_8-K_EX-10.2_9354744_EX-10.2_Content License Agreement,LICENS,5426,no,low IT content or pharma/biotech/goods focus,2.0,Uncapped Liability;Cap On Liability
+ZONDWINDSYSTEMPARTNERSLTDSERIES85-B_04_03_2006-EX-10-MANAGEMENT AND MAINTENANCE AGREEMENT,MAINTENANCE,1368,no,low IT content or pharma/biotech/goods focus,2.2,
+IbioInc_20200313_8-K_EX-10.1_12052678_EX-10.1_Development Agreement,DEVELOPMENT,4657,yes,tech-vendor contract type with IT/services content,6.0,Uncapped Liability;Cap On Liability
+BellringBrandsInc_20190920_S-1_EX-10.12_11817081_EX-10.12_Manufacturing Agreement4,,258,no,type not tech-vendor relevant,0.0,
+ParatekPharmaceuticalsInc_20170505_10-KA_EX-10.29_10323872_EX-10.29_Outsourcing Agreement,OUTSOURC,17726,no,low IT content or pharma/biotech/goods focus,1.9,Uncapped Liability;Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Termination For Convenience;Change Of Control;Insurance
+JOINTCORP_09_19_2014-EX-10.15-FRANCHISE AGREEMENT,,26623,no,out-of-scope contract type,4.9,Uncapped Liability;Cap On Liability;Renewal Term;Audit Rights;Termination For Convenience;Change Of Control;Insurance;Liquidated Damages
+VnueInc_20150914_8-K_EX-10.1_9259571_EX-10.1_Promotion Agreement,,1634,no,out-of-scope contract type,0.0,Renewal Term
+NEXSTARFINANCEHOLDINGSINC_03_27_2002-EX-10.26-OUTSOURCING AGREEMENT,OUTSOURC,18265,no,low IT content or pharma/biotech/goods focus,1.0,Cap On Liability;Audit Rights;Termination For Convenience;Insurance
+SUNTRONCORP_05_17_2006-EX-10.22-MAINTENANCE AGREEMENT,MAINTENANCE,4818,no,low IT content or pharma/biotech/goods focus,2.5,Cap On Liability;Liquidated Damages
+"SPIENERGYCO,LTD_03_09_2011-EX-99.5-OPERATIONS AND MAINTENANCE AGREEMENT",MAINTENANCE,8153,yes,tech-vendor contract type with IT/services content,5.8,Renewal Term;Notice Period To Terminate Renewal;Insurance
+SteelVaultCorp_20081224_10-K_EX-10.16_3074935_EX-10.16_Affiliate Agreement,,2709,no,type not tech-vendor relevant,6.3,Uncapped Liability;Cap On Liability;Renewal Term;Audit Rights
+"PRECIGEN,INC_01_22_2020-EX-99.1-JOINT FILING AGREEMENT",,145,no,type not tech-vendor relevant,0.0,
+PhotronicsInc_20171219_10-QA_EX-10.28_10982650_EX-10.28_Outsourcing Agreement,OUTSOURC,3937,no,low IT content or pharma/biotech/goods focus,0.3,Uncapped Liability;Cap On Liability
+"KIROMICBIOPHARMA,INC_04_08_2020-EX-10.28-JOINT VENTURE AGREEMENT",,5749,no,out-of-scope contract type,3.7,Renewal Term;Notice Period To Terminate Renewal;Change Of Control;Insurance
+EMERALDHEALTHTHERAPEUTICSINC_06_10_2020-EX-4.5-CONSULTING AGREEMENT - DR. GAETANO MORELLO N.D. INC.,CONSULT,3192,no,low IT content or pharma/biotech/goods focus,2.5,Termination For Convenience
+PlayboyEnterprisesInc_20090220_10-QA_EX-10.2_4091580_EX-10.2_Content License Agreement_ Marketing Agreement_ Sales-Purchase Agreement1,LICENS,17994,yes,tech-vendor contract type with IT/services content,5.5,Uncapped Liability;Cap On Liability;Renewal Term;Audit Rights;Insurance
+TubeMediaCorp_20060310_8-K_EX-10.1_513921_EX-10.1_Affiliate Agreement,,10728,no,type not tech-vendor relevant,19.0,Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Termination For Convenience;Insurance
+"MARSHALLHOLDINGSINTERNATIONAL,INC_04_14_2004-EX-10.15-ENDORSEMENT AGREEMENT",,1716,no,out-of-scope contract type,0.6,Change Of Control
+PcquoteComInc_19990721_S-1A_EX-10.11_6377149_EX-10.11_Co-Branding Agreement1,,3025,no,out-of-scope contract type,11.9,Cap On Liability
+BLACKBOXSTOCKSINC_08_05_2014-EX-10.1-DISTRIBUTOR AGREEMENT,,2706,no,type not tech-vendor relevant,0.4,Cap On Liability;Renewal Term;Change Of Control
+ALCOSTORESINC_12_14_2005-EX-10.26-AGENCY AGREEMENT,,1807,no,out-of-scope contract type,2.2,Audit Rights;Termination For Convenience
+WARNERCHILCOTTPLC_12_31_2003-EX-4.36-DEVELOPMENT AGREEMENT,DEVELOPMENT,4152,no,low IT content or pharma/biotech/goods focus,2.2,Cap On Liability
+VertexEnergyInc_20200113_8-K_EX-10.1_11943624_EX-10.1_Marketing Agreement,,7280,no,type not tech-vendor relevant,0.5,Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Change Of Control
+NETZEEINC_11_14_2002-EX-10.3-MAINTENANCE AGREEMENT,MAINTENANCE,464,yes,tech-vendor contract type with IT/services content,38.8,Renewal Term
+REGANHOLDINGCORP_03_31_2008-EX-10-LICENSE AND HOSTING AGREEMENT,LICENS,8824,yes,tech-vendor contract type with IT/services content,15.9,Uncapped Liability;Cap On Liability;Insurance
+INGEVITYCORP_05_16_2016-EX-10.5-INTELLECTUAL PROPERTY AGREEMENT,INTELLECTUAL PROPERTY,9967,yes,tech-vendor contract type with IT/services content,5.1,Termination For Convenience;Change Of Control
+MidwestEnergyEmissionsCorp_20080604_8-K_EX-10.2_3093976_EX-10.2_Content License Agreement,LICENS,5199,no,low IT content or pharma/biotech/goods focus,3.7,Cap On Liability;Renewal Term;Notice Period To Terminate Renewal;Audit Rights;Termination For Convenience
+"NOVOINTEGRATEDSCIENCES,INC_12_23_2019-EX-10.1-JOINT VENTURE AGREEMENT",,3412,no,out-of-scope contract type,0.0,Renewal Term
+HYDRONTECHNOLOGIESINC_03_31_1997-EX-10.47-SPONSORSHIP AGREEMENT,IP AGREEMENT,4114,no,out-of-scope contract type,0.0,Insurance
+CcRealEstateIncomeFundadv_20181205_POS 8C_EX-99.(H)(3)_11447739_EX-99.(H)(3)_Marketing Agreement,,4695,no,type not tech-vendor relevant,1.5,Cap On Liability;Termination For Convenience
+"BLUEROCKRESIDENTIALGROWTHREIT,INC_06_01_2016-EX-1.1-AGENCY AGREEMENT",,20909,no,out-of-scope contract type,0.6,Cap On Liability;Termination For Convenience;Insurance
+XinhuaSportsEntertainmentLtd_20070221_F-1_EX-99.4_645553_EX-99.4_Content License Agreement,LICENS,2472,no,low IT content or pharma/biotech/goods focus,1.6,Renewal Term;Termination For Convenience
+MERITLIFEINSURANCECO_06_19_2020-EX-10.(XIV)-MASTER SERVICES AGREEMENT,SERVICE,3328,yes,tech-vendor contract type with IT/services content,4.2,Uncapped Liability;Cap On Liability;Termination For Convenience;Insurance
+"TALLGRASSENERGY,LP_02_20_2020-EX-99.26-JOINT FILING AGREEMENT",,621,no,type not tech-vendor relevant,0.0,
+KINGPHARMACEUTICALSINC_08_09_2006-EX-10.1-PROMOTION AGREEMENT,,26840,no,out-of-scope contract type,3.5,Cap On Liability;Renewal Term;Audit Rights;Insurance
+PerformanceSportsBrandsInc_20110909_S-1_EX-10.10_7220214_EX-10.10_Endorsement Agreement,,4118,no,out-of-scope contract type,0.2,Audit Rights;Insurance

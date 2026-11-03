@@ -1,0 +1,53 @@
+---
+doc_id: "DOC-V010-CONTRACT-1"
+vendor_id: "V010"
+vendor_name: "Lumetric Insights GmbH"
+title: "SaaS Subscription Agreement: Lumetric Insights GmbH"
+doc_type: "contract"
+slice: "contracts"
+document_date: "2026-12-01"
+evidence_id: null
+access_class: "internal"
+source: "synthetic"
+planted_issues: ["DP-BREACH-NOTICE-LONG", "CON-PRICE-ESCALATION"]
+adversarial: []
+---
+# SaaS Subscription Agreement
+
+**Between** Indrapath Technologies Ltd, Tower B, Sector 62, Noida, Uttar Pradesh 201309, India (the "Customer") **and** Lumetric Insights GmbH, Germany (the "Supplier").
+
+**Status:** Final draft for signature (vendor's proposed terms)  
+**Effective Date:** December 1, 2026  
+## 1. Services
+The Supplier will provide Data analytics and BI services to the Customer as described in Schedule 1. The Customer's business owner for this agreement is the Data & Analytics function.
+
+## 2. Term and renewal
+This Agreement starts on the Effective Date and continues for an initial term of 36 months. On expiry, the term will automatically renew for further periods of one year each, unless a party notifies the other in writing not less than 30 days prior to the expiry of the current term.
+
+## 3. Fees and payment
+Annual fees are INR 1,10,00,000 (INR 1.1 crore), invoiced quarterly in arrears and payable within 30 days of invoice. The Supplier may increase fees once per contract year by no more than 10%.
+
+## 4. Service levels
+The Supplier will meet a monthly service availability of at least 99.5% as set out in Schedule 2, with service credits for shortfalls.
+
+## 5. Limitation of liability
+Except for fraud, the Supplier's maximum liability is limited to an amount equal to 12 months' fees under this Agreement. The Customer's total liability is limited to the fees payable in the 12 months preceding the claim.
+
+## 6. Termination
+Either party may terminate this Agreement without cause by giving not less than ninety (90) days' written notice.
+
+## 7. Audit
+On reasonable notice, the Supplier shall permit the Customer (or a third-party auditor) to inspect records and facilities relevant to the Services.
+
+## 8. Data protection and security incidents
+The Supplier will process personal data only as the Customer's Data Processor and in accordance with the Digital Personal Data Protection Act, 2023. The parties' data processing agreement forms part of this Agreement. Security incidents affecting Customer Data must be reported to the Customer without undue delay and in any event within 168 hours. Customer personal data will be stored and processed in European Union. Any transfer outside India is subject to the cross-border transfer safeguards in Schedule 3. The Supplier will not appoint a new sub-processor without the Customer's prior written approval.
+
+## 9. Confidentiality
+Each party will keep the other's confidential information confidential and use it only for this Agreement.
+
+## 10. Governing law
+This Agreement is governed by the laws of India; the courts at New Delhi have exclusive jurisdiction.
+
+---
+Signed for the Customer: Authorised Signatory, Indrapath Technologies Ltd  
+Signed for the Supplier: Authorised Signatory, Lumetric Insights GmbH
