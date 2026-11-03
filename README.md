@@ -6,13 +6,13 @@ A Track B capstone (Executive PG Programme in Generative AI and Agentic AI). It 
 | Week 1 step | Status | Where |
 |---|---|---|
 | Day 0 setup | Done (endpoint values still to fill in `.env`) | `.env.example`, `app/llm_client.py`, `docker/`, `app/db/schema.sql` |
-| 1.1 Task specification | Done; decisions D1–D13 need team sign-off | `docs/spec.md`, `docs/decisions.md` |
+| 1.1 Task specification | Done; decisions D1–D15 need team sign-off | `docs/spec.md`, `docs/decisions.md` |
 | 1.2 Rubric and schemas | Done | `app/scoring/`, `app/schemas.py`, `schemas/` |
 | 1.3 Synthetic vendor set | Done (35 vendors) | `data/ground_truth/` |
 | 1.4 Corpus | Done; **corpus v1 frozen: 1,053 documents** | `data/synthetic/`, `data/manifests/`, `scripts/ingest.py` |
 | 1.5 Evaluation set | Done; **eval_v1 frozen: 80 queries (30 dev / 50 test)**, with grader | `data/evaluation/`, `scripts/grade.py` |
-| 1.6–1.7 Prompting baseline | Needs the course endpoint | — |
-| 1.8 Retrieval baselines | Next: recall@k on eval_v1 gold docs (smoke test passes 10/10) | `scripts/retrieval_smoke_test.py` |
+| 1.6–1.7 Prompting baseline + failure log | Harness built and tested offline; **run needs the course endpoint** (`make prompt-baseline`) | `app/prompting.py`, `app/failure_analysis.py`, `docs/failure_log.md` |
+| 1.8 Retrieval baselines | **BM25 done** (hit@10 dev 0.89 / test 0.95; ACORD NDCG@5 0.07); dense waits for the embeddings endpoint | `docs/baselines.md`, `reports/retrieval_baseline_v1.json` |
 
 ## Quick start
 ```bash
@@ -21,7 +21,7 @@ make setup && source .venv/bin/activate          # or: pip install -r requiremen
 cp .env.example .env                              # fill in endpoint + keys
 # put the raw dataset at data/raw/procurement_dataset/  (shared via Drive; not in Git)
 make corpus                                       # rebuild ground truth, policies, synthetic docs, corpus v1
-make test                                         # 91 tests
+make test                                         # 96 tests
 make up                                           # Postgres+pgvector and Langfuse (Docker)
 ```
 Requires Python 3.11+, `pdftotext` (poppler-utils) and Docker.
@@ -34,7 +34,9 @@ app/
                                            conversation_turns, financial_metrics, append-only audit_events
   scoring/rubric.yaml, engine.py           deterministic rubric (becomes the compliance / financial tools)
   schemas.py                               Pydantic models for vendor facts and every copilot output
-  llm_client.py                            the only way to call the LLM: token ledger, quota guard, JSON retry
+  llm_client.py                            the only way to call the LLM: token ledger, quota guard, JSON retry, mock backend
+  prompting.py, failure_analysis.py        step 1.6 strategies and step 1.7 failure classifier
+  retrieval/chunking.py, retrievers.py     fixed-512 chunker, BM25 and dense retrievers
 data/
   raw/            NOT IN GIT: original downloads (~260 MB)
   manifests/      source register, CUAD/NDA selections, synthetic doc list, corpus_v1_manifest (frozen)
@@ -45,8 +47,9 @@ data/
   evaluation/     eval_v1.jsonl (80 queries, frozen), sha256, README, CHANGELOG
 docs/             spec, decision log
 scripts/          build_vendors, generate_policies, generate_synthetic_docs, ingest, retrieval_smoke_test,
-                  build_eval_set, grade, export_json_schemas
-tests/            ground truth, corpus, eval-set and grader guards (91 tests)
+                  build_eval_set, grade, retrieval_baseline, prompt_baseline, export_json_schemas
+tests/            ground truth, corpus, eval set, grader and baseline guards (96 tests)
+reports/          baseline results (JSON); runs/ holds raw LLM outputs (not in Git)
 docker/           docker-compose (db, langfuse; api/ui stubs)
 observability/    token ledger, traces (Week 2+)
 ```

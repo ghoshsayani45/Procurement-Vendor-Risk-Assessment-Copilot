@@ -56,15 +56,30 @@ def _log(kind: str, model: str, usage, latency_ms: int, tag: str):
     return rec
 
 
+LAST_CALL: dict = {}   # usage record of the most recent chat() call (tokens, latency) for per-query cost accounting
+
+
+def backend() -> str:
+    """LLM_BACKEND=endpoint (default, the course API) or mock (offline, deterministic; for tests and CI)."""
+    return os.getenv("LLM_BACKEND", "endpoint")
+
+
 def chat(messages: list[dict], *, tag: str = "", temperature: float = 0.0, max_tokens: int = 1024,
          json_mode: bool = False, **kw) -> str:
+    global LAST_CALL
+    if backend() == "mock":
+        from app.mock_llm import mock_chat
+        t0 = time.time()
+        content, usage = mock_chat(messages, temperature=temperature, json_mode=json_mode, tag=tag)
+        LAST_CALL = dict(kind="chat", model="mock", tag=tag, latency_ms=int((time.time() - t0) * 1000), **usage)
+        return content
     _guard(max_tokens)
     model = os.environ["LLM_MODEL"]
     extra = {"response_format": {"type": "json_object"}} if json_mode else {}
     t0 = time.time()
     r = _client("LLM_BASE_URL").chat.completions.create(model=model, messages=messages, temperature=temperature,
                                                         max_tokens=max_tokens, **extra, **kw)
-    _log("chat", model, r.usage, int((time.time() - t0) * 1000), tag)
+    LAST_CALL = _log("chat", model, r.usage, int((time.time() - t0) * 1000), tag)
     return r.choices[0].message.content or ""
 
 

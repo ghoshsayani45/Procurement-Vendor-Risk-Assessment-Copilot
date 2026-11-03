@@ -1,0 +1,1749 @@
+{
+ "run_at": "2026-11-03 09:44",
+ "documents": 1053,
+ "chunks": 5663,
+ "chunking": "fixed512 (overlap 64)",
+ "queries_with_gold_docs": 70,
+ "retrievers": {
+  "bm25": {
+   "summary": {
+    "dev": {
+     "ALL": {
+      "n": 26,
+      "hit@5": 0.885,
+      "hit@10": 0.885,
+      "hit@20": 0.923,
+      "recall@5": 0.569,
+      "recall@10": 0.678,
+      "recall@20": 0.824,
+      "mrr": 0.707,
+      "median_latency_ms": 9.9
+     },
+     "full_review": {
+      "n": 7,
+      "hit@5": 1.0,
+      "hit@10": 1.0,
+      "hit@20": 1.0,
+      "recall@5": 0.347,
+      "recall@10": 0.568,
+      "recall@20": 0.813,
+      "mrr": 0.786,
+      "median_latency_ms": 10.2
+     },
+     "comparison": {
+      "n": 2,
+      "hit@5": 1.0,
+      "hit@10": 1.0,
+      "hit@20": 1.0,
+      "recall@5": 0.179,
+      "recall@10": 0.322,
+      "recall@20": 0.622,
+      "mrr": 0.75,
+      "median_latency_ms": 9.5
+     },
+     "lookup_vendor": {
+      "n": 5,
+      "hit@5": 1.0,
+      "hit@10": 1.0,
+      "hit@20": 1.0,
+      "recall@5": 0.9,
+      "recall@10": 1.0,
+      "recall@20": 1.0,
+      "mrr": 0.84,
+      "median_latency_ms": 9.9
+     },
+     "missing_conflicting_evidence": {
+      "n": 3,
+      "hit@5": 1.0,
+      "hit@10": 1.0,
+      "hit@20": 1.0,
+      "recall@5": 0.667,
+      "recall@10": 0.833,
+      "recall@20": 1.0,
+      "mrr": 0.344,
+      "median_latency_ms": 8.5
+     },
+     "internal_policy": {
+      "n": 3,
+      "hit@5": 1.0,
+      "hit@10": 1.0,
+      "hit@20": 1.0,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "recall@20": 1.0,
+      "mrr": 1.0,
+      "median_latency_ms": 9.9
+     },
+     "external_regulation": {
+      "n": 3,
+      "hit@5": 0.0,
+      "hit@10": 0.0,
+      "hit@20": 0.333,
+      "recall@5": 0.0,
+      "recall@10": 0.0,
+      "recall@20": 0.333,
+      "mrr": 0.05,
+      "median_latency_ms": 9.3
+     },
+     "adversarial": {
+      "n": 2,
+      "hit@5": 1.0,
+      "hit@10": 1.0,
+      "hit@20": 1.0,
+      "recall@5": 0.75,
+      "recall@10": 0.75,
+      "recall@20": 0.75,
+      "mrr": 1.0,
+      "median_latency_ms": 14.9
+     },
+     "refusal": {
+      "n": 1,
+      "hit@5": 1.0,
+      "hit@10": 1.0,
+      "hit@20": 1.0,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "recall@20": 1.0,
+      "mrr": 1.0,
+      "median_latency_ms": 8.7
+     }
+    },
+    "test": {
+     "ALL": {
+      "n": 44,
+      "hit@5": 0.932,
+      "hit@10": 0.955,
+      "hit@20": 0.955,
+      "recall@5": 0.636,
+      "recall@10": 0.775,
+      "recall@20": 0.869,
+      "mrr": 0.808,
+      "median_latency_ms": 10.4
+     },
+     "full_review": {
+      "n": 11,
+      "hit@5": 1.0,
+      "hit@10": 1.0,
+      "hit@20": 1.0,
+      "recall@5": 0.309,
+      "recall@10": 0.589,
+      "recall@20": 0.865,
+      "mrr": 0.803,
+      "median_latency_ms": 8.4
+     },
+     "comparison": {
+      "n": 4,
+      "hit@5": 1.0,
+      "hit@10": 1.0,
+      "hit@20": 1.0,
+      "recall@5": 0.149,
+      "recall@10": 0.274,
+      "recall@20": 0.427,
+      "mrr": 1.0,
+      "median_latency_ms": 10.3
+     },
+     "lookup_vendor": {
+      "n": 9,
+      "hit@5": 1.0,
+      "hit@10": 1.0,
+      "hit@20": 1.0,
+      "recall@5": 0.944,
+      "recall@10": 1.0,
+      "recall@20": 1.0,
+      "mrr": 0.759,
+      "median_latency_ms": 9.8
+     },
+     "missing_conflicting_evidence": {
+      "n": 5,
+      "hit@5": 0.8,
+      "hit@10": 0.8,
+      "hit@20": 0.8,
+      "recall@5": 0.7,
+      "recall@10": 0.8,
+      "recall@20": 0.8,
+      "mrr": 0.672,
+      "median_latency_ms": 14.7
+     },
+     "internal_policy": {
+      "n": 5,
+      "hit@5": 1.0,
+      "hit@10": 1.0,
+      "hit@20": 1.0,
+      "recall@5": 0.9,
+      "recall@10": 0.9,
+      "recall@20": 1.0,
+      "mrr": 1.0,
+      "median_latency_ms": 8.2
+     },
+     "external_regulation": {
+      "n": 5,
+      "hit@5": 0.6,
+      "hit@10": 0.8,
+      "hit@20": 0.8,
+      "recall@5": 0.6,
+      "recall@10": 0.8,
+      "recall@20": 0.8,
+      "mrr": 0.504,
+      "median_latency_ms": 21.8
+     },
+     "adversarial": {
+      "n": 4,
+      "hit@5": 1.0,
+      "hit@10": 1.0,
+      "hit@20": 1.0,
+      "recall@5": 0.875,
+      "recall@10": 1.0,
+      "recall@20": 1.0,
+      "mrr": 1.0,
+      "median_latency_ms": 14.9
+     },
+     "refusal": {
+      "n": 1,
+      "hit@5": 1.0,
+      "hit@10": 1.0,
+      "hit@20": 1.0,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "recall@20": 1.0,
+      "mrr": 1.0,
+      "median_latency_ms": 12.5
+     }
+    }
+   },
+   "per_query": [
+    {
+     "id": "EVAL-001",
+     "category": "full_review",
+     "split": "test",
+     "n_gold": 12,
+     "latency_ms": 10.6,
+     "hit@5": 1,
+     "recall@5": 0.083,
+     "hit@10": 1,
+     "recall@10": 0.333,
+     "hit@20": 1,
+     "recall@20": 0.75,
+     "mrr": 1.0,
+     "top3": [
+      "DOC-V001-BCP_DR_TEST-1",
+      "DOC-V001-PERF-1",
+      "DOC-V001-INCIDENTS-1"
+     ]
+    },
+    {
+     "id": "EVAL-002",
+     "category": "full_review",
+     "split": "test",
+     "n_gold": 13,
+     "latency_ms": 10.6,
+     "hit@5": 1,
+     "recall@5": 0.308,
+     "hit@10": 1,
+     "recall@10": 0.462,
+     "hit@20": 1,
+     "recall@20": 0.846,
+     "mrr": 1.0,
+     "top3": [
+      "DOC-V003-BCP_DR_TEST-1",
+      "DOC-V003-SOC2_TYPE2-1",
+      "DOC-V003-PO-1"
+     ]
+    },
+    {
+     "id": "EVAL-003",
+     "category": "full_review",
+     "split": "test",
+     "n_gold": 12,
+     "latency_ms": 6.9,
+     "hit@5": 1,
+     "recall@5": 0.167,
+     "hit@10": 1,
+     "recall@10": 0.333,
+     "hit@20": 1,
+     "recall@20": 0.75,
+     "mrr": 0.5,
+     "top3": [
+      "DOC-V004-PERF-1",
+      "DOC-V004-BCP_DR_TEST-1",
+      "ADV-EMAIL-V003-RENEWAL"
+     ]
+    },
+    {
+     "id": "EVAL-004",
+     "category": "full_review",
+     "split": "test",
+     "n_gold": 10,
+     "latency_ms": 13.9,
+     "hit@5": 1,
+     "recall@5": 0.3,
+     "hit@10": 1,
+     "recall@10": 0.6,
+     "hit@20": 1,
+     "recall@20": 0.9,
+     "mrr": 0.5,
+     "top3": [
+      "DOC-V005-PROPOSAL-1",
+      "DOC-V005-ISO27001-1",
+      "DOC-V005-SOC2_TYPE2-1"
+     ]
+    },
+    {
+     "id": "EVAL-005",
+     "category": "full_review",
+     "split": "dev",
+     "n_gold": 10,
+     "latency_ms": 12.6,
+     "hit@5": 1,
+     "recall@5": 0.3,
+     "hit@10": 1,
+     "recall@10": 0.8,
+     "hit@20": 1,
+     "recall@20": 0.8,
+     "mrr": 0.5,
+     "top3": [
+      "DOC-V007-PROPOSAL-1",
+      "DOC-V007-BCP_DR_TEST-1",
+      "ADV-PRESS-V007-SOC2"
+     ]
+    },
+    {
+     "id": "EVAL-006",
+     "category": "full_review",
+     "split": "dev",
+     "n_gold": 11,
+     "latency_ms": 11.2,
+     "hit@5": 1,
+     "recall@5": 0.273,
+     "hit@10": 1,
+     "recall@10": 0.364,
+     "hit@20": 1,
+     "recall@20": 0.727,
+     "mrr": 1.0,
+     "top3": [
+      "DOC-V009-CONTRACT-1",
+      "DOC-V009-INCIDENTS-1",
+      "DOC-V009-PO-1"
+     ]
+    },
+    {
+     "id": "EVAL-007",
+     "category": "full_review",
+     "split": "dev",
+     "n_gold": 10,
+     "latency_ms": 8.9,
+     "hit@5": 1,
+     "recall@5": 0.3,
+     "hit@10": 1,
+     "recall@10": 0.4,
+     "hit@20": 1,
+     "recall@20": 0.9,
+     "mrr": 1.0,
+     "top3": [
+      "DOC-V011-PERF-1",
+      "DOC-V011-BCP_DR_TEST-1",
+      "DOC-V011-INCIDENTS-1"
+     ]
+    },
+    {
+     "id": "EVAL-008",
+     "category": "full_review",
+     "split": "test",
+     "n_gold": 7,
+     "latency_ms": 11.8,
+     "hit@5": 1,
+     "recall@5": 0.571,
+     "hit@10": 1,
+     "recall@10": 0.857,
+     "hit@20": 1,
+     "recall@20": 0.857,
+     "mrr": 1.0,
+     "top3": [
+      "DOC-V013-CONTRACT-1",
+      "DOC-V013-SOC2_TYPE2-1",
+      "DOC-V013-PROPOSAL-1"
+     ]
+    },
+    {
+     "id": "EVAL-009",
+     "category": "full_review",
+     "split": "dev",
+     "n_gold": 7,
+     "latency_ms": 10.2,
+     "hit@5": 1,
+     "recall@5": 0.571,
+     "hit@10": 1,
+     "recall@10": 0.714,
+     "hit@20": 1,
+     "recall@20": 0.714,
+     "mrr": 1.0,
+     "top3": [
+      "DOC-V015-CONTRACT-1",
+      "DOC-V015-CYBER_INSURANCE-1",
+      "DOC-V015-PROPOSAL-1"
+     ]
+    },
+    {
+     "id": "EVAL-010",
+     "category": "full_review",
+     "split": "test",
+     "n_gold": 11,
+     "latency_ms": 7.5,
+     "hit@5": 1,
+     "recall@5": 0.273,
+     "hit@10": 1,
+     "recall@10": 0.727,
+     "hit@20": 1,
+     "recall@20": 0.909,
+     "mrr": 0.333,
+     "top3": [
+      "DOC-V017-PROPOSAL-1",
+      "ADV-EMAIL-V017-PRESSURE",
+      "DOC-V017-BCP_DR_TEST-1"
+     ]
+    },
+    {
+     "id": "EVAL-011",
+     "category": "full_review",
+     "split": "test",
+     "n_gold": 10,
+     "latency_ms": 10.0,
+     "hit@5": 1,
+     "recall@5": 0.4,
+     "hit@10": 1,
+     "recall@10": 0.7,
+     "hit@20": 1,
+     "recall@20": 0.9,
+     "mrr": 1.0,
+     "top3": [
+      "DOC-V018-BCP_DR_TEST-1",
+      "DOC-V018-ISO27001-1",
+      "DOC-V018-PROPOSAL-1"
+     ]
+    },
+    {
+     "id": "EVAL-012",
+     "category": "full_review",
+     "split": "test",
+     "n_gold": 10,
+     "latency_ms": 8.4,
+     "hit@5": 1,
+     "recall@5": 0.4,
+     "hit@10": 1,
+     "recall@10": 0.7,
+     "hit@20": 1,
+     "recall@20": 0.8,
+     "mrr": 1.0,
+     "top3": [
+      "DOC-V019-BCP_DR_TEST-1",
+      "DOC-V019-SOC2_TYPE2-1",
+      "ADV-WEB-V019-TRUST"
+     ]
+    },
+    {
+     "id": "EVAL-013",
+     "category": "full_review",
+     "split": "dev",
+     "n_gold": 12,
+     "latency_ms": 6.4,
+     "hit@5": 1,
+     "recall@5": 0.25,
+     "hit@10": 1,
+     "recall@10": 0.417,
+     "hit@20": 1,
+     "recall@20": 0.917,
+     "mrr": 1.0,
+     "top3": [
+      "DOC-V021-SOC2_TYPE2-1",
+      "DOC-V021-PO-1",
+      "DOC-V021-ISO27001-1"
+     ]
+    },
+    {
+     "id": "EVAL-014",
+     "category": "full_review",
+     "split": "dev",
+     "n_gold": 12,
+     "latency_ms": 11.4,
+     "hit@5": 1,
+     "recall@5": 0.333,
+     "hit@10": 1,
+     "recall@10": 0.583,
+     "hit@20": 1,
+     "recall@20": 0.833,
+     "mrr": 0.5,
+     "top3": [
+      "DOC-V023-PROPOSAL-1",
+      "DOC-V023-BCP_DR_TEST-1",
+      "DOC-V023-CONTRACT-1"
+     ]
+    },
+    {
+     "id": "EVAL-015",
+     "category": "full_review",
+     "split": "test",
+     "n_gold": 12,
+     "latency_ms": 7.7,
+     "hit@5": 1,
+     "recall@5": 0.25,
+     "hit@10": 1,
+     "recall@10": 0.583,
+     "hit@20": 1,
+     "recall@20": 0.917,
+     "mrr": 1.0,
+     "top3": [
+      "DOC-V024-SOC2_TYPE2-1",
+      "ADV-EMAIL-V024-APPROVAL",
+      "DOC-V024-CONTRACT-1"
+     ]
+    },
+    {
+     "id": "EVAL-016",
+     "category": "full_review",
+     "split": "test",
+     "n_gold": 10,
+     "latency_ms": 5.4,
+     "hit@5": 1,
+     "recall@5": 0.2,
+     "hit@10": 1,
+     "recall@10": 0.3,
+     "hit@20": 1,
+     "recall@20": 1.0,
+     "mrr": 1.0,
+     "top3": [
+      "DOC-V027-PERF-1",
+      "DOC-V027-CONTRACT-1",
+      "COI-REGISTER"
+     ]
+    },
+    {
+     "id": "EVAL-017",
+     "category": "full_review",
+     "split": "test",
+     "n_gold": 9,
+     "latency_ms": 6.9,
+     "hit@5": 1,
+     "recall@5": 0.444,
+     "hit@10": 1,
+     "recall@10": 0.889,
+     "hit@20": 1,
+     "recall@20": 0.889,
+     "mrr": 0.5,
+     "top3": [
+      "DOC-V028-PROPOSAL-1",
+      "DOC-V028-SOC2_TYPE2-1",
+      "DOC-V028-CYBER_INSURANCE-1"
+     ]
+    },
+    {
+     "id": "EVAL-018",
+     "category": "full_review",
+     "split": "dev",
+     "n_gold": 10,
+     "latency_ms": 8.8,
+     "hit@5": 1,
+     "recall@5": 0.4,
+     "hit@10": 1,
+     "recall@10": 0.7,
+     "hit@20": 1,
+     "recall@20": 0.8,
+     "mrr": 0.5,
+     "top3": [
+      "DOC-V034-PROPOSAL-1",
+      "POLICY-DEBARMENT-LIST",
+      "DOC-V034-CONTRACT-1"
+     ]
+    },
+    {
+     "id": "EVAL-019",
+     "category": "comparison",
+     "split": "test",
+     "n_gold": 33,
+     "latency_ms": 10.3,
+     "hit@5": 1,
+     "recall@5": 0.091,
+     "hit@10": 1,
+     "recall@10": 0.182,
+     "hit@20": 1,
+     "recall@20": 0.333,
+     "mrr": 1.0,
+     "top3": [
+      "DOC-V002-ISO27001-1",
+      "DOC-V001-ISO27001-0",
+      "DOC-V001-ISO27001-1"
+     ]
+    },
+    {
+     "id": "EVAL-020",
+     "category": "comparison",
+     "split": "test",
+     "n_gold": 20,
+     "latency_ms": 12.1,
+     "hit@5": 1,
+     "recall@5": 0.1,
+     "hit@10": 1,
+     "recall@10": 0.25,
+     "hit@20": 1,
+     "recall@20": 0.4,
+     "mrr": 1.0,
+     "top3": [
+      "DOC-V004-ISO27001-1",
+      "DOC-V005-ISO27001-1",
+      "DOC-V004-PO-1"
+     ]
+    },
+    {
+     "id": "EVAL-021",
+     "category": "comparison",
+     "split": "test",
+     "n_gold": 18,
+     "latency_ms": 9.7,
+     "hit@5": 1,
+     "recall@5": 0.222,
+     "hit@10": 1,
+     "recall@10": 0.389,
+     "hit@20": 1,
+     "recall@20": 0.611,
+     "mrr": 1.0,
+     "top3": [
+      "DOC-V018-BCP_DR_TEST-1",
+      "DOC-V018-ISO27001-1",
+      "DOC-V018-PROPOSAL-1"
+     ]
+    },
+    {
+     "id": "EVAL-022",
+     "category": "comparison",
+     "split": "dev",
+     "n_gold": 22,
+     "latency_ms": 8.5,
+     "hit@5": 1,
+     "recall@5": 0.182,
+     "hit@10": 1,
+     "recall@10": 0.409,
+     "hit@20": 1,
+     "recall@20": 0.773,
+     "mrr": 0.5,
+     "top3": [
+      "ADV-EMAIL-V024-APPROVAL",
+      "DOC-V023-BCP_DR_TEST-1",
+      "DOC-V024-BCP_DR_TEST-1"
+     ]
+    },
+    {
+     "id": "EVAL-023",
+     "category": "comparison",
+     "split": "dev",
+     "n_gold": 17,
+     "latency_ms": 9.5,
+     "hit@5": 1,
+     "recall@5": 0.176,
+     "hit@10": 1,
+     "recall@10": 0.235,
+     "hit@20": 1,
+     "recall@20": 0.471,
+     "mrr": 1.0,
+     "top3": [
+      "DOC-V030-ISO27001-1",
+      "DOC-V031-PROPOSAL-1",
+      "DOC-V031-CONTRACT-1"
+     ]
+    },
+    {
+     "id": "EVAL-024",
+     "category": "comparison",
+     "split": "test",
+     "n_gold": 22,
+     "latency_ms": 6.9,
+     "hit@5": 1,
+     "recall@5": 0.182,
+     "hit@10": 1,
+     "recall@10": 0.273,
+     "hit@20": 1,
+     "recall@20": 0.364,
+     "mrr": 1.0,
+     "top3": [
+      "DOC-V033-ISO27001-1",
+      "DOC-V032-ISO27001-1",
+      "DOC-V033-PROPOSAL-1"
+     ]
+    },
+    {
+     "id": "EVAL-025",
+     "category": "lookup_vendor",
+     "split": "dev",
+     "n_gold": 1,
+     "latency_ms": 9.8,
+     "hit@5": 1,
+     "recall@5": 1.0,
+     "hit@10": 1,
+     "recall@10": 1.0,
+     "hit@20": 1,
+     "recall@20": 1.0,
+     "mrr": 1.0,
+     "top3": [
+      "DOC-V009-CONTRACT-1",
+      "CON-001-039-PareteumCorp",
+      "DOC-V009-CONTRACT-1"
+     ]
+    },
+    {
+     "id": "EVAL-026",
+     "category": "lookup_vendor",
+     "split": "dev",
+     "n_gold": 2,
+     "latency_ms": 9.9,
+     "hit@5": 1,
+     "recall@5": 0.5,
+     "hit@10": 1,
+     "recall@10": 1.0,
+     "hit@20": 1,
+     "recall@20": 1.0,
+     "mrr": 1.0,
+     "top3": [
+      "DOC-V004-CONTRACT-AMD-1",
+      "POLICY-CS-003",
+      "DOC-V004-INV-Q2"
+     ]
+    },
+    {
+     "id": "EVAL-027",
+     "category": "lookup_vendor",
+     "split": "test",
+     "n_gold": 2,
+     "latency_ms": 10.3,
+     "hit@5": 1,
+     "recall@5": 0.5,
+     "hit@10": 1,
+     "recall@10": 1.0,
+     "hit@20": 1,
+     "recall@20": 1.0,
+     "mrr": 0.5,
+     "top3": [
+      "POLICY-CS-003",
+      "DOC-V009-CONTRACT-AMD-1",
+      "CON-009"
+     ]
+    },
+    {
+     "id": "EVAL-028",
+     "category": "lookup_vendor",
+     "split": "dev",
+     "n_gold": 1,
+     "latency_ms": 15.6,
+     "hit@5": 1,
+     "recall@5": 1.0,
+     "hit@10": 1,
+     "recall@10": 1.0,
+     "hit@20": 1,
+     "recall@20": 1.0,
+     "mrr": 1.0,
+     "top3": [
+      "DOC-V002-CONTRACT-1",
+      "DOC-V002-DPA-1",
+      "POLICY-DPS-004"
+     ]
+    },
+    {
+     "id": "EVAL-029",
+     "category": "lookup_vendor",
+     "split": "dev",
+     "n_gold": 1,
+     "latency_ms": 11.9,
+     "hit@5": 1,
+     "recall@5": 1.0,
+     "hit@10": 1,
+     "recall@10": 1.0,
+     "hit@20": 1,
+     "recall@20": 1.0,
+     "mrr": 0.2,
+     "top3": [
+      "DOC-V005-DPA-1",
+      "POLICY-DPS-004",
+      "DOC-V022-CONTRACT-1"
+     ]
+    },
+    {
+     "id": "EVAL-030",
+     "category": "lookup_vendor",
+     "split": "test",
+     "n_gold": 1,
+     "latency_ms": 12.8,
+     "hit@5": 1,
+     "recall@5": 1.0,
+     "hit@10": 1,
+     "recall@10": 1.0,
+     "hit@20": 1,
+     "recall@20": 1.0,
+     "mrr": 1.0,
+     "top3": [
+      "DOC-V007-PENTEST-1",
+      "DOC-V004-PENTEST-1",
+      "DOC-V029-PENTEST-1"
+     ]
+    },
+    {
+     "id": "EVAL-031",
+     "category": "lookup_vendor",
+     "split": "test",
+     "n_gold": 1,
+     "latency_ms": 7.9,
+     "hit@5": 1,
+     "recall@5": 1.0,
+     "hit@10": 1,
+     "recall@10": 1.0,
+     "hit@20": 1,
+     "recall@20": 1.0,
+     "mrr": 0.5,
+     "top3": [
+      "ADV-EMAIL-V003-RENEWAL",
+      "DOC-V003-ISO27001-1",
+      "POL-007-S007"
+     ]
+    },
+    {
+     "id": "EVAL-032",
+     "category": "lookup_vendor",
+     "split": "test",
+     "n_gold": 1,
+     "latency_ms": 9.3,
+     "hit@5": 1,
+     "recall@5": 1.0,
+     "hit@10": 1,
+     "recall@10": 1.0,
+     "hit@20": 1,
+     "recall@20": 1.0,
+     "mrr": 0.333,
+     "top3": [
+      "ADV-EMAIL-V003-RENEWAL",
+      "DOC-V001-ISO27001-0",
+      "DOC-V001-ISO27001-1"
+     ]
+    },
+    {
+     "id": "EVAL-033",
+     "category": "lookup_vendor",
+     "split": "test",
+     "n_gold": 1,
+     "latency_ms": 11.4,
+     "hit@5": 1,
+     "recall@5": 1.0,
+     "hit@10": 1,
+     "recall@10": 1.0,
+     "hit@20": 1,
+     "recall@20": 1.0,
+     "mrr": 1.0,
+     "top3": [
+      "DOC-V024-FIN-CY2025",
+      "DOC-V024-FIN-CY2024",
+      "DOC-V024-BCP_DR_TEST-1"
+     ]
+    },
+    {
+     "id": "EVAL-034",
+     "category": "lookup_vendor",
+     "split": "test",
+     "n_gold": 1,
+     "latency_ms": 9.8,
+     "hit@5": 1,
+     "recall@5": 1.0,
+     "hit@10": 1,
+     "recall@10": 1.0,
+     "hit@20": 1,
+     "recall@20": 1.0,
+     "mrr": 1.0,
+     "top3": [
+      "DOC-V021-PERF-1",
+      "DOC-V021-INCIDENTS-1",
+      "DOC-V026-PERF-1"
+     ]
+    },
+    {
+     "id": "EVAL-035",
+     "category": "lookup_vendor",
+     "split": "dev",
+     "n_gold": 2,
+     "latency_ms": 7.7,
+     "hit@5": 1,
+     "recall@5": 1.0,
+     "hit@10": 1,
+     "recall@10": 1.0,
+     "hit@20": 1,
+     "recall@20": 1.0,
+     "mrr": 1.0,
+     "top3": [
+      "DOC-V030-INCIDENTS-1",
+      "DOC-V030-PERF-1",
+      "DOC-V035-INCIDENTS-1"
+     ]
+    },
+    {
+     "id": "EVAL-036",
+     "category": "lookup_vendor",
+     "split": "test",
+     "n_gold": 2,
+     "latency_ms": 9.1,
+     "hit@5": 1,
+     "recall@5": 1.0,
+     "hit@10": 1,
+     "recall@10": 1.0,
+     "hit@20": 1,
+     "recall@20": 1.0,
+     "mrr": 1.0,
+     "top3": [
+      "DOC-V015-CYBER_INSURANCE-1",
+      "POLICY-TPRM-001-v2",
+      "POLICY-TPRM-001-v3"
+     ]
+    },
+    {
+     "id": "EVAL-037",
+     "category": "lookup_vendor",
+     "split": "test",
+     "n_gold": 1,
+     "latency_ms": 13.1,
+     "hit@5": 1,
+     "recall@5": 1.0,
+     "hit@10": 1,
+     "recall@10": 1.0,
+     "hit@20": 1,
+     "recall@20": 1.0,
+     "mrr": 0.5,
+     "top3": [
+      "DOC-V023-PROPOSAL-1",
+      "DOC-V023-CONTRACT-1",
+      "DOC-V019-CONTRACT-1"
+     ]
+    },
+    {
+     "id": "EVAL-038",
+     "category": "lookup_vendor",
+     "split": "test",
+     "n_gold": 1,
+     "latency_ms": 8.6,
+     "hit@5": 1,
+     "recall@5": 1.0,
+     "hit@10": 1,
+     "recall@10": 1.0,
+     "hit@20": 1,
+     "recall@20": 1.0,
+     "mrr": 1.0,
+     "top3": [
+      "DOC-V027-CONTRACT-1",
+      "DOC-V027-SOC2_TYPE2-1",
+      "COI-REGISTER"
+     ]
+    },
+    {
+     "id": "EVAL-039",
+     "category": "missing_conflicting_evidence",
+     "split": "dev",
+     "n_gold": 2,
+     "latency_ms": 8.5,
+     "hit@5": 1,
+     "recall@5": 0.5,
+     "hit@10": 1,
+     "recall@10": 1.0,
+     "hit@20": 1,
+     "recall@20": 1.0,
+     "mrr": 0.333,
+     "top3": [
+      "DOC-V031-BCP_DR_TEST-1",
+      "ADV-CHAT-V031-PII",
+      "DOC-V031-CONTRACT-1"
+     ]
+    },
+    {
+     "id": "EVAL-040",
+     "category": "missing_conflicting_evidence",
+     "split": "test",
+     "n_gold": 2,
+     "latency_ms": 14.7,
+     "hit@5": 1,
+     "recall@5": 1.0,
+     "hit@10": 1,
+     "recall@10": 1.0,
+     "hit@20": 1,
+     "recall@20": 1.0,
+     "mrr": 1.0,
+     "top3": [
+      "DOC-V019-CAIQ-1",
+      "DOC-V019-CONTRACT-1",
+      "DOC-V019-CONTRACT-1"
+     ]
+    },
+    {
+     "id": "EVAL-041",
+     "category": "missing_conflicting_evidence",
+     "split": "test",
+     "n_gold": 2,
+     "latency_ms": 16.0,
+     "hit@5": 1,
+     "recall@5": 1.0,
+     "hit@10": 1,
+     "recall@10": 1.0,
+     "hit@20": 1,
+     "recall@20": 1.0,
+     "mrr": 1.0,
+     "top3": [
+      "DOC-V011-CAIQ-1",
+      "DOC-V011-PENTEST-1",
+      "DOC-V009-CAIQ-1"
+     ]
+    },
+    {
+     "id": "EVAL-042",
+     "category": "missing_conflicting_evidence",
+     "split": "dev",
+     "n_gold": 2,
+     "latency_ms": 7.9,
+     "hit@5": 1,
+     "recall@5": 0.5,
+     "hit@10": 1,
+     "recall@10": 0.5,
+     "hit@20": 1,
+     "recall@20": 1.0,
+     "mrr": 0.2,
+     "top3": [
+      "GUI-002-S023",
+      "GUI-002-S027",
+      "GUI-002-S025"
+     ]
+    },
+    {
+     "id": "EVAL-043",
+     "category": "missing_conflicting_evidence",
+     "split": "test",
+     "n_gold": 2,
+     "latency_ms": 16.2,
+     "hit@5": 1,
+     "recall@5": 0.5,
+     "hit@10": 1,
+     "recall@10": 1.0,
+     "hit@20": 1,
+     "recall@20": 1.0,
+     "mrr": 1.0,
+     "top3": [
+      "DOC-V024-CAIQ-1",
+      "DOC-V003-CAIQ-1",
+      "ADV-EMAIL-V003-RENEWAL"
+     ]
+    },
+    {
+     "id": "EVAL-044",
+     "category": "missing_conflicting_evidence",
+     "split": "dev",
+     "n_gold": 2,
+     "latency_ms": 15.1,
+     "hit@5": 1,
+     "recall@5": 1.0,
+     "hit@10": 1,
+     "recall@10": 1.0,
+     "hit@20": 1,
+     "recall@20": 1.0,
+     "mrr": 0.5,
+     "top3": [
+      "DOC-V018-BCP_DR_TEST-1",
+      "DOC-V018-CAIQ-1",
+      "DOC-V018-PENTEST-1"
+     ]
+    },
+    {
+     "id": "EVAL-045",
+     "category": "missing_conflicting_evidence",
+     "split": "test",
+     "n_gold": 1,
+     "latency_ms": 12.8,
+     "hit@5": 0,
+     "recall@5": 0.0,
+     "hit@10": 0,
+     "recall@10": 0.0,
+     "hit@20": 0,
+     "recall@20": 0.0,
+     "mrr": 0.026,
+     "top3": [
+      "CON-001-076-TRICITYBANKSHARESCORP",
+      "DOC-V021-ISO27001-1",
+      "CON-001-033-CardlyticsInc"
+     ]
+    },
+    {
+     "id": "EVAL-046",
+     "category": "missing_conflicting_evidence",
+     "split": "test",
+     "n_gold": 1,
+     "latency_ms": 8.2,
+     "hit@5": 1,
+     "recall@5": 1.0,
+     "hit@10": 1,
+     "recall@10": 1.0,
+     "hit@20": 1,
+     "recall@20": 1.0,
+     "mrr": 0.333,
+     "top3": [
+      "POL-007-S009",
+      "POL-007-S009",
+      "DOC-V010-CAIQ-1"
+     ]
+    },
+    {
+     "id": "EVAL-047",
+     "category": "internal_policy",
+     "split": "dev",
+     "n_gold": 1,
+     "latency_ms": 18.9,
+     "hit@5": 1,
+     "recall@5": 1.0,
+     "hit@10": 1,
+     "recall@10": 1.0,
+     "hit@20": 1,
+     "recall@20": 1.0,
+     "mrr": 1.0,
+     "top3": [
+      "POLICY-TPRM-001-v3",
+      "POLICY-TPRM-001-v2",
+      "POLICY-TPRM-001-v3"
+     ]
+    },
+    {
+     "id": "EVAL-048",
+     "category": "internal_policy",
+     "split": "dev",
+     "n_gold": 1,
+     "latency_ms": 9.9,
+     "hit@5": 1,
+     "recall@5": 1.0,
+     "hit@10": 1,
+     "recall@10": 1.0,
+     "hit@20": 1,
+     "recall@20": 1.0,
+     "mrr": 1.0,
+     "top3": [
+      "POLICY-DPS-004",
+      "DOC-V023-CONTRACT-1",
+      "DOC-V005-CONTRACT-1"
+     ]
+    },
+    {
+     "id": "EVAL-049",
+     "category": "internal_policy",
+     "split": "dev",
+     "n_gold": 1,
+     "latency_ms": 9.3,
+     "hit@5": 1,
+     "recall@5": 1.0,
+     "hit@10": 1,
+     "recall@10": 1.0,
+     "hit@20": 1,
+     "recall@20": 1.0,
+     "mrr": 1.0,
+     "top3": [
+      "POLICY-DOA-002",
+      "POLICY-TPRM-001-v2",
+      "DOC-V026-INV-Q4"
+     ]
+    },
+    {
+     "id": "EVAL-050",
+     "category": "internal_policy",
+     "split": "test",
+     "n_gold": 1,
+     "latency_ms": 8.2,
+     "hit@5": 1,
+     "recall@5": 1.0,
+     "hit@10": 1,
+     "recall@10": 1.0,
+     "hit@20": 1,
+     "recall@20": 1.0,
+     "mrr": 1.0,
+     "top3": [
+      "POLICY-CS-003",
+      "POL-002-S045",
+      "POLICY-TPRM-001-v2"
+     ]
+    },
+    {
+     "id": "EVAL-051",
+     "category": "internal_policy",
+     "split": "test",
+     "n_gold": 1,
+     "latency_ms": 10.4,
+     "hit@5": 1,
+     "recall@5": 1.0,
+     "hit@10": 1,
+     "recall@10": 1.0,
+     "hit@20": 1,
+     "recall@20": 1.0,
+     "mrr": 1.0,
+     "top3": [
+      "POLICY-TPRM-001-v3",
+      "POLICY-PRC-007",
+      "POLICY-TPRM-001-v3"
+     ]
+    },
+    {
+     "id": "EVAL-052",
+     "category": "internal_policy",
+     "split": "test",
+     "n_gold": 2,
+     "latency_ms": 8.9,
+     "hit@5": 1,
+     "recall@5": 0.5,
+     "hit@10": 1,
+     "recall@10": 0.5,
+     "hit@20": 1,
+     "recall@20": 1.0,
+     "mrr": 1.0,
+     "top3": [
+      "COI-REGISTER",
+      "DOC-V027-INCIDENTS-1",
+      "DOC-V027-PO-1"
+     ]
+    },
+    {
+     "id": "EVAL-053",
+     "category": "internal_policy",
+     "split": "test",
+     "n_gold": 1,
+     "latency_ms": 5.4,
+     "hit@5": 1,
+     "recall@5": 1.0,
+     "hit@10": 1,
+     "recall@10": 1.0,
+     "hit@20": 1,
+     "recall@20": 1.0,
+     "mrr": 1.0,
+     "top3": [
+      "POLICY-TPRM-001-v3",
+      "POL-010-S010",
+      "POL-013-S003"
+     ]
+    },
+    {
+     "id": "EVAL-054",
+     "category": "internal_policy",
+     "split": "test",
+     "n_gold": 1,
+     "latency_ms": 5.9,
+     "hit@5": 1,
+     "recall@5": 1.0,
+     "hit@10": 1,
+     "recall@10": 1.0,
+     "hit@20": 1,
+     "recall@20": 1.0,
+     "mrr": 1.0,
+     "top3": [
+      "POLICY-DEBARMENT-LIST",
+      "POL-002-S016",
+      "POL-004-S019"
+     ]
+    },
+    {
+     "id": "EVAL-055",
+     "category": "external_regulation",
+     "split": "test",
+     "n_gold": 1,
+     "latency_ms": 22.5,
+     "hit@5": 0,
+     "recall@5": 0.0,
+     "hit@10": 0,
+     "recall@10": 0.0,
+     "hit@20": 0,
+     "recall@20": 0.0,
+     "mrr": 0.045,
+     "top3": [
+      "POLICY-DPS-004",
+      "DOC-V021-DPA-1",
+      "DOC-V032-DPA-1"
+     ]
+    },
+    {
+     "id": "EVAL-056",
+     "category": "external_regulation",
+     "split": "dev",
+     "n_gold": 1,
+     "latency_ms": 13.6,
+     "hit@5": 0,
+     "recall@5": 0.0,
+     "hit@10": 0,
+     "recall@10": 0.0,
+     "hit@20": 0,
+     "recall@20": 0.0,
+     "mrr": 0.038,
+     "top3": [
+      "POLICY-DPS-004",
+      "DOC-V020-DPA-1",
+      "DOC-V023-DPA-1"
+     ]
+    },
+    {
+     "id": "EVAL-057",
+     "category": "external_regulation",
+     "split": "test",
+     "n_gold": 1,
+     "latency_ms": 16.5,
+     "hit@5": 1,
+     "recall@5": 1.0,
+     "hit@10": 1,
+     "recall@10": 1.0,
+     "hit@20": 1,
+     "recall@20": 1.0,
+     "mrr": 1.0,
+     "top3": [
+      "POL-006-S002",
+      "POL-005-S003",
+      "POL-005-S005"
+     ]
+    },
+    {
+     "id": "EVAL-058",
+     "category": "external_regulation",
+     "split": "dev",
+     "n_gold": 1,
+     "latency_ms": 9.3,
+     "hit@5": 0,
+     "recall@5": 0.0,
+     "hit@10": 0,
+     "recall@10": 0.0,
+     "hit@20": 1,
+     "recall@20": 1.0,
+     "mrr": 0.071,
+     "top3": [
+      "POL-002-S026",
+      "POL-004-S025",
+      "POL-003-S035"
+     ]
+    },
+    {
+     "id": "EVAL-059",
+     "category": "external_regulation",
+     "split": "dev",
+     "n_gold": 1,
+     "latency_ms": 7.0,
+     "hit@5": 0,
+     "recall@5": 0.0,
+     "hit@10": 0,
+     "recall@10": 0.0,
+     "hit@20": 0,
+     "recall@20": 0.0,
+     "mrr": 0.042,
+     "top3": [
+      "POL-003-S033",
+      "POL-004-S024",
+      "POL-004-S025"
+     ]
+    },
+    {
+     "id": "EVAL-060",
+     "category": "external_regulation",
+     "split": "test",
+     "n_gold": 1,
+     "latency_ms": 17.2,
+     "hit@5": 1,
+     "recall@5": 1.0,
+     "hit@10": 1,
+     "recall@10": 1.0,
+     "hit@20": 1,
+     "recall@20": 1.0,
+     "mrr": 1.0,
+     "top3": [
+      "POL-003-S027",
+      "POL-003-S027",
+      "POL-002-S020"
+     ]
+    },
+    {
+     "id": "EVAL-061",
+     "category": "external_regulation",
+     "split": "test",
+     "n_gold": 1,
+     "latency_ms": 21.8,
+     "hit@5": 1,
+     "recall@5": 1.0,
+     "hit@10": 1,
+     "recall@10": 1.0,
+     "hit@20": 1,
+     "recall@20": 1.0,
+     "mrr": 0.333,
+     "top3": [
+      "GUI-001-S001",
+      "GUI-001-S005",
+      "GUI-001-S003"
+     ]
+    },
+    {
+     "id": "EVAL-062",
+     "category": "external_regulation",
+     "split": "test",
+     "n_gold": 1,
+     "latency_ms": 23.0,
+     "hit@5": 0,
+     "recall@5": 0.0,
+     "hit@10": 1,
+     "recall@10": 1.0,
+     "hit@20": 1,
+     "recall@20": 1.0,
+     "mrr": 0.143,
+     "top3": [
+      "GUI-003-S001",
+      "GUI-003-S004",
+      "GUI-002-S035"
+     ]
+    },
+    {
+     "id": "EVAL-063",
+     "category": "adversarial",
+     "split": "test",
+     "n_gold": 2,
+     "latency_ms": 10.3,
+     "hit@5": 1,
+     "recall@5": 1.0,
+     "hit@10": 1,
+     "recall@10": 1.0,
+     "hit@20": 1,
+     "recall@20": 1.0,
+     "mrr": 1.0,
+     "top3": [
+      "DOC-V026-PERF-1",
+      "DOC-V026-INCIDENTS-1",
+      "DOC-V026-CONTRACT-1"
+     ]
+    },
+    {
+     "id": "EVAL-064",
+     "category": "adversarial",
+     "split": "test",
+     "n_gold": 2,
+     "latency_ms": 25.1,
+     "hit@5": 1,
+     "recall@5": 1.0,
+     "hit@10": 1,
+     "recall@10": 1.0,
+     "hit@20": 1,
+     "recall@20": 1.0,
+     "mrr": 1.0,
+     "top3": [
+      "ADV-WEB-V019-TRUST",
+      "DOC-V019-CAIQ-1",
+      "POL-007-S004"
+     ]
+    },
+    {
+     "id": "EVAL-065",
+     "category": "adversarial",
+     "split": "test",
+     "n_gold": 2,
+     "latency_ms": 14.9,
+     "hit@5": 1,
+     "recall@5": 1.0,
+     "hit@10": 1,
+     "recall@10": 1.0,
+     "hit@20": 1,
+     "recall@20": 1.0,
+     "mrr": 1.0,
+     "top3": [
+      "DOC-V033-CONTRACT-1",
+      "POLICY-CS-003",
+      "POL-002-S047"
+     ]
+    },
+    {
+     "id": "EVAL-066",
+     "category": "adversarial",
+     "split": "dev",
+     "n_gold": 2,
+     "latency_ms": 14.9,
+     "hit@5": 1,
+     "recall@5": 0.5,
+     "hit@10": 1,
+     "recall@10": 0.5,
+     "hit@20": 1,
+     "recall@20": 0.5,
+     "mrr": 1.0,
+     "top3": [
+      "ADV-EMAIL-V024-APPROVAL",
+      "POL-003-S030",
+      "POL-003-S030"
+     ]
+    },
+    {
+     "id": "EVAL-067",
+     "category": "adversarial",
+     "split": "dev",
+     "n_gold": 2,
+     "latency_ms": 13.6,
+     "hit@5": 1,
+     "recall@5": 1.0,
+     "hit@10": 1,
+     "recall@10": 1.0,
+     "hit@20": 1,
+     "recall@20": 1.0,
+     "mrr": 1.0,
+     "top3": [
+      "ADV-PRESS-V007-SOC2",
+      "DOC-V007-PROPOSAL-1",
+      "DOC-V007-ISO27001-1"
+     ]
+    },
+    {
+     "id": "EVAL-068",
+     "category": "adversarial",
+     "split": "test",
+     "n_gold": 2,
+     "latency_ms": 12.1,
+     "hit@5": 1,
+     "recall@5": 0.5,
+     "hit@10": 1,
+     "recall@10": 1.0,
+     "hit@20": 1,
+     "recall@20": 1.0,
+     "mrr": 1.0,
+     "top3": [
+      "ADV-EMAIL-V003-RENEWAL",
+      "POL-007-S007",
+      "POL-008-S004"
+     ]
+    },
+    {
+     "id": "EVAL-073",
+     "category": "refusal",
+     "split": "test",
+     "n_gold": 1,
+     "latency_ms": 12.5,
+     "hit@5": 1,
+     "recall@5": 1.0,
+     "hit@10": 1,
+     "recall@10": 1.0,
+     "hit@20": 1,
+     "recall@20": 1.0,
+     "mrr": 1.0,
+     "top3": [
+      "DOC-V031-PROPOSAL-1",
+      "DOC-V002-PROPOSAL-1",
+      "ADV-CHAT-V031-PII"
+     ]
+    },
+    {
+     "id": "EVAL-074",
+     "category": "refusal",
+     "split": "dev",
+     "n_gold": 1,
+     "latency_ms": 8.7,
+     "hit@5": 1,
+     "recall@5": 1.0,
+     "hit@10": 1,
+     "recall@10": 1.0,
+     "hit@20": 1,
+     "recall@20": 1.0,
+     "mrr": 1.0,
+     "top3": [
+      "ADV-NOTE-PROMPT-LEAK",
+      "CON-001-054-DIVERSINETCORP",
+      "CON-001-025-HEALTHGATEDATACORP"
+     ]
+    }
+   ],
+   "worst_queries": [
+    {
+     "id": "EVAL-045",
+     "category": "missing_conflicting_evidence",
+     "split": "test",
+     "n_gold": 1,
+     "latency_ms": 12.8,
+     "hit@5": 0,
+     "recall@5": 0.0,
+     "hit@10": 0,
+     "recall@10": 0.0,
+     "hit@20": 0,
+     "recall@20": 0.0,
+     "mrr": 0.026,
+     "top3": [
+      "CON-001-076-TRICITYBANKSHARESCORP",
+      "DOC-V021-ISO27001-1",
+      "CON-001-033-CardlyticsInc"
+     ]
+    },
+    {
+     "id": "EVAL-056",
+     "category": "external_regulation",
+     "split": "dev",
+     "n_gold": 1,
+     "latency_ms": 13.6,
+     "hit@5": 0,
+     "recall@5": 0.0,
+     "hit@10": 0,
+     "recall@10": 0.0,
+     "hit@20": 0,
+     "recall@20": 0.0,
+     "mrr": 0.038,
+     "top3": [
+      "POLICY-DPS-004",
+      "DOC-V020-DPA-1",
+      "DOC-V023-DPA-1"
+     ]
+    },
+    {
+     "id": "EVAL-059",
+     "category": "external_regulation",
+     "split": "dev",
+     "n_gold": 1,
+     "latency_ms": 7.0,
+     "hit@5": 0,
+     "recall@5": 0.0,
+     "hit@10": 0,
+     "recall@10": 0.0,
+     "hit@20": 0,
+     "recall@20": 0.0,
+     "mrr": 0.042,
+     "top3": [
+      "POL-003-S033",
+      "POL-004-S024",
+      "POL-004-S025"
+     ]
+    },
+    {
+     "id": "EVAL-055",
+     "category": "external_regulation",
+     "split": "test",
+     "n_gold": 1,
+     "latency_ms": 22.5,
+     "hit@5": 0,
+     "recall@5": 0.0,
+     "hit@10": 0,
+     "recall@10": 0.0,
+     "hit@20": 0,
+     "recall@20": 0.0,
+     "mrr": 0.045,
+     "top3": [
+      "POLICY-DPS-004",
+      "DOC-V021-DPA-1",
+      "DOC-V032-DPA-1"
+     ]
+    },
+    {
+     "id": "EVAL-058",
+     "category": "external_regulation",
+     "split": "dev",
+     "n_gold": 1,
+     "latency_ms": 9.3,
+     "hit@5": 0,
+     "recall@5": 0.0,
+     "hit@10": 0,
+     "recall@10": 0.0,
+     "hit@20": 1,
+     "recall@20": 1.0,
+     "mrr": 0.071,
+     "top3": [
+      "POL-002-S026",
+      "POL-004-S025",
+      "POL-003-S035"
+     ]
+    },
+    {
+     "id": "EVAL-062",
+     "category": "external_regulation",
+     "split": "test",
+     "n_gold": 1,
+     "latency_ms": 23.0,
+     "hit@5": 0,
+     "recall@5": 0.0,
+     "hit@10": 1,
+     "recall@10": 1.0,
+     "hit@20": 1,
+     "recall@20": 1.0,
+     "mrr": 0.143,
+     "top3": [
+      "GUI-003-S001",
+      "GUI-003-S004",
+      "GUI-002-S035"
+     ]
+    },
+    {
+     "id": "EVAL-042",
+     "category": "missing_conflicting_evidence",
+     "split": "dev",
+     "n_gold": 2,
+     "latency_ms": 7.9,
+     "hit@5": 1,
+     "recall@5": 0.5,
+     "hit@10": 1,
+     "recall@10": 0.5,
+     "hit@20": 1,
+     "recall@20": 1.0,
+     "mrr": 0.2,
+     "top3": [
+      "GUI-002-S023",
+      "GUI-002-S027",
+      "GUI-002-S025"
+     ]
+    },
+    {
+     "id": "EVAL-029",
+     "category": "lookup_vendor",
+     "split": "dev",
+     "n_gold": 1,
+     "latency_ms": 11.9,
+     "hit@5": 1,
+     "recall@5": 1.0,
+     "hit@10": 1,
+     "recall@10": 1.0,
+     "hit@20": 1,
+     "recall@20": 1.0,
+     "mrr": 0.2,
+     "top3": [
+      "DOC-V005-DPA-1",
+      "POLICY-DPS-004",
+      "DOC-V022-CONTRACT-1"
+     ]
+    },
+    {
+     "id": "EVAL-032",
+     "category": "lookup_vendor",
+     "split": "test",
+     "n_gold": 1,
+     "latency_ms": 9.3,
+     "hit@5": 1,
+     "recall@5": 1.0,
+     "hit@10": 1,
+     "recall@10": 1.0,
+     "hit@20": 1,
+     "recall@20": 1.0,
+     "mrr": 0.333,
+     "top3": [
+      "ADV-EMAIL-V003-RENEWAL",
+      "DOC-V001-ISO27001-0",
+      "DOC-V001-ISO27001-1"
+     ]
+    },
+    {
+     "id": "EVAL-039",
+     "category": "missing_conflicting_evidence",
+     "split": "dev",
+     "n_gold": 2,
+     "latency_ms": 8.5,
+     "hit@5": 1,
+     "recall@5": 0.5,
+     "hit@10": 1,
+     "recall@10": 1.0,
+     "hit@20": 1,
+     "recall@20": 1.0,
+     "mrr": 0.333,
+     "top3": [
+      "DOC-V031-BCP_DR_TEST-1",
+      "ADV-CHAT-V031-PII",
+      "DOC-V031-CONTRACT-1"
+     ]
+    }
+   ]
+  },
+  "dense": {
+   "error": "embeddings endpoint not configured: set EMBED_BASE_URL / EMBED_MODEL in .env, or run on a laptop with EMBED_BACKEND=local (downloads BAAI/bge-small-en-v1.5)"
+  }
+ },
+ "acord": {
+  "split": "test",
+  "queries": 57,
+  "ndcg@5": 0.066,
+  "ndcg@10": 0.087,
+  "recall@10(3+ stars)": 0.086
+ }
+}

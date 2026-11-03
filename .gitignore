@@ -28,3 +28,7 @@ venv/
 
 # docker volumes
 docker/volumes/
+
+# experiment outputs (raw LLM runs, mock reports)
+runs/
+reports/mock/
