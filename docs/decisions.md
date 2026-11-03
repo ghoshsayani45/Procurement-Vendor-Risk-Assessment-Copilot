@@ -13,3 +13,5 @@
 | D9 | 2026-11-03 | Synthetic documents are rendered from `vendors.json` by templates with seeded wording variants, not by an LLM | Guarantees documents never contradict the ground truth; no token quota spent; fully reproducible | Proposed |
 | D10 | 2026-11-03 | Debarment list and COI register are `internal`, not `restricted` | The copilot must read them to apply knockouts; revisit if role-based access is added | Proposed |
 | D11 | 2026-11-03 | Emails, press releases, web pages and drafts are not evidence (spec rule 9) | Enables the social-engineering and unverified-claim tests | Proposed |
+| D12 | 2026-11-03 | eval_v1 split 30 dev / 50 test, stratified by category; test is run only at the Week 3 and Week 4 gates | Stops prompt tuning from inflating reported numbers | Proposed |
+| D13 | 2026-11-03 | Mechanical grading: exact match for band, recommendation and refusal category; fact strings with alternatives for free text; finding recall ≥ 0.8 to pass a full review. LLM-as-judge only for usefulness (Week 4) | Reproducible, free, and not dependent on the same small model being graded | Proposed |

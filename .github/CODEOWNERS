@@ -1,0 +1,9 @@
+# Changes to these paths need the owner's review (enable branch protection on main)
+/data/evaluation/          @M1-github-handle
+/data/ground_truth/        @M1-github-handle
+/app/scoring/rubric.yaml   @M1-github-handle @M3-github-handle
+/docs/spec.md              @M1-github-handle
+/scripts/ingest.py         @M2-github-handle
+/data/manifests/           @M2-github-handle
+/app/db/                   @M6-github-handle
+/docker/                   @M6-github-handle

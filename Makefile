@@ -1,4 +1,4 @@
-.PHONY: setup ground-truth policies synthetic ingest corpus test schemas up down
+.PHONY: setup ground-truth policies synthetic ingest corpus eval-set grade test schemas up down
 
 setup:            ## create venv and install dependencies
 	python -m venv .venv && . .venv/bin/activate && pip install -r requirements.txt
@@ -16,6 +16,12 @@ ingest:           ## step 1.4c: extract real sources per the source register + m
 	python -m scripts.ingest
 
 corpus: ground-truth policies synthetic ingest   ## full rebuild of corpus v1
+
+eval-set:         ## step 1.5: rebuild eval_v1 (DON'T run after the freeze; create eval_v2 instead)
+	python -m scripts.build_eval_set
+
+grade:            ## grade predictions: make grade PRED=runs/dev.jsonl SPLIT=dev
+	python -m scripts.grade $(PRED) --split $(or $(SPLIT),dev)
 
 schemas:
 	python -m scripts.export_json_schemas

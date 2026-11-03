@@ -6,13 +6,13 @@ A Track B capstone (Executive PG Programme in Generative AI and Agentic AI). It 
 | Week 1 step | Status | Where |
 |---|---|---|
 | Day 0 setup | Done (endpoint values still to fill in `.env`) | `.env.example`, `app/llm_client.py`, `docker/`, `app/db/schema.sql` |
-| 1.1 Task specification | Done; decisions D1–D11 need team sign-off | `docs/spec.md`, `docs/decisions.md` |
+| 1.1 Task specification | Done; decisions D1–D13 need team sign-off | `docs/spec.md`, `docs/decisions.md` |
 | 1.2 Rubric and schemas | Done | `app/scoring/`, `app/schemas.py`, `schemas/` |
 | 1.3 Synthetic vendor set | Done (35 vendors) | `data/ground_truth/` |
 | 1.4 Corpus | Done; **corpus v1 frozen: 1,053 documents** | `data/synthetic/`, `data/manifests/`, `scripts/ingest.py` |
-| 1.5 Evaluation set (80 queries) | Next | `data/evaluation/` |
+| 1.5 Evaluation set | Done; **eval_v1 frozen: 80 queries (30 dev / 50 test)**, with grader | `data/evaluation/`, `scripts/grade.py` |
 | 1.6–1.7 Prompting baseline | Needs the course endpoint | — |
-| 1.8 Retrieval baselines | Smoke test passes (10/10); full baseline after 1.5 | `scripts/retrieval_smoke_test.py` |
+| 1.8 Retrieval baselines | Next: recall@k on eval_v1 gold docs (smoke test passes 10/10) | `scripts/retrieval_smoke_test.py` |
 
 ## Quick start
 ```bash
@@ -21,7 +21,7 @@ make setup && source .venv/bin/activate          # or: pip install -r requiremen
 cp .env.example .env                              # fill in endpoint + keys
 # put the raw dataset at data/raw/procurement_dataset/  (shared via Drive; not in Git)
 make corpus                                       # rebuild ground truth, policies, synthetic docs, corpus v1
-make test                                         # 84 tests
+make test                                         # 91 tests
 make up                                           # Postgres+pgvector and Langfuse (Docker)
 ```
 Requires Python 3.11+, `pdftotext` (poppler-utils) and Docker.
@@ -42,10 +42,11 @@ data/
   seed/           rows for the vendors and financial_metrics tables
   synthetic/      444 generated docs: policy/ contracts/ compliance_evidence/ performance_purchase_records/ adversarial/
   processed/      NOT IN GIT: corpus_v1.jsonl (make ingest)
-  evaluation/     eval_v1 (step 1.5)
+  evaluation/     eval_v1.jsonl (80 queries, frozen), sha256, README, CHANGELOG
 docs/             spec, decision log
-scripts/          build_vendors, generate_policies, generate_synthetic_docs, ingest, retrieval_smoke_test, export_json_schemas
-tests/            ground truth, corpus and schema guards
+scripts/          build_vendors, generate_policies, generate_synthetic_docs, ingest, retrieval_smoke_test,
+                  build_eval_set, grade, export_json_schemas
+tests/            ground truth, corpus, eval-set and grader guards (91 tests)
 docker/           docker-compose (db, langfuse; api/ui stubs)
 observability/    token ledger, traces (Week 2+)
 ```
