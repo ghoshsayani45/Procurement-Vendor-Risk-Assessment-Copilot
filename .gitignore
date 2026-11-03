@@ -1,0 +1,30 @@
+# secrets
+.env
+*.key
+
+# raw source documents (~260 MB, third-party licences) - share via Drive/DVC, never commit
+data/raw/*
+!data/raw/README.md
+
+# regenerable outputs (make ingest)
+data/processed/*
+!data/processed/README.md
+
+# python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+
+# notebooks / editors / OS
+.ipynb_checkpoints/
+.vscode/
+.idea/
+.DS_Store
+
+# docker volumes
+docker/volumes/

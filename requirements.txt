@@ -1,0 +1,27 @@
+# Week 1 (data, ground truth, ingestion)
+pydantic>=2.7,<3
+pyyaml>=6.0
+pandas>=2.2
+openpyxl>=3.1
+xlrd>=2.0
+beautifulsoup4>=4.12
+pytest>=8.0
+python-dotenv>=1.0
+
+# LLM / retrieval (Week 1 baselines onwards)
+openai>=1.40
+rank-bm25>=0.2.2
+numpy>=1.26
+sentence-transformers>=3.0   # CPU cross-encoder reranker (Week 2)
+
+# Platform (Week 2 onwards)
+fastapi>=0.111
+uvicorn>=0.30
+sqlalchemy>=2.0
+psycopg[binary]>=3.1
+pgvector>=0.3
+alembic>=1.13
+langgraph>=0.2
+langfuse>=2.0
+streamlit>=1.36
+slowapi>=0.1.9
