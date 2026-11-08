@@ -12,12 +12,12 @@ from scripts.grade import grade, load_eval
 ROOT = Path(__file__).resolve().parents[1]
 EV = ROOT / "data/evaluation"
 Q = load_eval()
-EXP = {o["vendor_id"]: o for o in json.loads((ROOT / "data/ground_truth/expected_outcomes.json").read_text())}
+EXP = {o["vendor_id"]: o for o in json.loads((ROOT / "data/ground_truth/expected_outcomes.json").read_text(encoding="utf-8"))}
 
 
 def test_eval_v1_is_frozen():
     """Fails if eval_v1.jsonl is edited after the Week 1 gate. Fixes go into eval_v2 (see CHANGELOG.md)."""
-    expected = (EV / "eval_v1.sha256").read_text().split()[0]
+    expected = (EV / "eval_v1.sha256").read_text(encoding="utf-8").split()[0]
     assert hashlib.sha256((EV / "eval_v1.jsonl").read_bytes()).hexdigest() == expected
 
 
@@ -32,7 +32,7 @@ def test_shape_and_mix():
 
 
 def test_gold_docs_exist_in_frozen_corpus():
-    ids = {r["doc_id"] for r in csv.DictReader(open(ROOT / "data/manifests/corpus_v1_manifest.csv"))}
+    ids = {r["doc_id"] for r in csv.DictReader(open(ROOT / "data/manifests/corpus_v1_manifest.csv", encoding="utf-8"))}
     for q in Q:
         assert set(q["gold_doc_ids"]) <= ids, q["id"]
 
@@ -41,7 +41,7 @@ def test_gold_docs_exist_in_frozen_corpus():
 def test_gold_quotes_appear_verbatim():
     import re
     norm = lambda s: re.sub(r"\s+", " ", s).strip()
-    corpus = {json.loads(l)["doc_id"]: norm(json.loads(l)["text"]) for l in open(ROOT / "data/processed/corpus_v1.jsonl")}
+    corpus = {json.loads(l)["doc_id"]: norm(json.loads(l)["text"]) for l in open(ROOT / "data/processed/corpus_v1.jsonl", encoding="utf-8")}
     for q in Q:
         for g in q["gold_quotes"]:
             assert norm(g["quote"]) in corpus[g["doc_id"]], (q["id"], g["doc_id"])

@@ -28,6 +28,17 @@ REPORTS = ROOT / "reports"
 KS = (5, 10, 20)
 
 
+
+def read_doc(path):
+    """Read a docs/*.md file as UTF-8; repair files an older version wrote in the Windows default encoding (cp1252)."""
+    if not path.exists():
+        return "# Week 1 baselines\n\n"
+    raw = path.read_bytes()
+    try:
+        return raw.decode("utf-8")
+    except UnicodeDecodeError:
+        return raw.decode("cp1252", errors="replace")
+
 def evaluate(retriever, queries, k_max=50):
     per_q = []
     for q in queries:
@@ -67,10 +78,10 @@ def acord_bm25(split="test"):
     base = ROOT / "data/raw/procurement_dataset/Contract Analysis Datasets/ACORD/ACORD Dataset & ReadMe/ACORD Dataset & ReadMe (external)"
     if not base.exists():
         return None
-    corpus = [json.loads(l) for l in open(base / "corpus.jsonl")]
-    queries = {json.loads(l)["_id"]: json.loads(l)["text"] for l in open(base / "queries.jsonl")}
+    corpus = [json.loads(l) for l in open(base / "corpus.jsonl", encoding="utf-8")]
+    queries = {json.loads(l)["_id"]: json.loads(l)["text"] for l in open(base / "queries.jsonl", encoding="utf-8")}
     qrels = defaultdict(dict)
-    for r in csv.DictReader(open(base / f"qrels/{split}.tsv"), delimiter="\t"):
+    for r in csv.DictReader(open(base / f"qrels/{split}.tsv", encoding="utf-8"), delimiter="\t"):
         qrels[r["query-id"]][r["corpus-id"]] = int(r["score"])
     ids = [c["_id"] for c in corpus]
     bm = BM25Okapi([tokenize(c["text"]) for c in corpus])
@@ -121,12 +132,12 @@ def write_markdown(report):
               "- Low recall on vendor questions usually means the right vendor's documents are outranked by look-alike documents from other vendors (all synthetic vendors share templates). Metadata filtering by `vendor_id` (Week 2) is the expected fix.",
               "- The worst queries for each retriever are listed under `worst_queries` in `reports/retrieval_baseline_v1.json`.", ""]
     path = ROOT / "docs" / "baselines.md"
-    existing = path.read_text() if path.exists() else "# Week 1 baselines\n\n"
+    existing = read_doc(path)
     start = existing.find("## Step 1.8")
     if start >= 0:
         end = existing.find("\n## ", start + 5)
         existing = existing[:start] + existing[end + 1:] if end >= 0 else existing[:start]
-    path.write_text(existing.rstrip() + "\n\n" + "\n".join(lines))
+    path.write_text(existing.rstrip() + "\n\n" + "\n".join(lines), encoding="utf-8", newline="\n")
 
 
 def main():
@@ -167,7 +178,7 @@ def main():
     if report["acord"]:
         print("ACORD BM25:", report["acord"])
     REPORTS.mkdir(exist_ok=True)
-    (REPORTS / "retrieval_baseline_v1.json").write_text(json.dumps(report, indent=1))
+    (REPORTS / "retrieval_baseline_v1.json").write_text(json.dumps(report, indent=1), encoding="utf-8", newline="\n")
     write_markdown(report)
 
 

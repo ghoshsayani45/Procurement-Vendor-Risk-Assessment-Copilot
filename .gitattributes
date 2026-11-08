@@ -1,0 +1,7 @@
+# Keep LF line endings on every OS: the eval freeze (SHA-256) and corpus manifest must not change on Windows checkouts
+* text=auto eol=lf
+*.pdf binary
+*.xlsx binary
+*.xls binary
+*.zip binary
+*.npy binary

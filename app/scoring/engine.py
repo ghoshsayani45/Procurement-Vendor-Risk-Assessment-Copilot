@@ -26,7 +26,7 @@ VALID = {CS.VERIFIED, CS.EXPIRING_SOON}
 
 
 def load_rubric(path: Path = RUBRIC_PATH) -> dict:
-    return yaml.safe_load(path.read_text())
+    return yaml.safe_load(path.read_text(encoding="utf-8"))
 
 
 def _severity(points: int) -> str:

@@ -23,7 +23,7 @@ class Chunk:
 
 
 def load_corpus(path: Path = CORPUS) -> list[dict]:
-    return [json.loads(l) for l in open(path)]
+    return [json.loads(l) for l in open(path, encoding="utf-8")]
 
 
 def fixed_chunks(doc: dict, size_tokens: int = 512, overlap_tokens: int = 64) -> list[Chunk]:
@@ -52,7 +52,7 @@ def chunk_corpus(docs: list[dict], strategy: str = "fixed512") -> list[Chunk]:
 
 def save_chunks(chunks: list[Chunk], path: Path):
     path.parent.mkdir(parents=True, exist_ok=True)
-    with open(path, "w") as fh:
+    with open(path, "w", encoding="utf-8") as fh:
         for c in chunks:
             fh.write(json.dumps(asdict(c), ensure_ascii=False) + "\n")
 

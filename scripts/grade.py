@@ -23,7 +23,7 @@ BAND_ORDER = ["LOW", "MEDIUM", "HIGH", "CRITICAL"]
 
 
 def load_eval():
-    return [json.loads(l) for l in open(EVAL)]
+    return [json.loads(l) for l in open(EVAL, encoding="utf-8")]
 
 
 def _date_alts(s):
@@ -155,11 +155,11 @@ def main():
     ap.add_argument("--split", default="all", choices=["dev", "test", "all"])
     ap.add_argument("--out")
     a = ap.parse_args()
-    preds = {json.loads(l)["id"]: json.loads(l)["response"] for l in open(a.predictions) if l.strip()}
+    preds = {json.loads(l)["id"]: json.loads(l)["response"] for l in open(a.predictions, encoding="utf-8") if l.strip()}
     summary, results = grade(preds, a.split)
     print(json.dumps(summary, indent=2))
     if a.out:
-        Path(a.out).write_text(json.dumps(dict(summary=summary, results=results), indent=2))
+        Path(a.out).write_text(json.dumps(dict(summary=summary, results=results), indent=2), encoding="utf-8", newline="\n")
 
 
 if __name__ == "__main__":

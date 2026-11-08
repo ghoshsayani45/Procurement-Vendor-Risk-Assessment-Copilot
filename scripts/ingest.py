@@ -41,7 +41,7 @@ NOISE = re.compile(r"^(public disclosure authorized|page \d+( of \d+)?|\d{1,4}|[
 def pdf_text(path: Path, ranges=None) -> str:
     def run(a=None, b=None):
         cmd = ["pdftotext", "-enc", "UTF-8"] + (["-f", str(a), "-l", str(b)] if a else []) + [str(path), "-"]
-        return subprocess.run(cmd, capture_output=True, text=True).stdout
+        return subprocess.run(cmd, capture_output=True, text=True, encoding="utf-8", errors="replace").stdout
     return "\n".join(run(a, b) for a, b in ranges) if ranges else run()
 
 
@@ -60,7 +60,7 @@ def clean(text: str) -> str:
 
 def html_text(path: Path) -> str:
     from bs4 import BeautifulSoup
-    return BeautifulSoup(path.read_text(errors="ignore"), "html.parser").get_text("\n")
+    return BeautifulSoup(path.read_text(errors="ignore", encoding="utf-8"), "html.parser").get_text("\n")
 
 
 def any_text(path: Path) -> str:
@@ -69,7 +69,7 @@ def any_text(path: Path) -> str:
         return pdf_text(path)
     if s in (".htm", ".html"):
         return html_text(path)
-    return path.read_text(errors="ignore")
+    return path.read_text(errors="ignore", encoding="utf-8")
 
 
 def parse_ranges(scope: str):
@@ -135,8 +135,8 @@ def ingest_split_pdf(row):
 
 
 def ingest_cuad(row):
-    data = json.loads((RAW / "Contract Analysis Datasets/CUAD/data/CUADv1.json").read_text())["data"]
-    keep = {r["cuad_title"] for r in csv.DictReader(open(MAN / "cuad_selection.csv")) if r["include"] == "yes"}
+    data = json.loads((RAW / "Contract Analysis Datasets/CUAD/data/CUADv1.json").read_text(encoding="utf-8"))["data"]
+    keep = {r["cuad_title"] for r in csv.DictReader(open(MAN / "cuad_selection.csv", encoding="utf-8")) if r["include"] == "yes"}
     n = 0
     for d in data:
         if d["title"] in keep:
@@ -149,7 +149,7 @@ def ingest_cuad(row):
 def ingest_nda(row):
     raw = RAW / "Contract Analysis Datasets/Contract NLI/contract-nli/raw"
     n = 0
-    for r in csv.DictReader(open(MAN / "nda_selection.csv")):
+    for r in csv.DictReader(open(MAN / "nda_selection.csv", encoding="utf-8")):
         if r["include"] != "yes":
             continue
         n += 1
@@ -167,7 +167,7 @@ def ingest_common_paper(row):
 
 def ingest_synthetic():
     for p in sorted(SYN.rglob("*.md")):
-        raw = p.read_text()
+        raw = p.read_text(encoding="utf-8")
         _, fm, body = raw.split("---\n", 2)
         meta = {k: json.loads(v) for k, v in (l.split(": ", 1) for l in fm.strip().splitlines())}
         did = meta.pop("doc_id")
@@ -178,7 +178,7 @@ def ingest_synthetic():
 
 def main():
     PROC.mkdir(parents=True, exist_ok=True)
-    reg = list(csv.DictReader(open(MAN / "source_register.csv")))
+    reg = list(csv.DictReader(open(MAN / "source_register.csv", encoding="utf-8")))
     for row in reg:
         if row["role"] not in ("corpus", "corpus + generation_template") or row["include"] not in ("yes", "partial"):
             continue
@@ -204,12 +204,12 @@ def main():
         if sha[d["sha1"]] > 1:
             WARN.append(f"identical text: {d['doc_id']}")
 
-    with open(PROC / "corpus_v1.jsonl", "w") as fh:
+    with open(PROC / "corpus_v1.jsonl", "w", encoding="utf-8") as fh:
         for d in DOCS:
             fh.write(json.dumps(d, ensure_ascii=False, default=str) + "\n")
     cols = ["doc_id", "source_id", "source", "slice", "doc_type", "vendor_id", "title", "document_date", "status", "access_class",
             "licence", "words", "sha1", "raw_path"]
-    with open(MAN / "corpus_v1_manifest.csv", "w", newline="") as fh:
+    with open(MAN / "corpus_v1_manifest.csv", "w", newline="", encoding="utf-8") as fh:
         w = csv.DictWriter(fh, fieldnames=cols, extrasaction="ignore"); w.writeheader(); w.writerows(DOCS)
 
     by_slice = defaultdict(lambda: Counter())
@@ -218,7 +218,7 @@ def main():
     report = dict(corpus_version="v1", documents=len(DOCS), words=sum(d["words"] for d in DOCS),
                   by_slice={k: dict(v) for k, v in sorted(by_slice.items())},
                   by_source_id=dict(Counter(d["source_id"] for d in DOCS)), warnings=WARN)
-    (PROC / "ingest_report.json").write_text(json.dumps(report, indent=2))
+    (PROC / "ingest_report.json").write_text(json.dumps(report, indent=2), encoding="utf-8", newline="\n")
     print(json.dumps({k: v for k, v in report.items() if k not in ("by_source_id", "warnings")}, indent=1))
     print("warnings:", len(WARN), WARN[:8])
 

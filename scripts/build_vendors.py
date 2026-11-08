@@ -427,9 +427,9 @@ def main():
         raise SystemExit("Ground truth inconsistent:\n  " + "\n  ".join(problems))
     OUT.mkdir(parents=True, exist_ok=True)
     SEED_OUT.mkdir(parents=True, exist_ok=True)
-    (OUT / "vendors.json").write_text(json.dumps([v.model_dump(mode="json") for v in vendors], indent=2))
-    (OUT / "expected_outcomes.json").write_text(json.dumps(outcomes, indent=2))
-    with open(OUT / "vendor_summary.csv", "w", newline="") as fh:
+    (OUT / "vendors.json").write_text(json.dumps([v.model_dump(mode="json") for v in vendors], indent=2), encoding="utf-8", newline="\n")
+    (OUT / "expected_outcomes.json").write_text(json.dumps(outcomes, indent=2), encoding="utf-8", newline="\n")
+    with open(OUT / "vendor_summary.csv", "w", newline="", encoding="utf-8") as fh:
         w = csv.writer(fh)
         w.writerow(["vendor_id", "legal_name", "category", "comparison_group", "hq_country", "review_type", "data_access", "business_critical",
                     "annual_value_inr", "tier", "overall_score", "raw_band", "band", "knockouts", "recommendation", "required_approvers",
@@ -441,14 +441,14 @@ def main():
                         o["recommendation"], ";".join(o["required_approvers"]), ";".join(nv), ";".join(v.planted_issues),
                         ";".join(v.traps), ";".join(v.adversarial)])
     plan = document_plan(vendors)
-    with open(OUT / "document_plan.csv", "w", newline="") as fh:
+    with open(OUT / "document_plan.csv", "w", newline="", encoding="utf-8") as fh:
         w = csv.DictWriter(fh, fieldnames=plan[0].keys()); w.writeheader(); w.writerows(plan)
     # database seeds (tables from the solution document)
-    with open(SEED_OUT / "vendors.csv", "w", newline="") as fh:
+    with open(SEED_OUT / "vendors.csv", "w", newline="", encoding="utf-8") as fh:
         w = csv.writer(fh); w.writerow(["id", "name", "category", "status", "owner"])
         for v in vendors:
             w.writerow([v.vendor_id, v.legal_name, v.category, "ACTIVE" if v.review_type.value == "RENEWAL" else "PROSPECT", v.business_owner])
-    with open(SEED_OUT / "financial_metrics.csv", "w", newline="") as fh:
+    with open(SEED_OUT / "financial_metrics.csv", "w", newline="", encoding="utf-8") as fh:
         w = csv.writer(fh); w.writerow(["vendor_id", "period", "metric", "value", "source"])
         for v in vendors:
             for fy in v.financials:

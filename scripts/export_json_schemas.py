@@ -7,5 +7,5 @@ from app.schemas import Answer, Clarification, ComparisonResult, Plan, Refusal, 
 OUT = Path(__file__).resolve().parents[1] / "schemas"
 OUT.mkdir(exist_ok=True)
 for m in (ReviewRequest, Plan, Report, ComparisonResult, Answer, Clarification, Refusal, VendorFacts):
-    (OUT / f"{m.__name__}.schema.json").write_text(json.dumps(m.model_json_schema(), indent=2))
+    (OUT / f"{m.__name__}.schema.json").write_text(json.dumps(m.model_json_schema(), indent=2), encoding="utf-8", newline="\n")
     print("wrote", m.__name__)

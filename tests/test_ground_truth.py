@@ -17,8 +17,8 @@ from app.scoring.engine import assess, effective_contract, load_rubric
 ROOT = Path(__file__).resolve().parents[1]
 GT = ROOT / "data" / "ground_truth"
 R = load_rubric()
-VENDORS = [VendorFacts.model_validate(v) for v in json.loads((GT / "vendors.json").read_text())]
-EXPECTED = {o["vendor_id"]: o for o in json.loads((GT / "expected_outcomes.json").read_text())}
+VENDORS = [VendorFacts.model_validate(v) for v in json.loads((GT / "vendors.json").read_text(encoding="utf-8"))]
+EXPECTED = {o["vendor_id"]: o for o in json.loads((GT / "expected_outcomes.json").read_text(encoding="utf-8"))}
 
 
 def test_35_vendors_with_unique_ids():

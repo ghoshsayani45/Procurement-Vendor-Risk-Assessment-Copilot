@@ -14,16 +14,16 @@ MANIFEST = ROOT / "data/manifests/corpus_v1_manifest.csv"
 
 
 def test_policies_quote_rubric_numbers():
-    tprm = (POL / "POLICY-TPRM-001-v3.md").read_text()
+    tprm = (POL / "POLICY-TPRM-001-v3.md").read_text(encoding="utf-8")
     for b in R["bands"]:
         assert f"{b['band']} from {b['min']}" in tprm
-    assert f"within **{R['limits']['breach_notice_max_hours']} hours**" in (POL / "POLICY-DPS-004.md").read_text()
-    doa = (POL / "POLICY-DOA-002.md").read_text()
+    assert f"within **{R['limits']['breach_notice_max_hours']} hours**" in (POL / "POLICY-DPS-004.md").read_text(encoding="utf-8")
+    doa = (POL / "POLICY-DOA-002.md").read_text(encoding="utf-8")
     assert "INR 25 lakh" in doa and "INR 5 crore" in doa
 
 
 def test_superseded_policy_is_marked():
-    assert 'status: "SUPERSEDED"' in (POL / "POLICY-TPRM-001-v2.md").read_text()
+    assert 'status: "SUPERSEDED"' in (POL / "POLICY-TPRM-001-v2.md").read_text(encoding="utf-8")
 
 
 def test_synthetic_documents_validate():
@@ -33,7 +33,7 @@ def test_synthetic_documents_validate():
 
 
 def test_corpus_manifest_in_range():
-    rows = list(csv.DictReader(open(MANIFEST)))
+    rows = list(csv.DictReader(open(MANIFEST, encoding="utf-8")))
     assert 800 <= len(rows) <= 2000
     assert len({r["doc_id"] for r in rows}) == len(rows)
     slices = {r["slice"] for r in rows}
@@ -41,13 +41,13 @@ def test_corpus_manifest_in_range():
 
 
 def test_every_ground_truth_evidence_doc_is_in_corpus():
-    ids = {r["doc_id"] for r in csv.DictReader(open(MANIFEST))}
-    plan = {r["doc_id"] for r in csv.DictReader(open(ROOT / "data/ground_truth/document_plan.csv"))}
+    ids = {r["doc_id"] for r in csv.DictReader(open(MANIFEST, encoding="utf-8"))}
+    plan = {r["doc_id"] for r in csv.DictReader(open(ROOT / "data/ground_truth/document_plan.csv", encoding="utf-8"))}
     assert plan <= ids
 
 
 @pytest.mark.skipif(not (ROOT / "data/processed/corpus_v1.jsonl").exists(), reason="run `make ingest` first")
 def test_processed_corpus_matches_manifest():
-    man = {r["doc_id"]: r["sha1"] for r in csv.DictReader(open(MANIFEST))}
-    got = {json.loads(l)["doc_id"]: json.loads(l)["sha1"] for l in open(ROOT / "data/processed/corpus_v1.jsonl")}
+    man = {r["doc_id"]: r["sha1"] for r in csv.DictReader(open(MANIFEST, encoding="utf-8"))}
+    got = {json.loads(l)["doc_id"]: json.loads(l)["sha1"] for l in open(ROOT / "data/processed/corpus_v1.jsonl", encoding="utf-8")}
     assert got == man

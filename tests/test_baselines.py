@@ -19,7 +19,7 @@ def test_prompt_harness_end_to_end_with_mock(tmp_path, monkeypatch):
     for s in ("structured_fewshot", "decomposition"):
         r = results[s]
         assert r["queries"] == 8 and 0 <= r["accuracy"] <= 1 and r["calls_per_query"] >= 1
-        lines = (tmp_path / f"{s}.jsonl").read_text().splitlines()
+        lines = (tmp_path / f"{s}.jsonl").read_text(encoding="utf-8").splitlines()
         assert len(lines) == 8 and all("labels" in json.loads(l) for l in lines)
 
 
@@ -69,6 +69,6 @@ def test_bm25_baseline_reproducible():
     chunks = chunk_corpus(load_corpus())
     qs = [q for q in load_eval() if q["gold_doc_ids"] and q["split"] == "dev"]
     s1 = summarise(evaluate(BM25Retriever(chunks), qs))["ALL"]
-    rep = json.loads((ROOT / "reports/retrieval_baseline_v1.json").read_text())
+    rep = json.loads((ROOT / "reports/retrieval_baseline_v1.json").read_text(encoding="utf-8"))
     s0 = rep["retrievers"]["bm25"]["summary"]["dev"]["ALL"]
     assert {k: s1[k] for k in ("hit@10", "recall@10", "mrr")} == {k: s0[k] for k in ("hit@10", "recall@10", "mrr")}

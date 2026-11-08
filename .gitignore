@@ -2,6 +2,9 @@
 .env
 *.key
 
+# Certificates
+certs/
+
 # raw source documents (~260 MB, third-party licences) - share via Drive/DVC, never commit
 data/raw/*
 !data/raw/README.md

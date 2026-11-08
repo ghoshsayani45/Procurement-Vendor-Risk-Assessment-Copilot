@@ -36,7 +36,7 @@ def toks(t):
 
 
 def main(k=5):
-    docs = [json.loads(l) for l in open(ROOT / "data/processed/corpus_v1.jsonl")]
+    docs = [json.loads(l) for l in open(ROOT / "data/processed/corpus_v1.jsonl", encoding="utf-8")]
     tf = [Counter(toks(d["title"] + " " + d["text"])) for d in docs]
     lens = [sum(c.values()) for c in tf]
     avg = sum(lens) / len(lens)

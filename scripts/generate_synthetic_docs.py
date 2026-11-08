@@ -26,7 +26,7 @@ R = load_rubric()
 AS_OF = date.fromisoformat(R["review_as_of"])
 CO = "Indrapath Technologies Ltd"
 CO_ADDR = "Tower B, Sector 62, Noida, Uttar Pradesh 201309, India"
-VENDORS = [VendorFacts.model_validate(v) for v in json.loads((ROOT / "data/ground_truth/vendors.json").read_text())]
+VENDORS = [VendorFacts.model_validate(v) for v in json.loads((ROOT / "data/ground_truth/vendors.json").read_text(encoding="utf-8"))]
 MANIFEST: list[dict] = []
 MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
@@ -71,7 +71,7 @@ def save(doc_id, vendor, slice_, doc_type, title, ddate, body, *, evidence_id=No
     path = SYN / slice_ / f"{doc_id}.md"
     path.parent.mkdir(parents=True, exist_ok=True)
     text = "---\n" + "\n".join(f"{k}: {json.dumps(v)}" for k, v in fm.items()) + "\n---\n" + body.strip() + "\n"
-    path.write_text(text)
+    path.write_text(text, encoding="utf-8", newline="\n")
     MANIFEST.append(dict(doc_id=doc_id, vendor_id=fm["vendor_id"] or "", slice=slice_, doc_type=doc_type, title=title,
                          document_date=fm["document_date"] or "", words=len(body.split()),
                          planted_issues=";".join(issues), adversarial=";".join(adversarial), path=str(path.relative_to(ROOT))))
@@ -609,8 +609,8 @@ def date_variants(d: date):
 
 def validate():
     errors = []
-    plan = list(csv.DictReader(open(ROOT / "data/ground_truth/document_plan.csv")))
-    files = {p.stem: p.read_text() for p in SYN.rglob("*.md")}
+    plan = list(csv.DictReader(open(ROOT / "data/ground_truth/document_plan.csv", encoding="utf-8")))
+    files = {p.stem: p.read_text(encoding="utf-8") for p in SYN.rglob("*.md")}
     for row in plan:
         txt = files.get(row["doc_id"])
         if txt is None:
@@ -676,7 +676,7 @@ def main():
             r_proposal(v)
     r_adversarial()
     errors, nplan = validate()
-    with open(ROOT / "data/manifests/synthetic_docs.csv", "w", newline="") as fh:
+    with open(ROOT / "data/manifests/synthetic_docs.csv", "w", newline="", encoding="utf-8") as fh:
         w = csv.DictWriter(fh, fieldnames=MANIFEST[0].keys()); w.writeheader(); w.writerows(MANIFEST)
     from collections import Counter
     print("synthetic vendor/adversarial docs:", len(MANIFEST), dict(Counter(m["slice"] for m in MANIFEST)))

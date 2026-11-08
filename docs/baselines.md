@@ -11,21 +11,100 @@ Recorded before any agent code, as the Week 1 gate requires. Re-run any section 
 
 Before the real run, check the pipeline offline with `make prompt-baseline-mock`. It uses a deliberately weak stand-in model; its numbers mean nothing and go to `reports/mock/` only.
 
-## Step 1.6: Prompting baseline
+## Step 1.6: Prompting baseline (single agent, single prompt, gold passages pasted in)
 
-Not run yet: needs `LLM_BASE_URL`, `LLM_API_KEY` and `LLM_MODEL` in `.env`. The run replaces this section with a comparison table.
+Model `Qwen/Qwen3-8B` · eval_v1 **dev** split · context = gold documents (retrieval not tested here).
+Runs: `structured_fewshot` 2026-11-08 00:30 (30 queries); `cot_sc` 2026-11-08 00:39 (30 queries); `decomposition` 2026-11-08 13:05 (30 queries).
 
-**Set-up (fixed before the run, so the comparison is fair):**
-- **Input:** eval_v1 dev split (30 queries).
-- **Context:** the gold documents pasted in (≤ 4,500 words; the scoring policy and approval matrix always included for reviews), so retrieval isn't tested here. The vendor register is also included, so the model can resolve names.
-- **Same system prompt** (10 rules + output shapes) for all strategies; few-shot examples use a fictional vendor V900 that isn't in eval_v1.
-- **Strategies** (in `app/prompting.py`):
-    - `structured_fewshot`: JSON mode, temperature 0, one call.
-    - `cot_sc`: a reasoning field, 3 samples at temperature 0.7, majority vote on behaviour, band and recommendation.
-    - `decomposition`: sub-questions first, then the final JSON.
-- **Every output** is validated against `app/schemas.py`, with one repair retry. JSON validity is reported before and after the retry.
-- **Cost per strategy:** calls, tokens and latency per query, logged through `app/llm_client.py`.
-- **Expected budget:** about 30 × (1.5 + 4.5 + 2.4) calls, roughly 0.6M tokens at a ~6k-token context. Check it against the team quota first, or start with `--limit 5`.
+| Metric | structured_fewshot | cot_sc | decomposition |
+|---|---|---|---|
+| accuracy | 0.5 | 0.533 | 0.5 |
+| json_valid_first_try | 0.967 | 0.9 | 0.967 |
+| json_valid_final | 1.0 | 1.0 | 1.0 |
+| band_accuracy | 0.429 | 0.429 | 0.429 |
+| recommendation_accuracy | 0.286 | 0.286 | 0.571 |
+| checklist_accuracy | 0.794 | 0.851 | 0.595 |
+| finding_recall | 0.136 | 0.136 | 0.119 |
+| fact_recall | 0.662 | 0.725 | 0.775 |
+| citation_hit_rate | 1.0 | 1.0 | 1.0 |
+| refusal_accuracy | 1.0 | 1.0 | 1.0 |
+| injection_resistance | 0.0 | 0.0 | 0.0 |
+| pii_leak_free | 1.0 | 1.0 | 1.0 |
+| calls_per_query | 1.03 | 3.2 | 2.03 |
+| tokens_per_query | 4675 | 14909 | 8403 |
+| median_latency_ms | 1856 | 6039 | 12164 |
+
+| Category | structured_fewshot | cot_sc | decomposition |
+|---|---|---|---|
+| adversarial | 0/2 | 0/2 | 1/2 |
+| clarify | 2/2 | 2/2 | 0/2 |
+| comparison | 0/2 | 0/2 | 0/2 |
+| external_regulation | 2/3 | 2/3 | 3/3 |
+| full_review | 0/7 | 0/7 | 0/7 |
+| internal_policy | 3/3 | 3/3 | 3/3 |
+| lookup_vendor | 4/5 | 5/5 | 5/5 |
+| missing_conflicting_evidence | 1/3 | 1/3 | 0/3 |
+| refusal | 3/3 | 3/3 | 3/3 |
+
+Strategy definitions are in `app/prompting.py`; raw outputs in `runs/prompt_baseline/`. Failure analysis: `docs/failure_log.md` (generated) and `docs/failure_notes.md` (team notes).
+
+**Headline.** With the right documents pasted into the prompt, Qwen3-8B answers about **half** of the dev queries correctly under every strategy (50.0%, 53.3%, 50.0%). It fails **every full review (0/7)** and **every comparison (0/2)**, and **never detects** a prompt injection (0%); it follows the injected instruction under two of the three strategies. Prompting strategy changes the cost far more than the quality.
+
+### What a single prompt can and cannot do
+
+| Works (single-fact reading) | Fails (multi-rule synthesis) |
+|---|---|
+| Vendor fact lookups: 4/5 to 5/5 | Full reviews: 0/7 for all strategies |
+| Internal policy questions: 3/3 | Risk band correct: 43% for all strategies |
+| External regulation: 2/3 to 3/3 | Planted findings recalled: 12–14% (≈ 6 in 7 issues missed) |
+| Refusals: 3/3, correct category every time | Comparisons: 0/2 (inherits the band errors) |
+| Citations to a real gold document: 100% | Missing/conflicting evidence: 0/3 to 1/3 |
+| No personal data leaked: 100% | Prompt injection detected: 0% (followed in 2 of 3 strategies) |
+
+The model reads individual facts well. It breaks down when it has to apply many policy rules at once: tier, required evidence, validity dates, points, weights, bands, knockouts and approvers. The failure log makes this concrete: SCORE_ARITHMETIC and MISSED_FINDINGS hit **7 of 7** full reviews, WRONG_APPROVERS 6–7 of 7 and WRONG_BAND 6 of 7, **identically for all three strategies**.
+
+### Strategy comparison
+
+| | Structured few-shot | CoT + self-consistency (3 samples) | Decomposition |
+|---|---|---|---|
+| Accuracy | 50.0% | **53.3%** | 50.0% |
+| Checklist accuracy | 79% | **85%** | 60% |
+| Recommendation correct | 29% | 29% | **57%** |
+| Fact recall (questions) | 66% | 73% | **78%** |
+| Clarify when ambiguous | 2/2 | 2/2 | **0/2** |
+| Followed the injection (EVAL-007) | yes | yes | no (but not flagged) |
+| Tokens per query | **4.7k** | 14.9k (3.2×) | 8.4k (1.8×) |
+| Median latency | **1.9 s** | 6.0 s | 12.2 s |
+
+- **Structured few-shot is the best value:** within one query of the best accuracy, at the lowest cost and latency.
+- **Self-consistency** buys a better checklist (+6 points) for 3.2× the tokens, but no gain on band, findings or injections.
+- **Decomposition** helps where reasoning is sequential (recommendation, multi-part facts) and was the only strategy not to follow the injection, but it hurts the checklist. It also stops asking clarifying questions: splitting the task into sub-questions pushes the model to answer.
+
+### Format lessons (what it took to get 97–100% valid JSON)
+
+1. **One answer shape per call, stated last.** The model picks its shape from the question's topic, not from `REQUEST_KIND`, unless the shape is the final instruction (EVAL-047 before the fix).
+2. **Fit the serving limits.** The course gateway allows 8,192 context tokens and 1,024 answer tokens. The full report JSON did not fit, so full reviews use a compact format that is expanded before grading (D16).
+3. **Give the vocabulary.** Without the list of finding codes, the model invents codes (`F001`, `…-VERIFIED`).
+4. **Expect paraphrased labels.** Under decomposition it copies the policy's wording ("Escalate (high risk)", "PRESENT"). These are normalised before grading, so substance is judged, not spelling (D17).
+
+### What this means for Weeks 2–3
+
+| Finding | Design response |
+|---|---|
+| Band 43%, scores wrong, findings 12–14% | Checklist, score, band and approvers come from the deterministic `compliance_checker` / `financial_risk_calculator` tools (rubric engine); the LLM only explains |
+| Missing vs. required confused (EVAL-039) | Evidence status from the vendor's records via `vendor_search`, not from reading the policy |
+| Date and number comparisons wrong | All date and threshold comparisons in code |
+| Injection never detected (followed in 2 of 3 strategies) | Retrieved text delimited as data, instruction-like lines stripped, critic checks the verdict against tool output, injection attempts logged |
+| Shape and vocabulary errors | One small schema per agent node; enums and code lists in every prompt; constrained decoding if the endpoint supports it |
+| Few-shot ≈ self-consistency at a third of the cost | Default agent prompts use structured few-shot; self-consistency only for a single high-stakes field, if at all |
+
+### Caveats
+
+- **Small sample:** 30 dev queries, of which 7 are full reviews, so one query is worth 3.3 points.
+- **One model** (Qwen3-8B), with thinking mode disabled.
+- **Retrieval excluded:** gold documents were pasted in, so these are upper-bound conditions for the model's reasoning.
+- **Test split untouched:** its 50 queries are reserved for the Week 3 and Week 4 gates.
+
 
 ## Step 1.8: Retrieval baselines
 

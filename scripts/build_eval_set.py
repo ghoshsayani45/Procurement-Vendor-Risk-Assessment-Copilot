@@ -26,9 +26,9 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "data" / "evaluation"
 R = load_rubric()
 AS_OF = R["review_as_of"]
-V = {v["vendor_id"]: VendorFacts.model_validate(v) for v in json.loads((ROOT / "data/ground_truth/vendors.json").read_text())}
-EXP = {o["vendor_id"]: o for o in json.loads((ROOT / "data/ground_truth/expected_outcomes.json").read_text())}
-CORPUS = {json.loads(l)["doc_id"]: json.loads(l)["text"] for l in open(ROOT / "data/processed/corpus_v1.jsonl")}
+V = {v["vendor_id"]: VendorFacts.model_validate(v) for v in json.loads((ROOT / "data/ground_truth/vendors.json").read_text(encoding="utf-8"))}
+EXP = {o["vendor_id"]: o for o in json.loads((ROOT / "data/ground_truth/expected_outcomes.json").read_text(encoding="utf-8"))}
+CORPUS = {json.loads(l)["doc_id"]: json.loads(l)["text"] for l in open(ROOT / "data/processed/corpus_v1.jsonl", encoding="utf-8")}
 norm = lambda s: re.sub(r"\s+", " ", s).strip()
 NCORPUS = {k: norm(t) for k, t in CORPUS.items()}
 QUERIES: list[dict] = []
@@ -394,9 +394,9 @@ def main():
     validate()
     OUT.mkdir(parents=True, exist_ok=True)
     path = OUT / "eval_v1.jsonl"
-    path.write_text("".join(json.dumps(q, ensure_ascii=False, sort_keys=False) + "\n" for q in QUERIES))
+    path.write_text("".join(json.dumps(q, ensure_ascii=False, sort_keys=False) + "\n" for q in QUERIES), encoding="utf-8", newline="\n")
     digest = hashlib.sha256(path.read_bytes()).hexdigest()
-    (OUT / "eval_v1.sha256").write_text(f"{digest}  eval_v1.jsonl\n")
+    (OUT / "eval_v1.sha256").write_text(f"{digest}  eval_v1.jsonl\n", encoding="utf-8", newline="\n")
     print("queries:", len(QUERIES))
     print("by category:", dict(Counter(q["category"] for q in QUERIES)))
     print("by split:", dict(Counter(q["split"] for q in QUERIES)))

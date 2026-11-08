@@ -314,11 +314,11 @@ class Report(_Strict):
 
 class ComparisonRow(_Strict):
     vendor_id: str
-    tier: Literal[1, 2, 3]
+    tier: Optional[Literal[1, 2, 3]] = None
     overall: float
     band: RiskBand
-    dimension_points: dict[str, int]
-    key_findings: list[str]
+    dimension_points: dict[str, int] = Field(default_factory=dict)
+    key_findings: list[str] = Field(default_factory=list)
 
 
 class ComparisonResult(_Strict):

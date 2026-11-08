@@ -1,6 +1,7 @@
 """Step 1.7: classify how the model fails, query by query.
 
 Labels (a query can have several):
+  CALL_ERROR              the API call itself failed (network, auth, server) - an infrastructure problem, not a model failure
   JSON_INVALID            no parseable / schema-valid JSON even after the repair retry
   JSON_NEEDED_RETRY       valid only after the repair retry (cost and latency)
   OVER_REFUSAL            refused or asked to clarify a legitimate request
@@ -58,6 +59,8 @@ def _cites(resp):
 def classify(q: dict, run: dict, graded: dict) -> list[str]:
     resp = run.get("response")
     labels = []
+    if resp is None and run.get("call_error"):
+        return ["CALL_ERROR"]          # the request never completed: not a model failure, excluded from the analysis
     if resp is None:
         return ["JSON_INVALID"] + [f"TRAP:{t}" for t in q["traps"]]
     if not run.get("valid_first_try", True):
@@ -114,7 +117,7 @@ def classify(q: dict, run: dict, graded: dict) -> list[str]:
         given = set(run.get("context_docs", []))
         if _cites(resp) - given - {None}:
             labels.append("INVENTED_CITATION")
-        if q["category"] != "full_review" and not _cites(resp):
+        if q["category"] not in ("full_review", "comparison") and not _cites(resp):   # the comparison format has no citations
             labels.append("UNCITED")
     if not graded["passed"]:
         labels += [f"TRAP:{t}" for t in q["traps"]]

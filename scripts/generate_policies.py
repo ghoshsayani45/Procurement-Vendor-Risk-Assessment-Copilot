@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "data" / "synthetic" / "policy"
 R = load_rubric()
 CO = "Indrapath Technologies Ltd"
-VENDORS = {v["vendor_id"]: v for v in json.loads((ROOT / "data/ground_truth/vendors.json").read_text())}
+VENDORS = {v["vendor_id"]: v for v in json.loads((ROOT / "data/ground_truth/vendors.json").read_text(encoding="utf-8"))}
 
 
 def inr(x):
@@ -27,7 +27,7 @@ def write(doc_id, title, version, effective, body, status="CURRENT", superseded_
           "version": version, "document_date": effective, "status": status, "superseded_by": superseded_by,
           "access_class": access, "source": "synthetic", "owner": "Procurement & Third-Party Risk Office", "company": CO}
     head = "---\n" + "\n".join(f"{k}: {json.dumps(v)}" for k, v in fm.items()) + "\n---\n"
-    (OUT / f"{doc_id}.md").write_text(head + body.strip() + "\n")
+    (OUT / f"{doc_id}.md").write_text(head + body.strip() + "\n", encoding="utf-8", newline="\n")
 
 
 def tprm_current():
