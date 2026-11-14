@@ -1,4 +1,4 @@
-.PHONY: setup ground-truth policies synthetic ingest corpus eval-set grade retrieval-baseline prompt-baseline prompt-baseline-mock test schemas up down
+.PHONY: setup ground-truth policies synthetic ingest corpus eval-set grade retrieval-baseline prompt-baseline prompt-baseline-mock copilot-dev test schemas up down
 
 setup:            ## create venv and install dependencies
 	python -m venv .venv && . .venv/bin/activate && pip install -r requirements.txt
@@ -31,6 +31,9 @@ prompt-baseline:  ## steps 1.6-1.7: 3 prompting strategies on the dev split via 
 
 prompt-baseline-mock: ## offline pipeline check with a stand-in model (numbers meaningless; reports/mock/ only)
 	LLM_BACKEND=mock python -m scripts.prompt_baseline --split dev
+
+copilot-dev:      ## Week 3: run the agent copilot on the dev split and grade it (LLM=none|mock|endpoint)
+	python -m scripts.run_copilot --split dev --llm $(or $(LLM),none)
 
 schemas:
 	python -m scripts.export_json_schemas
