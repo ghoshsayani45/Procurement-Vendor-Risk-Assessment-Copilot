@@ -35,3 +35,7 @@ docker/volumes/
 # experiment outputs (raw LLM runs, mock reports)
 runs/
 reports/mock/
+
+# Week 3 copilot runs (regenerate with python -m scripts.run_copilot)
+observability/audit_events.jsonl
+reports/copilot/*.jsonl

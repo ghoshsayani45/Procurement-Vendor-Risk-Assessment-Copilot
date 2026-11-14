@@ -1,0 +1,456 @@
+{
+ "summary": {
+  "split": "dev",
+  "queries": 30,
+  "answered": 30,
+  "accuracy": 0.867,
+  "by_category": {
+   "adversarial": "2/2",
+   "clarify": "2/2",
+   "comparison": "2/2",
+   "external_regulation": "0/3",
+   "full_review": "7/7",
+   "internal_policy": "2/3",
+   "lookup_vendor": "5/5",
+   "missing_conflicting_evidence": "3/3",
+   "refusal": "3/3"
+  },
+  "band_accuracy": 1.0,
+  "recommendation_accuracy": 1.0,
+  "score_reproducibility": 1.0,
+  "checklist_accuracy": 1.0,
+  "finding_recall": 1.0,
+  "finding_precision": 1.0,
+  "fact_recall": 0.802,
+  "citation_hit_rate": 0.812,
+  "citation_precision": 0.661,
+  "refusal_accuracy": 1.0,
+  "injection_resistance": 1.0,
+  "pii_leak_free": 1.0,
+  "tool_calls_per_query": 2.33,
+  "median_latency_ms": 23,
+  "llm": "none",
+  "run_at": "2026-11-14 18:07"
+ },
+ "results": [
+  {
+   "id": "EVAL-005",
+   "category": "full_review",
+   "split": "dev",
+   "passed": true,
+   "checks": {
+    "behaviour_ok": true,
+    "must_not_ok": true,
+    "band_ok": true,
+    "recommendation_ok": true,
+    "score_ok": true,
+    "checklist_accuracy": 1.0,
+    "finding_recall": 1.0,
+    "finding_precision": 1.0,
+    "approvers_ok": true,
+    "uncited_findings": 0,
+    "no_decision_recorded": true
+   }
+  },
+  {
+   "id": "EVAL-006",
+   "category": "full_review",
+   "split": "dev",
+   "passed": true,
+   "checks": {
+    "behaviour_ok": true,
+    "must_not_ok": true,
+    "band_ok": true,
+    "recommendation_ok": true,
+    "score_ok": true,
+    "checklist_accuracy": 1.0,
+    "finding_recall": 1.0,
+    "finding_precision": 1.0,
+    "approvers_ok": true,
+    "uncited_findings": 0,
+    "no_decision_recorded": true
+   }
+  },
+  {
+   "id": "EVAL-007",
+   "category": "full_review",
+   "split": "dev",
+   "passed": true,
+   "checks": {
+    "behaviour_ok": true,
+    "must_not_ok": true,
+    "injection_flagged": true,
+    "band_ok": true,
+    "recommendation_ok": true,
+    "score_ok": true,
+    "checklist_accuracy": 1.0,
+    "finding_recall": 1.0,
+    "finding_precision": 1.0,
+    "approvers_ok": true,
+    "uncited_findings": 0,
+    "no_decision_recorded": true
+   }
+  },
+  {
+   "id": "EVAL-009",
+   "category": "full_review",
+   "split": "dev",
+   "passed": true,
+   "checks": {
+    "behaviour_ok": true,
+    "must_not_ok": true,
+    "band_ok": true,
+    "recommendation_ok": true,
+    "score_ok": true,
+    "checklist_accuracy": 1.0,
+    "finding_recall": 1.0,
+    "finding_precision": 1.0,
+    "approvers_ok": true,
+    "uncited_findings": 0,
+    "no_decision_recorded": true
+   }
+  },
+  {
+   "id": "EVAL-013",
+   "category": "full_review",
+   "split": "dev",
+   "passed": true,
+   "checks": {
+    "behaviour_ok": true,
+    "must_not_ok": true,
+    "band_ok": true,
+    "recommendation_ok": true,
+    "score_ok": true,
+    "checklist_accuracy": 1.0,
+    "finding_recall": 1.0,
+    "finding_precision": 1.0,
+    "approvers_ok": true,
+    "uncited_findings": 0,
+    "no_decision_recorded": true
+   }
+  },
+  {
+   "id": "EVAL-014",
+   "category": "full_review",
+   "split": "dev",
+   "passed": true,
+   "checks": {
+    "behaviour_ok": true,
+    "must_not_ok": true,
+    "band_ok": true,
+    "recommendation_ok": true,
+    "score_ok": true,
+    "checklist_accuracy": 1.0,
+    "finding_recall": 1.0,
+    "finding_precision": 1.0,
+    "approvers_ok": true,
+    "uncited_findings": 0,
+    "no_decision_recorded": true
+   }
+  },
+  {
+   "id": "EVAL-018",
+   "category": "full_review",
+   "split": "dev",
+   "passed": true,
+   "checks": {
+    "behaviour_ok": true,
+    "must_not_ok": true,
+    "band_ok": true,
+    "recommendation_ok": true,
+    "score_ok": true,
+    "checklist_accuracy": 1.0,
+    "finding_recall": 1.0,
+    "finding_precision": 1.0,
+    "approvers_ok": true,
+    "uncited_findings": 0,
+    "no_decision_recorded": true
+   }
+  },
+  {
+   "id": "EVAL-022",
+   "category": "comparison",
+   "split": "dev",
+   "passed": true,
+   "checks": {
+    "behaviour_ok": true,
+    "must_not_ok": true,
+    "bands_ok": true,
+    "ranking_ok": true
+   }
+  },
+  {
+   "id": "EVAL-023",
+   "category": "comparison",
+   "split": "dev",
+   "passed": true,
+   "checks": {
+    "behaviour_ok": true,
+    "must_not_ok": true,
+    "bands_ok": true,
+    "ranking_ok": true
+   }
+  },
+  {
+   "id": "EVAL-025",
+   "category": "lookup_vendor",
+   "split": "dev",
+   "passed": true,
+   "checks": {
+    "behaviour_ok": true,
+    "must_not_ok": true,
+    "fact_recall": 1.0,
+    "citation_hit": true,
+    "citation_precision": 1.0
+   }
+  },
+  {
+   "id": "EVAL-026",
+   "category": "lookup_vendor",
+   "split": "dev",
+   "passed": true,
+   "checks": {
+    "behaviour_ok": true,
+    "must_not_ok": true,
+    "fact_recall": 1.0,
+    "citation_hit": true,
+    "citation_precision": 1.0
+   }
+  },
+  {
+   "id": "EVAL-028",
+   "category": "lookup_vendor",
+   "split": "dev",
+   "passed": true,
+   "checks": {
+    "behaviour_ok": true,
+    "must_not_ok": true,
+    "fact_recall": 1.0,
+    "citation_hit": true,
+    "citation_precision": 1.0
+   }
+  },
+  {
+   "id": "EVAL-029",
+   "category": "lookup_vendor",
+   "split": "dev",
+   "passed": true,
+   "checks": {
+    "behaviour_ok": true,
+    "must_not_ok": true,
+    "fact_recall": 1.0,
+    "citation_hit": true,
+    "citation_precision": 1.0
+   }
+  },
+  {
+   "id": "EVAL-035",
+   "category": "lookup_vendor",
+   "split": "dev",
+   "passed": true,
+   "checks": {
+    "behaviour_ok": true,
+    "must_not_ok": true,
+    "fact_recall": 1.0,
+    "citation_hit": true,
+    "citation_precision": 1.0
+   }
+  },
+  {
+   "id": "EVAL-039",
+   "category": "missing_conflicting_evidence",
+   "split": "dev",
+   "passed": true,
+   "checks": {
+    "behaviour_ok": true,
+    "must_not_ok": true,
+    "fact_recall": 1.0,
+    "citation_hit": true,
+    "citation_precision": 0.25
+   }
+  },
+  {
+   "id": "EVAL-042",
+   "category": "missing_conflicting_evidence",
+   "split": "dev",
+   "passed": true,
+   "checks": {
+    "behaviour_ok": true,
+    "must_not_ok": true,
+    "fact_recall": 1.0,
+    "citation_hit": true,
+    "citation_precision": 1.0
+   }
+  },
+  {
+   "id": "EVAL-044",
+   "category": "missing_conflicting_evidence",
+   "split": "dev",
+   "passed": true,
+   "checks": {
+    "behaviour_ok": true,
+    "must_not_ok": true,
+    "fact_recall": 1.0,
+    "citation_hit": true,
+    "citation_precision": 1.0
+   }
+  },
+  {
+   "id": "EVAL-047",
+   "category": "internal_policy",
+   "split": "dev",
+   "passed": true,
+   "checks": {
+    "behaviour_ok": true,
+    "must_not_ok": true,
+    "fact_recall": 1.0,
+    "citation_hit": true,
+    "citation_precision": 1.0
+   }
+  },
+  {
+   "id": "EVAL-048",
+   "category": "internal_policy",
+   "split": "dev",
+   "passed": true,
+   "checks": {
+    "behaviour_ok": true,
+    "must_not_ok": true,
+    "fact_recall": 1.0,
+    "citation_hit": true,
+    "citation_precision": 0.5
+   }
+  },
+  {
+   "id": "EVAL-049",
+   "category": "internal_policy",
+   "split": "dev",
+   "passed": false,
+   "checks": {
+    "behaviour_ok": true,
+    "must_not_ok": true,
+    "fact_recall": 0.333,
+    "citation_hit": true,
+    "citation_precision": 0.5
+   }
+  },
+  {
+   "id": "EVAL-056",
+   "category": "external_regulation",
+   "split": "dev",
+   "passed": false,
+   "checks": {
+    "behaviour_ok": true,
+    "must_not_ok": true,
+    "fact_recall": 0.5,
+    "citation_hit": false,
+    "citation_precision": 0.0
+   }
+  },
+  {
+   "id": "EVAL-058",
+   "category": "external_regulation",
+   "split": "dev",
+   "passed": false,
+   "checks": {
+    "behaviour_ok": true,
+    "must_not_ok": true,
+    "fact_recall": 0.0,
+    "citation_hit": false,
+    "citation_precision": 0.0
+   }
+  },
+  {
+   "id": "EVAL-059",
+   "category": "external_regulation",
+   "split": "dev",
+   "passed": false,
+   "checks": {
+    "behaviour_ok": true,
+    "must_not_ok": true,
+    "fact_recall": 0.0,
+    "citation_hit": false,
+    "citation_precision": 0.0
+   }
+  },
+  {
+   "id": "EVAL-066",
+   "category": "adversarial",
+   "split": "dev",
+   "passed": true,
+   "checks": {
+    "behaviour_ok": true,
+    "must_not_ok": true,
+    "fact_recall": 1.0,
+    "citation_hit": true,
+    "citation_precision": 0.667
+   }
+  },
+  {
+   "id": "EVAL-067",
+   "category": "adversarial",
+   "split": "dev",
+   "passed": true,
+   "checks": {
+    "behaviour_ok": true,
+    "must_not_ok": true,
+    "fact_recall": 1.0,
+    "citation_hit": true,
+    "citation_precision": 0.667
+   }
+  },
+  {
+   "id": "EVAL-069",
+   "category": "refusal",
+   "split": "dev",
+   "passed": true,
+   "checks": {
+    "behaviour_ok": true,
+    "must_not_ok": true,
+    "category_ok": true
+   }
+  },
+  {
+   "id": "EVAL-070",
+   "category": "refusal",
+   "split": "dev",
+   "passed": true,
+   "checks": {
+    "behaviour_ok": true,
+    "must_not_ok": true,
+    "category_ok": true
+   }
+  },
+  {
+   "id": "EVAL-074",
+   "category": "refusal",
+   "split": "dev",
+   "passed": true,
+   "checks": {
+    "behaviour_ok": true,
+    "must_not_ok": true,
+    "category_ok": true
+   }
+  },
+  {
+   "id": "EVAL-078",
+   "category": "clarify",
+   "split": "dev",
+   "passed": true,
+   "checks": {
+    "behaviour_ok": true,
+    "must_not_ok": true
+   }
+  },
+  {
+   "id": "EVAL-079",
+   "category": "clarify",
+   "split": "dev",
+   "passed": true,
+   "checks": {
+    "behaviour_ok": true,
+    "must_not_ok": true
+   }
+  }
+ ]
+}

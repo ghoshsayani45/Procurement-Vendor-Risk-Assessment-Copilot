@@ -11,8 +11,10 @@ A Track B capstone (Executive PG Programme in Generative AI and Agentic AI). It 
 | 1.3 Synthetic vendor set | Done (35 vendors) | `data/ground_truth/` |
 | 1.4 Corpus | Done; **corpus v1 frozen: 1,053 documents** | `data/synthetic/`, `data/manifests/`, `scripts/ingest.py` |
 | 1.5 Evaluation set | Done; **eval_v1 frozen: 80 queries (30 dev / 50 test)**, with grader | `data/evaluation/`, `scripts/grade.py` |
-| 1.6–1.7 Prompting baseline + failure log | Harness built and tested offline; **run needs the course endpoint** (`make prompt-baseline`) | `app/prompting.py`, `app/failure_analysis.py`, `docs/failure_log.md` |
+| 1.6–1.7 Prompting baseline + failure log | Done (Qwen3-8B, dev split: 50–53%) | `app/prompting.py`, `app/failure_analysis.py`, `docs/failure_log.md` |
 | 1.8 Retrieval baselines | **BM25 done** (hit@10 dev 0.89 / test 0.95; ACORD NDCG@5 0.07); dense waits for the embeddings endpoint | `docs/baselines.md`, `reports/retrieval_baseline_v1.json` |
+| 2.2–2.4 RAG layer | Done (code); real run needs corpus v1 + embedding key | `app/rag/`, `docs/rag.md` |
+| 3.x Tools and agents | Done (code); **dev split 26/30 offline**, full reviews 7/7 | `app/tools/`, `app/agents/`, `docs/agents.md` |
 
 ## Quick start
 ```bash
@@ -29,7 +31,9 @@ Requires Python 3.11+, `pdftotext` (poppler-utils) and Docker.
 ## Repository layout
 ```
 app/
-  api/  agents/  tools/  retrieval/  ui/   Week 2-3 (empty packages)
+  agents/  tools/                          Week 3: router/planner/executor/writer/critic (LangGraph) and the 5 tools
+  rag/                                     Week 2: chunking, hybrid retrieval, reranker, cited answers
+  api/  ui/                                Week 3-4 (empty packages)
   db/schema.sql                            vendors, documents, chunks (pgvector + full-text), reviews,
                                            conversation_turns, financial_metrics, append-only audit_events
   scoring/rubric.yaml, engine.py           deterministic rubric (becomes the compliance / financial tools)
