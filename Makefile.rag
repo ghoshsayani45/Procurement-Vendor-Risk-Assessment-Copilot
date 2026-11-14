@@ -1,0 +1,14 @@
+# RAG targets, kept in a separate file so the existing Makefile is not modified.   Usage: make -f Makefile.rag rag-check
+.PHONY: rag-check rag-index rag-chunking rag-retrieval rag-answers rag-test
+rag-check:      ## test the shared embedding endpoint
+	python -m scripts.rag_check_embeddings
+rag-index:      ## build + save the hybrid index: make -f Makefile.rag rag-index CHUNKING=heading
+	python -m scripts.rag_build_index --chunking $(or $(CHUNKING),heading)
+rag-chunking:   ## step 2.2 chunking experiments on the dev split
+	python -m scripts.rag_chunking_experiments
+rag-retrieval:  ## retrieval-only recall@k for bm25 / dense / hybrid / hybrid+rerank
+	python -m scripts.rag_retrieval_eval --chunking $(or $(CHUNKING),heading)
+rag-answers:    ## end-to-end answers with retrieval-vs-generator diagnosis (uses model tokens); add ARGS=--oracle
+	python -m scripts.rag_eval_answers --chunking $(or $(CHUNKING),heading) $(ARGS)
+rag-test:       ## offline RAG tests
+	python -m pytest tests/test_rag.py -q
