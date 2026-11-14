@@ -218,7 +218,7 @@ def r_dpa(v, e):
 3. **Security.** The Processor maintains reasonable security safeguards, including encryption, access control and logging, consistent with Rule 6 of the DPDP Rules, 2025.
 4. **Breach notification.** {'The Processor notifies the Fiduciary of any personal data breach within ' + str(c.breach_notification_hours) + ' hours of becoming aware of it.' if c.breach_notification_hours is not None else 'Personal data breaches are handled under the main agreement.'}
 5. **Location.** Personal data is stored and processed in {c.data_location}.{' Transfers outside India rely on the safeguards in Annex 2.' if c.data_location != 'India' and c.cross_border_safeguards else ''}
-6. **Sub-processors.** {'New sub-processors require the Fiduciary\'s prior written approval.' if c.subprocessor_approval else 'The Processor may engage sub-processors and will keep a public list.'}
+6. **Sub-processors.** {"New sub-processors require the Fiduciary's prior written approval." if c.subprocessor_approval else 'The Processor may engage sub-processors and will keep a public list.'}
 7. **Deletion.** On termination, personal data is deleted or returned within 30 days.
 """
     save(e.doc_id, v, "contracts", "dpa", f"Data Processing Agreement: {v.legal_name}", e.issue_date, body, evidence_id=e.evidence_id,
