@@ -1,4 +1,4 @@
-# Day 0 skeleton. api / ui services are enabled in Week 2-3 once their code exists.
+# Services: db (Postgres + pgvector), langfuse (+ its db), api (FastAPI copilot), ui (Streamlit reviewer UI).
 # Usage: make up   (reads ../.env)
 name: pvrc
 
@@ -36,16 +36,21 @@ services:
       SALT: change-me
     ports: ["3000:3000"]
 
-  # api:
-  #   build: {context: .., dockerfile: docker/Dockerfile.api}
-  #   env_file: ../.env
-  #   depends_on: {db: {condition: service_healthy}}
-  #   ports: ["8000:8000"]
-  # ui:
-  #   build: {context: .., dockerfile: docker/Dockerfile.ui}
-  #   env_file: ../.env
-  #   depends_on: [api]
-  #   ports: ["8501:8501"]
+  api:
+    build: {context: .., dockerfile: docker/Dockerfile.api}
+    env_file: ../.env
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
+      COPILOT_LLM: ${COPILOT_LLM:-none}
+    depends_on: {db: {condition: service_healthy}}
+    ports: ["8000:8000"]
+
+  ui:
+    build: {context: .., dockerfile: docker/Dockerfile.ui}
+    environment:
+      API_URL: http://api:8000
+    depends_on: {api: {condition: service_healthy}}
+    ports: ["8501:8501"]
 
 volumes:
   pgdata:

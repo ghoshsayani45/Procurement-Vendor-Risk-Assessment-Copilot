@@ -43,16 +43,47 @@ CREATE TABLE IF NOT EXISTS financial_metrics (
     PRIMARY KEY (vendor_id, period, metric)
 );
 
+-- One row per copilot request (Week 3-4, decision D28): full reviews, comparisons, questions, refusals and clarifications.
+-- vendor_id / review_type are NULL for comparisons, policy questions, refusals and clarifications.
+-- decision / decided_by are written ONLY by the API's approval endpoint for a named human approver; never by the copilot.
 CREATE TABLE IF NOT EXISTS reviews (
     id              UUID PRIMARY KEY,
-    vendor_id       TEXT NOT NULL REFERENCES vendors(id),
-    review_type     TEXT NOT NULL CHECK (review_type IN ('NEW_VENDOR','RENEWAL')),
+    vendor_id       TEXT REFERENCES vendors(id),
+    review_type     TEXT CHECK (review_type IN ('NEW_VENDOR','RENEWAL')),
     status          TEXT NOT NULL DEFAULT 'OPEN',
     as_of           DATE NOT NULL,
     score_json      JSONB,
     report_json     JSONB,
-    created_at      TIMESTAMPTZ NOT NULL DEFAULT now()
+    created_at      TIMESTAMPTZ NOT NULL DEFAULT now(),
+    request_kind    TEXT,
+    behaviour       TEXT,
+    requested_by    TEXT,
+    requester_role  TEXT,
+    request_json    JSONB,
+    response_json   JSONB,
+    trace_json      JSONB,
+    decision        TEXT CHECK (decision IN ('APPROVED','REJECTED','MORE_INFO')),
+    decided_by      TEXT,
+    decided_role    TEXT,
+    decided_at      TIMESTAMPTZ,
+    decision_comment TEXT,
+    CHECK (decision IS NULL OR (decided_by IS NOT NULL AND decided_by <> 'copilot'))
 );
+-- Upgrade path for databases created from the Day 0 schema (no-ops on a fresh database).
+ALTER TABLE reviews ALTER COLUMN vendor_id DROP NOT NULL;
+ALTER TABLE reviews ALTER COLUMN review_type DROP NOT NULL;
+ALTER TABLE reviews ADD COLUMN IF NOT EXISTS request_kind TEXT;
+ALTER TABLE reviews ADD COLUMN IF NOT EXISTS behaviour TEXT;
+ALTER TABLE reviews ADD COLUMN IF NOT EXISTS requested_by TEXT;
+ALTER TABLE reviews ADD COLUMN IF NOT EXISTS requester_role TEXT;
+ALTER TABLE reviews ADD COLUMN IF NOT EXISTS request_json JSONB;
+ALTER TABLE reviews ADD COLUMN IF NOT EXISTS response_json JSONB;
+ALTER TABLE reviews ADD COLUMN IF NOT EXISTS trace_json JSONB;
+ALTER TABLE reviews ADD COLUMN IF NOT EXISTS decision TEXT;
+ALTER TABLE reviews ADD COLUMN IF NOT EXISTS decided_by TEXT;
+ALTER TABLE reviews ADD COLUMN IF NOT EXISTS decided_role TEXT;
+ALTER TABLE reviews ADD COLUMN IF NOT EXISTS decided_at TIMESTAMPTZ;
+ALTER TABLE reviews ADD COLUMN IF NOT EXISTS decision_comment TEXT;
 
 CREATE TABLE IF NOT EXISTS conversation_turns (
     id              BIGSERIAL PRIMARY KEY,

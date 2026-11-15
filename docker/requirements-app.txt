@@ -1,0 +1,17 @@
+# Runtime dependencies for the api and ui containers (slim: no torch / sentence-transformers;
+# the reranker falls back to its lexical mode and says so). Full dev set: ../requirements.txt
+pydantic>=2.7,<3
+pyyaml>=6.0
+python-dotenv>=1.0
+numpy>=1.26
+rank-bm25>=0.2.2
+openai>=1.40
+httpx>=0.27
+truststore>=0.9
+langgraph>=0.2
+fastapi>=0.111
+uvicorn>=0.30
+sqlalchemy>=2.0
+psycopg[binary]>=3.1
+slowapi>=0.1.9
+streamlit>=1.46

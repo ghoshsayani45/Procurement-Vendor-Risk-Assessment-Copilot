@@ -15,6 +15,7 @@ A Track B capstone (Executive PG Programme in Generative AI and Agentic AI). It 
 | 1.8 Retrieval baselines | **BM25 done** (hit@10 dev 0.89 / test 0.95; ACORD NDCG@5 0.07); dense waits for the embeddings endpoint | `docs/baselines.md`, `reports/retrieval_baseline_v1.json` |
 | 2.2–2.4 RAG layer | Done (code); real run needs corpus v1 + embedding key | `app/rag/`, `docs/rag.md` |
 | 3.x Tools and agents | Done (code); **dev split 26/30 offline**, full reviews 7/7 | `app/tools/`, `app/agents/`, `docs/agents.md` |
+| 3-4 App layer | Done (code): FastAPI, database with append-only audit, Streamlit approval UI, safety suite; Docker not yet run | `app/api/`, `app/db/`, `app/ui/`, `tests/safety/`, `docs/app.md` |
 
 ## Quick start
 ```bash
@@ -23,7 +24,8 @@ make setup && source .venv/bin/activate          # or: pip install -r requiremen
 cp .env.example .env                              # fill in endpoint + keys
 # put the raw dataset at data/raw/procurement_dataset/  (shared via Drive; not in Git)
 make corpus                                       # rebuild ground truth, policies, synthetic docs, corpus v1
-make test                                         # 96 tests
+make test                                         # 248 tests (offline)
+make ui                                           # reviewer UI on :8501 (API in-process, SQLite)
 make up                                           # Postgres+pgvector and Langfuse (Docker)
 ```
 Requires Python 3.11+, `pdftotext` (poppler-utils) and Docker.
@@ -33,7 +35,7 @@ Requires Python 3.11+, `pdftotext` (poppler-utils) and Docker.
 app/
   agents/  tools/                          Week 3: router/planner/executor/writer/critic (LangGraph) and the 5 tools
   rag/                                     Week 2: chunking, hybrid retrieval, reranker, cited answers
-  api/  ui/                                Week 3-4 (empty packages)
+  api/  ui/  db/store.py                    Week 3-4: FastAPI service, Streamlit reviewer UI with approval panel, persistence
   db/schema.sql                            vendors, documents, chunks (pgvector + full-text), reviews,
                                            conversation_turns, financial_metrics, append-only audit_events
   scoring/rubric.yaml, engine.py           deterministic rubric (becomes the compliance / financial tools)
