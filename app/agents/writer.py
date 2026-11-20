@@ -272,7 +272,14 @@ def write_answer(rt, ex: dict, llm: str = "none") -> dict:
         cites = _doc_cites(docs) + [TOOL_CITE("compliance_checker")]
         text = " ".join(parts)
     elif llm in ("endpoint", "mock") and ds.get("hits"):
-        text, cites = _rag_answer(q, ds, rt.request["as_of"], llm)
+        try:
+            text, cites = _rag_answer(q, ds, rt.request["as_of"], llm)
+        except Exception as e:  # a model or network failure must never crash a request
+            text, docs = _extractive(q, ds["hits"])
+            text = (f"From {', '.join(docs)}: " + text) if text else ""
+            cites = _doc_cites(docs)
+            gaps.append(f"The model's answer could not be used ({type(e).__name__}); this answer quotes the retrieved passages instead.")
+            events.append(dict(event_type="LLM_ANSWER_FAILED", error=f"{type(e).__name__}: {str(e)[:200]}"))
     elif ds.get("hits"):
         text, docs = _extractive(q, ds["hits"])
         text = (f"From {', '.join(docs)}: " + text) if text else ""
@@ -285,9 +292,9 @@ def write_answer(rt, ex: dict, llm: str = "none") -> dict:
         if h.get("injection") and not any(h["doc_id"] in g for g in gaps):
             gaps.append(f"Prompt-injection attempt ignored: retrieved passage {h['doc_id']} contains instructions aimed at automated reviewers; it was not used.")
             events.append(dict(event_type="INJECTION_DETECTED", doc_id=h["doc_id"], vendor_ids=rt.vendor_ids, excerpt=""))
-    inj = [g for g in gaps if g.startswith("Prompt-injection")]
-    if inj:
-        text += " Note: " + " ".join(inj)
+    notes = [g for g in gaps if g.startswith(("Prompt-injection", "The model's answer could not be used"))]
+    if notes:
+        text += " Note: " + " ".join(notes)
     beh = "PARTIAL" if ex["failures"] else "ANSWER"
     return dict(response=dict(behaviour=beh, answer=mask_pii(text)[:1200], citations=cites[:8]), events=events)
 
