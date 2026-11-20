@@ -2,6 +2,8 @@
 
 A Track B capstone (Executive PG Programme in Generative AI and Agentic AI). It is a multi-agent copilot that assesses technology vendors for onboarding and renewal, built on a hosted ≤8B model. It retrieves cited evidence, applies a deterministic risk rubric, and routes every decision to a human approver.
 
+**Full project documentation (12 pages, Weeks 1-4, architecture, results, challenges):** [docs/Project_Documentation.pdf](docs/Project_Documentation.pdf)
+
 ## Status
 | Week 1 step | Status | Where |
 |---|---|---|
