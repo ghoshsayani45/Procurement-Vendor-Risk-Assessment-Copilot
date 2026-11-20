@@ -110,3 +110,44 @@ def test_vendor_questions_with_the_full_library(monkeypatch):
     finally:
         documents.store.cache_clear()
         tools._pipeline.cache_clear()
+
+
+@pytest.mark.parametrize("q,expected", [
+    ("Who has to approve an INR 3 crore renewal rated MEDIUM that has a contract finding?",
+     ["Head of Procurement", "Finance Controller", "Legal Counsel"]),
+    ("Who approves a Rs 20 lakh purchase rated LOW?", ["Category Manager"]),
+    ("Who must approve an INR 8 crore contract rated HIGH with a data protection finding?",
+     ["Chief Financial Officer", "Procurement Committee", "Third-Party Risk Committee", "Data Protection Officer"]),
+    ("Which approvers are needed for ₹1.5 crore with a conflict of interest?",
+     ["Head of Procurement", "Finance Controller", "Ethics & Compliance Officer"]),
+])
+def test_policy_approver_questions_are_computed_from_the_rubric(q, expected):
+    """Regression (live runs 2026-11-20): the 8B model dropped Legal Counsel in 2 of 3 runs; approvers now come from the rubric."""
+    from app.agents.writer import policy_approvers_answer
+    parts, docs = policy_approvers_answer(q)
+    assert parts[0] == f"Required approvers: {', '.join(expected)}." and docs == ["POLICY-DOA-002"]
+
+
+@pytest.mark.parametrize("q", ["Who approves vendors?", "What does the delegation of authority cover?", "Approve Kestrion."])
+def test_approver_calculator_needs_an_amount_and_a_who_question(q):
+    from app.agents.writer import policy_approvers_answer
+    assert policy_approvers_answer(q) is None
+
+
+def test_approver_question_end_to_end_without_the_model(monkeypatch):
+    monkeypatch.setenv("AUDIT_LOG_PATH", "off")
+    from app.agents.copilot import run
+    r = run(dict(request_kind="QUESTION", vendor_ids=[], question="Who has to approve an INR 3 crore renewal rated MEDIUM that has a contract finding?",
+                 requester_role="risk_reviewer", as_of="2026-11-01"), llm="endpoint")["response"]
+    assert "Legal Counsel" in r["answer"] and any(c.get("doc_id") == "POLICY-DOA-002" for c in r["citations"])
+
+
+def test_citation_dates_with_a_time_are_cleaned():
+    """Regression (live run 2026-11-20, EVAL-059): a source dated '2026-01-31T00:00:00' failed the citation schema."""
+    from app.agents.writer import _clean_dates
+    from app.schemas import Citation
+    c = _clean_dates([dict(source_id="POL-001-S016", doc_id="POL-001-S016", document_date="2026-01-31T00:00:00"),
+                      dict(source_id="CON-001-1", doc_id="CON-001-1", document_date="v1 (2021)")])
+    assert [x["document_date"] for x in c] == ["2026-01-31", None]
+    for x in c:
+        Citation.model_validate(x)

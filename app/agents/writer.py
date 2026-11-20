@@ -11,7 +11,7 @@ import re
 from app.agents.executor import all_ok, first
 from app.tools import documents
 from app.tools.safety import mask_pii
-from app.tools.tools import cite
+from app.tools.tools import _date_or_none, cite
 
 ITEM_LABEL = dict(SOC2_TYPE2="SOC 2 Type II report", ISO27001="ISO/IEC 27001 certificate", CAIQ="CAIQ security questionnaire",
                   PENTEST="penetration test", CYBER_INSURANCE="cyber insurance", BCP_DR_TEST="BCP/DR test", DPA="data processing agreement (DPA)",
@@ -261,6 +261,52 @@ def _extractive(q: str, hits: list[dict]) -> tuple[str, list[str]]:
     return " ".join(p[2] for p in picks), list(dict.fromkeys(p[3] for p in picks))
 
 
+_AMOUNT = re.compile(r"(?:inr|rs\.?|₹)\s*([\d][\d,]*(?:\.\d+)?)\s*(crores?|cr|lakhs?|lacs?)\b", re.I)
+_UNIT = {"cr": 10_000_000, "crore": 10_000_000, "crores": 10_000_000, "lakh": 100_000, "lakhs": 100_000, "lac": 100_000, "lacs": 100_000}
+
+
+def policy_approvers_answer(q: str) -> tuple[list[str], list[str]] | None:
+    """'Who approves an INR 3 crore renewal rated MEDIUM with a contract finding?' -> computed from the rubric's approval matrix and
+    additional approvers, exactly as full reviews do (D2), instead of asking the 8B model to apply the rules (live runs 2026-11-20:
+    the model dropped Legal Counsel in 2 of 3 runs). Only for questions that name an amount and ask who approves."""
+    if not re.search(r"\bwho\b.{0,40}\bapprov|\bapprov\w*\b.{0,30}\b(?:needed|required|whom)\b|\bwhich approvers\b", q, re.I):
+        return None
+    m = _AMOUNT.search(q)
+    if not m:
+        return None
+    from app.scoring.engine import load_rubric
+    r = load_rubric()
+    value = float(m.group(1).replace(",", "")) * _UNIT[m.group(2).lower()]
+    row = next(x for x in r["approval_matrix"] if x["max_inr"] is None or value <= x["max_inr"])
+    approvers, why = list(row["approvers"]), []
+    limit = f"up to INR {row['max_inr']:,}" if row["max_inr"] else "above INR 5 crore"
+    add = r["additional_approvers"]
+    band = next((b for b in ("CRITICAL", "HIGH", "MEDIUM", "LOW") if re.search(rf"\b{b}\b", q, re.I)), None)
+    rules = [(band in ("HIGH", "CRITICAL"), add["band_high_or_critical"], f"band {band}"),
+             (re.search(r"\bcontract(?:ual)?\s+(?:finding|issue|term)", q, re.I), add["any_contract_terms_finding"], "a contract finding"),
+             (re.search(r"\bdata[\s-]protection\s+(?:finding|issue)|\bpersonal[\s-]data\s+(?:finding|issue)|\bDPA\b", q, re.I),
+              add["any_data_protection_finding"], "a data-protection finding"),
+             (re.search(r"\bconflict\s+of\s+interest\b", q, re.I), add["conflict_of_interest"], "a conflict of interest")]
+    for hit, who, reason in rules:
+        if hit and who not in approvers:
+            approvers.append(who)
+            why.append(f"{who} because of {reason}")
+    parts = [f"Required approvers: {', '.join(approvers)}.",
+             f"The annual value (INR {value:,.0f}) falls in the approval band {limit}: {', '.join(row['approvers'])}."
+             + (f" Added: {'; '.join(why)}." if why else "")
+             + (f" Band {band} adds no approver on its own." if band in ("LOW", "MEDIUM") else ""),
+             "The copilot only routes the decision; a named approver decides in the approval panel."]
+    return parts, ["POLICY-DOA-002"]
+
+
+def _clean_dates(cites: list[dict]) -> list[dict]:
+    """Citation dates must be plain dates: some sources store a time of day or a version label (2026-11-20)."""
+    for c in cites:
+        if "document_date" in c:
+            c["document_date"] = _date_or_none(c.get("document_date"))
+    return cites
+
+
 def write_answer(rt, ex: dict, llm: str = "none") -> dict:
     q = rt.request.get("question") or ""
     a = first(ex, "compliance_checker")
@@ -268,9 +314,14 @@ def write_answer(rt, ex: dict, llm: str = "none") -> dict:
     scans = ds.get("scan", [])
     gaps, events = safety_gaps(scans, rt.vendor_ids)
     sa = structured_answer(q, a, scans) if a else None
+    pa = None if (a or sa) else policy_approvers_answer(q)
     if sa:
         parts, docs = sa
         cites = _doc_cites(docs) + [TOOL_CITE("compliance_checker")]
+        text = " ".join(parts)
+    elif pa:
+        parts, docs = pa
+        cites = _doc_cites(docs) + [TOOL_CITE("rubric_engine")]
         text = " ".join(parts)
     elif llm in ("endpoint", "mock") and ds.get("hits"):
         try:
@@ -297,7 +348,7 @@ def write_answer(rt, ex: dict, llm: str = "none") -> dict:
     if notes:
         text += " Note: " + " ".join(notes)
     beh = "PARTIAL" if ex["failures"] else "ANSWER"
-    return dict(response=dict(behaviour=beh, answer=mask_pii(text)[:1200], citations=cites[:8]), events=events)
+    return dict(response=dict(behaviour=beh, answer=mask_pii(text)[:1200], citations=_clean_dates(cites[:8])), events=events)
 
 
 def _rag_answer(q: str, ds: dict, as_of: str, llm: str) -> tuple[str, list[dict]]:
