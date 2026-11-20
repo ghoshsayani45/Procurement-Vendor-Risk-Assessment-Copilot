@@ -119,6 +119,41 @@ def _parse(raw: str) -> dict | None:
     return None
 
 
+_SID = re.compile(r"\bS\d{1,2}\b")
+_INLINE_CITES = re.compile(r"\s*\[(?:\s*S\d{1,2}\s*,?)+\]")
+
+
+def _claim_items(data) -> tuple[list[dict | None], dict]:
+    """Normalise the reply shapes a small model actually produces into [{text, kind, sources}] (None = unusable item).
+    Accepted: {"claims":[{...}]} (the asked shape), claims as plain strings with inline [S1] citations, a bare list,
+    a single claim object, {"answer": "..."}, and the keys claim/statement for text and source/citations for sources."""
+    meta = data if isinstance(data, dict) else {}
+    if isinstance(data, dict):
+        items = data.get("claims")
+        if items is None:
+            items = [data] if any(k in data for k in ("text", "claim", "statement")) else ([data["answer"]] if isinstance(data.get("answer"), str) else [])
+    else:
+        items = data
+    if isinstance(items, (str, dict)):
+        items = [items]
+    out: list[dict | None] = []
+    for c in items if isinstance(items, list) else []:
+        if isinstance(c, str):
+            c = {"text": c}
+        if not isinstance(c, dict):
+            out.append(None)
+            continue
+        text = str(c.get("text") or c.get("claim") or c.get("statement") or "")
+        src = c.get("sources", c.get("source", c.get("citations")))
+        if isinstance(src, str):
+            src = _SID.findall(src) or [src.strip()]
+        src = [str(x).strip().strip("[]") for x in src] if isinstance(src, list) else []
+        if not src:
+            src = _SID.findall(text)                     # citations written inline: "... 48 hours [S2]"
+        out.append(dict(text=_INLINE_CITES.sub("", text).strip(), kind=c.get("kind"), sources=src))
+    return out, meta
+
+
 def _numbers(text: str) -> set[str]:
     return {n.replace(",", "") for n in re.findall(r"\d[\d,]*(?:\.\d+)?", text)}
 
@@ -136,23 +171,27 @@ def generate(question: str, hits: list[Hit], *, as_of: str = "2026-11-01", cfg: 
     usage = {k: llm_client.LAST_CALL.get(k) for k in ("prompt_tokens", "completion_tokens", "latency_ms", "finish_reason")}
     data = _parse(raw)
     errors: list[str] = []
-    if data is None:
+    if data is None or not isinstance(data, (dict, list)):
         errors.append("model reply was not valid JSON")
         return RagAnswer(question, "Insufficient evidence: the model reply could not be validated.", [], [], True, False,
                          [h.chunk.chunk_id for h in kept], raw, 0, errors, usage)
     claims, dropped = [], 0
-    for c in data.get("claims", []) or []:
-        srcs = [s for s in (c.get("sources") or []) if s in ids]
-        if not srcs or not str(c.get("text", "")).strip():
+    items, meta = _claim_items(data)
+    for c in items:
+        if c is None:
+            dropped += 1
+            continue
+        srcs = list(dict.fromkeys(s for s in c["sources"] if s in ids))
+        if not srcs or not c["text"]:
             dropped += 1                                         # uncited / wrongly cited claims are rejected
             continue
         kind = c.get("kind") if c.get("kind") in ("observation", "interpretation", "recommendation") else "observation"
-        text = mask_pii(str(c["text"]).strip())
+        text = mask_pii(c["text"])
         cited_text = " ".join(ids[s].chunk.text + " " + (ids[s].chunk.parent_text or "") for s in srcs).replace(",", "")
         missing = sorted(n for n in _numbers(text) if n not in cited_text and n not in _numbers(as_of) and len(n) > 1)
         claims.append(Claim(text, kind, srcs, missing))
-    insufficient = bool(data.get("insufficient_evidence")) or not claims
-    injection = bool(data.get("injection_detected")) or any(INJECTION_RE.search(h.chunk.text) for h in kept)
+    insufficient = bool(meta.get("insufficient_evidence")) or not claims
+    injection = bool(meta.get("injection_detected")) or any(INJECTION_RE.search(h.chunk.text) for h in kept)
     answer = " ".join(f"{c.text} [{', '.join(c.sources)}]" for c in claims) or "Insufficient evidence in the retrieved documents."
     if insufficient and claims:
         answer = "Insufficient evidence to answer fully. " + answer

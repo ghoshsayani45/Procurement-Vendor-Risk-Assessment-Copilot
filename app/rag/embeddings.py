@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 import os
 import time
 from pathlib import Path
@@ -29,9 +30,21 @@ class EmbeddingError(RuntimeError):
     pass
 
 
+_FILLER = re.compile(r"([_\-=.*~#])\1{3,}")   # form lines such as ______ or ------ (one token per character)
+_MAX_WORD_CHARS = 40                              # long URLs split into many tokens
+_CHARS_PER_WORD = 8                               # hard character cap, so no input can blow past 512 tokens
+
+
 def _truncate(text: str, max_words: int) -> str:
-    w = text.split()
-    return text if len(w) <= max_words else " ".join(w[:max_words])
+    """Cut text to fit the 512-token model limit. Counting words alone is not enough: a 250-character URL
+    or a line of underscores is one 'word' but hundreds of tokens (seen on the GFR / DoE policy chunks)."""
+    clean = _FILLER.sub(lambda m: m.group(1) * 3, text)
+    w = clean.split()
+    if clean == text and len(w) <= max_words and len(text) <= max_words * _CHARS_PER_WORD \
+            and all(len(x) <= _MAX_WORD_CHARS for x in w):
+        return text                                   # unchanged, so existing cache keys stay valid
+    out = " ".join(x[:_MAX_WORD_CHARS] for x in w[:max_words])
+    return out[:max_words * _CHARS_PER_WORD]
 
 
 class EmbeddingClient:
@@ -91,7 +104,7 @@ class EmbeddingClient:
         url = self.cfg.embed_base_url.rstrip("/") + "/embeddings"
         body = {"model": self.cfg.embed_model, "input": [_truncate(t, max_words) for t in texts]}
         delay = 1.0
-        for attempt in range(1, 7):
+        for attempt in range(1, 10):
             try:
                 r = self._client().post(url, json=body)
             except (httpx.TimeoutException, httpx.TransportError) as e:
@@ -107,10 +120,14 @@ class EmbeddingClient:
                     return [d["embedding"] for d in data]
                 if r.status_code in (401, 403):
                     raise EmbeddingError(f"HTTP {r.status_code}: the embedding key was rejected. Check EMBED_API_KEY.")
-                if r.status_code == 400 and max_words > 60:       # input too long for 512 tokens: shrink and retry
+                too_long = r.status_code == 400 or (r.status_code in (413, 422) and "token" in r.text.lower())
+                if too_long and max_words > 40:                   # input too long for 512 tokens: shrink and retry
+                    # the course server answers 422 "inputs must have less than 512 tokens" (seen 2026-11-20)
                     max_words = int(max_words * 0.7)
                     body["input"] = [_truncate(t, max_words) for t in texts]
-                    err = f"HTTP 400 (shrinking to {max_words} words): {r.text[:150]}"
+                    err = f"HTTP {r.status_code} (shrinking to {max_words} words): {r.text[:150]}"
+                    self.retries += 1
+                    continue
                 elif r.status_code in (408, 409, 425, 429) or r.status_code >= 500:
                     err = f"HTTP {r.status_code} capacity/server error: {r.text[:150]}"
                 else:

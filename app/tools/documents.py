@@ -7,6 +7,7 @@ of the document type (email, press release, web page, chat, draft), which the co
 from __future__ import annotations
 
 import json
+import os
 import re
 from functools import lru_cache
 from pathlib import Path
@@ -16,6 +17,15 @@ import yaml
 from app.tools.register import ANSWER_FIELDS, ROOT
 
 CORPUS = ROOT / "data" / "processed" / "corpus_v1.jsonl"
+
+
+def corpus_path() -> Path:
+    """CORPUS_PATH in .env (relative to the project root) selects another corpus file, e.g. data/processed/corpus_v1_partial.jsonl
+    built from an incomplete raw dataset; default: the frozen corpus v1."""
+    from dotenv import load_dotenv
+    load_dotenv(ROOT / ".env")
+    p = Path((os.getenv("CORPUS_PATH") or "").strip() or CORPUS)
+    return p if p.is_absolute() else ROOT / p
 SYNTHETIC = ROOT / "data" / "synthetic"
 _FRONT = re.compile(r"\A---\n(.*?)\n---\n", re.S)
 NON_EVIDENCE_TYPES = {"email", "press_release", "web_page", "chat", "chat_transcript", "draft", "note"}
@@ -47,8 +57,9 @@ def _from_markdown() -> dict[str, dict]:
 def store() -> dict[str, dict]:
     """doc_id -> {doc_id, vendor_id, title, doc_type, document_date, status, not_evidence, text, ...}."""
     docs = _from_markdown()
-    if CORPUS.exists():
-        with open(CORPUS, encoding="utf-8") as fh:
+    cp = corpus_path()
+    if cp.exists():
+        with open(cp, encoding="utf-8") as fh:
             for line in fh:
                 if line.strip():
                     d = _clean(json.loads(line))
@@ -59,7 +70,8 @@ def store() -> dict[str, dict]:
 
 
 def source() -> str:
-    return "corpus_v1" if CORPUS.exists() else "synthetic_only"
+    cp = corpus_path()
+    return cp.stem if cp.exists() else "synthetic_only"
 
 
 def vendor_docs(vendor_id: str) -> list[dict]:

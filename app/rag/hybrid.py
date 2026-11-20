@@ -64,10 +64,11 @@ def dedupe(hits: list[Hit], per_doc: int = 2, per_section: int = 1) -> list[Hit]
 
 
 def hybrid_search(index: HybridIndex, query: str, *, vendor_ids: list[str] | None = None, cfg: RagSettings | None = None,
-                  candidates: int | None = None, mode: str = "hybrid", allowed_access: set[str] | None = None) -> list[Hit]:
+                  candidates: int | None = None, mode: str = "hybrid", allowed_access: set[str] | None = None,
+                  include_global: bool = True) -> list[Hit]:
     """Candidate generation. mode = bm25 | dense | hybrid. Returns a fused, filtered list of candidates (not yet reranked)."""
     cfg = cfg or settings()
-    mask = index.mask(vendor_ids if cfg.vendor_filter else None, allowed_access=allowed_access)
+    mask = index.mask(vendor_ids if cfg.vendor_filter else None, allowed_access=allowed_access, include_global=include_global)
     lists = []
     if mode in ("bm25", "hybrid"):
         lists.append(index.search_bm25(query, cfg.top_bm25, mask))

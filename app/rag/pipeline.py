@@ -37,14 +37,15 @@ class RagPipeline:
             self._reranker = Reranker(self.cfg)
         return self._reranker
 
-    def retrieve(self, query: str, *, vendor_ids: list[str] | None = None, mode: str = "hybrid+rerank", k: int | None = None) -> Retrieval:
+    def retrieve(self, query: str, *, vendor_ids: list[str] | None = None, mode: str = "hybrid+rerank", k: int | None = None,
+                 include_global: bool = True) -> Retrieval:
         if mode not in MODES:
             raise ValueError(f"mode must be one of {MODES}")
         k = k or self.cfg.final_k
         t0 = time.time()
         vids = vendor_ids if vendor_ids else detect_vendors(query, self.vendors)
         base = "hybrid" if mode.startswith("hybrid") else mode
-        cands = hybrid_search(self.index, query, vendor_ids=vids or None, cfg=self.cfg, mode=base)
+        cands = hybrid_search(self.index, query, vendor_ids=vids or None, cfg=self.cfg, mode=base, include_global=include_global)
         note = ""
         if mode == "hybrid+rerank":
             final = self.reranker.rerank(query, cands, top_k=max(k, 1))
