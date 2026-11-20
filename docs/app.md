@@ -1,6 +1,6 @@
-# Week 3-4: application layer (API, database, UI, safety suite)
+# Week 4: application layer (API, database, UI, safety suite)
 
-Built on branch `m6/4.x-api-ui-db` by Sounak Moulik. Everything runs offline; the course LLM is optional (`COPILOT_LLM`).
+Built on branch `m6/4.x-api-ui-db` by Sounak Moulik and Shakya Acharya. Everything runs offline; the course LLM is optional (`COPILOT_LLM`).
 
 ## Run it
 

@@ -16,7 +16,8 @@ REPORTS = ROOT / "reports"
 
 
 def _f(name: str, default: str) -> str:
-    return os.getenv(name, default).strip()
+    """A variable that is unset OR blank in .env (e.g. `EMBED_BASE_URL=` copied from .env.example) takes the default."""
+    return (os.getenv(name) or default).strip()
 
 
 @dataclass

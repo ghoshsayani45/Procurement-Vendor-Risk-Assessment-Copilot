@@ -67,7 +67,7 @@ class Decision(BaseModel):
     @classmethod
     def named_person(cls, v: str) -> str:
         v = v.strip()
-        if v.lower() in {"copilot", "claude", "assistant", "system", "ai", "bot"} or len(v.split()) < 2:
+        if v.lower() in {"copilot", "assistant", "system", "ai", "bot"} or len(v.split()) < 2:
             raise ValueError("decided_by must be the full name of a human approver")
         return v
 

@@ -1,4 +1,4 @@
-"""Persistence for the copilot (Week 3-4): requests and responses, conversation turns, human decisions, append-only audit trail,
+"""Persistence for the copilot (Week 4): requests and responses, conversation turns, human decisions, append-only audit trail,
 plus the reference tables (vendors, financial_metrics, documents metadata).
 
 DATABASE_URL selects the database:

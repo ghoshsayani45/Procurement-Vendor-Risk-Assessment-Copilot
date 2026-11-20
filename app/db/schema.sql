@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS financial_metrics (
     PRIMARY KEY (vendor_id, period, metric)
 );
 
--- One row per copilot request (Week 3-4, decision D28): full reviews, comparisons, questions, refusals and clarifications.
+-- One row per copilot request (Week 4, decision D28): full reviews, comparisons, questions, refusals and clarifications.
 -- vendor_id / review_type are NULL for comparisons, policy questions, refusals and clarifications.
 -- decision / decided_by are written ONLY by the API's approval endpoint for a named human approver; never by the copilot.
 CREATE TABLE IF NOT EXISTS reviews (
