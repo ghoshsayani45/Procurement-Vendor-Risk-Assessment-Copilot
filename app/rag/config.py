@@ -30,7 +30,7 @@ class RagSettings:
     embed_api_key: str = field(default_factory=lambda: _f("EMBED_API_KEY", ""))
     embed_ca_bundle: str = field(default_factory=lambda: _f("EMBED_CA_BUNDLE", str(Path.home() / "Downloads" / "vm02-ca.crt")))
     embed_batch: int = field(default_factory=lambda: min(16, int(_f("EMBED_BATCH", "16"))))    # server limit is 16 texts
-    embed_max_words: int = field(default_factory=lambda: int(_f("EMBED_MAX_WORDS", "300")))    # keeps a chunk under 512 model tokens
+    embed_max_words: int = field(default_factory=lambda: int(_f("EMBED_MAX_WORDS", "250")))    # under 512 model tokens even for dense legal text (300 words reached 522 tokens)
     embed_local_model: str = field(default_factory=lambda: _f("EMBED_LOCAL_MODEL", "BAAI/bge-small-en-v1.5"))
     # bge models work best when the *query* (not the documents) carries this instruction
     query_prefix: str = field(default_factory=lambda: os.getenv("EMBED_QUERY_PREFIX", "Represent this sentence for searching relevant passages: "))

@@ -151,3 +151,43 @@ def test_citation_dates_with_a_time_are_cleaned():
     assert [x["document_date"] for x in c] == ["2026-01-31", None]
     for x in c:
         Citation.model_validate(x)
+
+
+def test_embedding_client_shrinks_inputs_on_422_too_many_tokens(tmp_path, monkeypatch):
+    """Regression (2026-11-20): the course embedding server rejects long inputs with HTTP 422 'inputs must have less than 512
+    tokens', not 400; the client gave up and the Week 2 index build stopped. It must shrink the batch and retry."""
+    import httpx
+    import app.rag.embeddings as emb
+    from app.rag.config import RagSettings
+    monkeypatch.setattr(emb, "RAG_DIR", tmp_path)
+    monkeypatch.setattr("time.sleep", lambda s: None)
+    seen = []
+
+    def handler(request):
+        body = json.loads(request.content)
+        longest = max(len(t.split()) for t in body["input"])
+        seen.append(longest)
+        if longest > 120:
+            return httpx.Response(422, json={"message": "Input validation error: `inputs` must have less than 512 tokens. Given: 522",
+                                             "code": 422, "type": "Validation"})
+        return httpx.Response(200, json={"data": [{"index": i, "embedding": [1.0] * emb.DIM} for i in range(len(body["input"]))]})
+
+    cfg = RagSettings()
+    cfg.embed_api_key, cfg.embed_ca_bundle, cfg.embed_max_words = "KEY", "", 250
+    c = emb.EmbeddingClient(cfg)
+    c._http = httpx.Client(transport=httpx.MockTransport(handler))
+    v = c.embed_texts(["word " * 400, "short text"])
+    assert v.shape == (2, emb.DIM) and seen[0] == 250 and seen[-1] <= 120 and c.retries >= 2
+
+
+def test_embedding_client_still_fails_fast_on_other_validation_errors(tmp_path, monkeypatch):
+    import httpx
+    import app.rag.embeddings as emb
+    from app.rag.config import RagSettings
+    monkeypatch.setattr(emb, "RAG_DIR", tmp_path)
+    cfg = RagSettings()
+    cfg.embed_api_key, cfg.embed_ca_bundle = "KEY", ""
+    c = emb.EmbeddingClient(cfg)
+    c._http = httpx.Client(transport=httpx.MockTransport(lambda r: httpx.Response(422, json={"message": "unknown model"})))
+    with pytest.raises(emb.EmbeddingError):
+        c.embed_texts(["hello"])

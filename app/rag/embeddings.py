@@ -107,10 +107,14 @@ class EmbeddingClient:
                     return [d["embedding"] for d in data]
                 if r.status_code in (401, 403):
                     raise EmbeddingError(f"HTTP {r.status_code}: the embedding key was rejected. Check EMBED_API_KEY.")
-                if r.status_code == 400 and max_words > 60:       # input too long for 512 tokens: shrink and retry
+                too_long = r.status_code == 400 or (r.status_code in (413, 422) and "token" in r.text.lower())
+                if too_long and max_words > 60:                   # input too long for 512 tokens: shrink and retry
+                    # the course server answers 422 "inputs must have less than 512 tokens" (seen 2026-11-20)
                     max_words = int(max_words * 0.7)
                     body["input"] = [_truncate(t, max_words) for t in texts]
-                    err = f"HTTP 400 (shrinking to {max_words} words): {r.text[:150]}"
+                    err = f"HTTP {r.status_code} (shrinking to {max_words} words): {r.text[:150]}"
+                    self.retries += 1
+                    continue
                 elif r.status_code in (408, 409, 425, 429) or r.status_code >= 500:
                     err = f"HTTP {r.status_code} capacity/server error: {r.text[:150]}"
                 else:
