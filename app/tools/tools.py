@@ -95,15 +95,22 @@ def _pipeline():
     return RagPipeline(idx, cfg), mode
 
 
+POLICY_SCOPE = "__policies_and_regulations__"   # a vendor id no document has: the vendor filter then keeps only non-vendor documents
+
+
 def document_search(query: str, vendor_id: str | None = None, k: int = 6, scan_vendor_documents: bool = False, **_) -> dict:
+    """With a vendor: that vendor's documents plus policies and regulations. Without one (a policy or regulation question):
+    policies and regulations only, so another vendor's contract clause can never answer a question about our policy
+    (live run 2026-11-20, EVAL-048: '96 hours' taken from a vendor contract instead of the 48-hour policy)."""
     pipe, mode = _pipeline()
-    ret = pipe.retrieve(query, vendor_ids=[vendor_id] if vendor_id else None, mode=mode, k=k)
+    ret = pipe.retrieve(query, vendor_ids=[vendor_id] if vendor_id else [POLICY_SCOPE], mode=mode, k=k)
     hits = [dict(chunk_id=h.chunk.chunk_id, doc_id=h.chunk.doc_id, title=h.chunk.title, doc_type=h.chunk.doc_type,
                  document_date=_iso(h.chunk.document_date), status=h.chunk.status, score=round(h.score, 4),
                  text=safety.mask_pii(h.chunk.parent_text or h.chunk.text),
                  injection=bool(safety.INJECTION_RE.search(h.chunk.parent_text or h.chunk.text)),
                  not_evidence=bool((documents.get(h.chunk.doc_id) or {}).get("not_evidence"))) for h in ret.final]
-    out = dict(query=query, mode=mode, store=documents.source(), vendor_ids=ret.vendor_ids, hits=hits, note=ret.note)
+    out = dict(query=query, mode=mode, store=documents.source(), vendor_ids=[v for v in ret.vendor_ids if v != POLICY_SCOPE],
+               scope="vendor" if vendor_id else "policies_and_regulations", hits=hits, note=ret.note)
     if scan_vendor_documents and vendor_id:
         flags = [safety.scan(d) for d in documents.vendor_docs(vendor_id)]
         out["scan"] = [f for f in flags if f["injection"] or f["not_evidence"] or f["pii"]]

@@ -63,3 +63,22 @@ def test_model_failure_never_crashes_a_request(monkeypatch):
     assert r["behaviour"] in ("ANSWER", "PARTIAL") and r["citations"]
     assert "could not be used (ConnectionError)" in r["answer"]
     assert "LLM_ANSWER_FAILED" in out["trace"]["events"]
+
+
+@pytest.mark.parametrize("q", [
+    "What is the maximum time a vendor can take to notify us of a personal data breach?",
+    "Who has to approve an INR 3 crore renewal rated MEDIUM that has a contract finding?",
+])
+def test_policy_questions_never_retrieve_vendor_documents(q):
+    """Regression (live run 2026-11-20): a vendor contract's 96-hour clause answered a question about the 48-hour policy."""
+    from app.tools import documents
+    from app.tools.tools import document_search
+    r = document_search(q)
+    assert r["scope"] == "policies_and_regulations" and r["hits"]
+    assert all(not (documents.get(h["doc_id"]) or {}).get("vendor_id") for h in r["hits"])
+
+
+def test_vendor_questions_keep_the_vendor_documents():
+    from app.tools.tools import document_search
+    r = document_search("auto-renewal notice period", vendor_id="V009")
+    assert r["scope"] == "vendor" and any(h["doc_id"].startswith("DOC-V009-") for h in r["hits"])
