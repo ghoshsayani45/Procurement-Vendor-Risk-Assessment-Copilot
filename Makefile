@@ -1,4 +1,4 @@
-.PHONY: setup ground-truth policies synthetic ingest corpus eval-set grade retrieval-baseline prompt-baseline prompt-baseline-mock copilot-dev test schemas up down
+.PHONY: setup ground-truth policies synthetic ingest corpus eval-set grade retrieval-baseline prompt-baseline prompt-baseline-mock copilot-dev load-db api ui test-safety test schemas up down
 
 setup:            ## create venv and install dependencies
 	python -m venv .venv && . .venv/bin/activate && pip install -r requirements.txt
@@ -34,6 +34,18 @@ prompt-baseline-mock: ## offline pipeline check with a stand-in model (numbers m
 
 copilot-dev:      ## Week 3: run the agent copilot on the dev split and grade it (LLM=none|mock|endpoint)
 	python -m scripts.run_copilot --split dev --llm $(or $(LLM),none)
+
+load-db:          ## create the copilot tables and load vendors, financial metrics and document metadata (DATABASE_URL or SQLite)
+	python -m scripts.load_db
+
+api:              ## run the FastAPI service on :8000 (docs at /docs)
+	uvicorn app.api.main:app --reload --port 8000
+
+ui:               ## run the Streamlit reviewer UI on :8501 (API in-process unless API_URL is set)
+	streamlit run app/ui/streamlit_app.py
+
+test-safety:      ## adversarial and data-protection suite
+	python -m pytest tests/safety -q
 
 schemas:
 	python -m scripts.export_json_schemas

@@ -1,0 +1,10 @@
+.git
+.venv
+venv
+.env
+data/raw
+data/processed
+runs
+reports
+observability/*.jsonl
+**/__pycache__

@@ -1,4 +1,4 @@
-"""Append-only audit log (JSONL). Mirrors the audit_events table in app/db/schema.sql until the API writes to Postgres (Week 3-4).
+"""Append-only audit log (JSONL). Mirrors the audit_events table in app/db/schema.sql until the API writes to Postgres (Week 4).
 Path: AUDIT_LOG_PATH (default observability/audit_events.jsonl, git-ignored). Events never contain raw personal data."""
 from __future__ import annotations
 
