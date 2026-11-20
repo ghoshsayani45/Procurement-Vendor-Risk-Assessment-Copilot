@@ -191,3 +191,15 @@ def test_embedding_client_still_fails_fast_on_other_validation_errors(tmp_path, 
     c._http = httpx.Client(transport=httpx.MockTransport(lambda r: httpx.Response(422, json={"message": "unknown model"})))
     with pytest.raises(emb.EmbeddingError):
         c.embed_texts(["hello"])
+
+
+def test_truncate_caps_tokens_from_urls_and_form_lines():
+    """Regression (2026-11-20): GFR / DoE policy chunks hold 250-character URLs and lines of underscores. Each is one
+    'word' but hundreds of tokens, so a 59-word input still reached 951 tokens. Truncation must cap characters too."""
+    from app.rag.embeddings import _truncate
+    assert _truncate("Signature" + "_" * 90 + " Date" + "-" * 80, 250) == "Signature___ Date---"
+    assert len(_truncate("see https://doe.gov.in/" + "x" * 300, 250).split()[1]) == 40
+    long = " ".join(["procurement"] * 400)
+    assert len(_truncate(long, 250)) <= 2000 and len(_truncate(long, 41)) <= 328
+    plain = "Ordinary policy text\nwith a line break"
+    assert _truncate(plain, 250) is plain          # untouched, so cached vectors keep their keys
