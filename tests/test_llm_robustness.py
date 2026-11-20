@@ -82,3 +82,31 @@ def test_vendor_questions_keep_the_vendor_documents():
     from app.tools.tools import document_search
     r = document_search("auto-renewal notice period", vendor_id="V009")
     assert r["scope"] == "vendor" and any(h["doc_id"].startswith("DOC-V009-") for h in r["hits"])
+
+
+def test_citation_date_ignores_version_labels():
+    """CUAD records carry 'v1 (2021)' in their date field; a citation must still validate (regression 2026-11-20)."""
+    from app.tools.tools import _date_or_none
+    assert _date_or_none("v1 (2021)") is None and _date_or_none("2026-01-31") == "2026-01-31" and _date_or_none(None) is None
+
+
+PARTIAL = "data/processed/corpus_v1_partial.jsonl"
+
+
+@pytest.mark.skipif(not __import__("pathlib").Path(PARTIAL).exists(), reason="needs the partial corpus built from data/raw")
+def test_vendor_questions_with_the_full_library(monkeypatch):
+    """With 400+ public reference documents loaded, a vendor question must still retrieve that vendor's own contract first,
+    and a policy question must still find the policy (regression 2026-11-20)."""
+    monkeypatch.setenv("CORPUS_PATH", PARTIAL)
+    from app.tools import documents, tools
+    documents.store.cache_clear()
+    tools._pipeline.cache_clear()
+    try:
+        r = tools.document_search("auto-renewal notice period", vendor_id="V009")
+        assert r["hits"][0]["doc_id"].startswith("DOC-V009-")
+        assert not any(h["doc_id"].startswith(("CON-001-", "POL-0", "GUI-")) for h in r["hits"])
+        p = tools.document_search("What is the maximum time a vendor can take to notify us of a personal data breach?")
+        assert p["hits"][0]["doc_id"] == "POLICY-DPS-004"
+    finally:
+        documents.store.cache_clear()
+        tools._pipeline.cache_clear()

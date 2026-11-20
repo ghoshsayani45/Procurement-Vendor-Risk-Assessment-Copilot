@@ -254,7 +254,8 @@ def _extractive(q: str, hits: list[dict]) -> tuple[str, list[str]]:
         for s in re.split(r"(?<=[.!?])\s+|\n+", body):
             st = set(re.findall(r"[a-z0-9]+", s.lower()))
             if len(s.split()) >= 5 and not INJECTION_RE.search(s):
-                best.append((len(qt & st), -usable.index(h), s.strip(" |#*"), h["doc_id"]))
+                rank = usable.index(h)                     # prefer higher-ranked passages: 1.0, 0.85, 0.7, 0.55
+                best.append((len(qt & st) * (1 - 0.15 * rank), -rank, s.strip(" |#*"), h["doc_id"]))
     best.sort(reverse=True)
     picks = best[:2]
     return " ".join(p[2] for p in picks), list(dict.fromkeys(p[3] for p in picks))

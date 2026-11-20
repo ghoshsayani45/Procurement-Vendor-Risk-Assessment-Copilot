@@ -33,7 +33,16 @@ def cite(ref: str, vmap: dict[str, str]) -> dict:
     d = documents.get(doc_id)
     if d is None:
         return dict(source_id=f"tool:{ref}", doc_id=None, title=None, document_date=None, snippet=None)
-    return dict(source_id=doc_id, doc_id=doc_id, title=(d.get("title") or "")[:200] or None, document_date=_iso(d.get("document_date")), snippet=None)
+    return dict(source_id=doc_id, doc_id=doc_id, title=(d.get("title") or "")[:200] or None, document_date=_date_or_none(d.get("document_date")), snippet=None)
+
+
+def _date_or_none(v) -> str | None:
+    """Some public sources carry a version label in their date field (CUAD: 'v1 (2021)'); a citation takes only a real date."""
+    s = _iso(v)
+    try:
+        return date.fromisoformat(str(s)[:10]).isoformat() if s else None
+    except ValueError:
+        return None
 
 
 # ------------------------------------------------------------------ vendor_search
@@ -95,7 +104,8 @@ def _pipeline():
     return RagPipeline(idx, cfg), mode
 
 
-POLICY_SCOPE = "__policies_and_regulations__"   # a vendor id no document has: the vendor filter then keeps only non-vendor documents
+POLICY_SCOPE = "__policies_and_regulations__"
+INTERNAL_PREFIXES = ("POLICY-", "COI-")             # the company's own policies and registers (synthetic, data/synthetic/policy)   # a vendor id no document has: the vendor filter then keeps only non-vendor documents
 
 
 def document_search(query: str, vendor_id: str | None = None, k: int = 6, scan_vendor_documents: bool = False, **_) -> dict:
@@ -103,9 +113,24 @@ def document_search(query: str, vendor_id: str | None = None, k: int = 6, scan_v
     policies and regulations only, so another vendor's contract clause can never answer a question about our policy
     (live run 2026-11-20, EVAL-048: '96 hours' taken from a vendor contract instead of the 48-hour policy)."""
     pipe, mode = _pipeline()
-    ret = pipe.retrieve(query, vendor_ids=[vendor_id] if vendor_id else [POLICY_SCOPE], mode=mode, k=k)
+    if vendor_id:
+        # The vendor's own documents first, then the two best internal policy passages. The public reference library (CUAD,
+        # manuals, NIST, World Bank) is left to policy and regulation questions: it crowded out the vendor's own contract once
+        # the full corpus was loaded (2026-11-20).
+        ret = pipe.retrieve(query, vendor_ids=[vendor_id], mode=mode, k=max(1, k - 2), include_global=False)
+        pol = pipe.retrieve(query, vendor_ids=[POLICY_SCOPE], mode=mode, k=40)
+        internal = [h for h in pol.final + pol.candidates if h.chunk.doc_id.startswith(INTERNAL_PREFIXES)]
+        seen = {h.chunk.chunk_id for h in ret.final}
+        extra = []
+        for h in internal:
+            if h.chunk.chunk_id not in seen and len(extra) < 2:
+                seen.add(h.chunk.chunk_id)
+                extra.append(h)
+        ret.final = ret.final + extra
+    else:
+        ret = pipe.retrieve(query, vendor_ids=[POLICY_SCOPE], mode=mode, k=k)
     hits = [dict(chunk_id=h.chunk.chunk_id, doc_id=h.chunk.doc_id, title=h.chunk.title, doc_type=h.chunk.doc_type,
-                 document_date=_iso(h.chunk.document_date), status=h.chunk.status, score=round(h.score, 4),
+                 document_date=_date_or_none(h.chunk.document_date), status=h.chunk.status, score=round(h.score, 4),
                  text=safety.mask_pii(h.chunk.parent_text or h.chunk.text),
                  injection=bool(safety.INJECTION_RE.search(h.chunk.parent_text or h.chunk.text)),
                  not_evidence=bool((documents.get(h.chunk.doc_id) or {}).get("not_evidence"))) for h in ret.final]

@@ -10,7 +10,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 ROOT = Path(__file__).resolve().parents[2]
-CORPUS_PATH = ROOT / "data" / "processed" / "corpus_v1.jsonl"
+_cp = Path((os.getenv("CORPUS_PATH") or "").strip() or ROOT / "data" / "processed" / "corpus_v1.jsonl")
+CORPUS_PATH = _cp if _cp.is_absolute() else ROOT / _cp   # CORPUS_PATH in .env selects another corpus file (default: frozen v1)
 RAG_DIR = ROOT / "data" / "processed" / "rag"
 REPORTS = ROOT / "reports"
 
