@@ -18,7 +18,7 @@ A Track B capstone (Executive PG Programme in Generative AI and Agentic AI). It 
 | 4 App layer | Done (code): FastAPI, database with append-only audit, Streamlit approval UI, safety suite; Docker not yet run | `app/api/`, `app/db/`, `app/ui/`, `tests/safety/`, `docs/app.md` |
 
 ## Quick start
-**New teammate? Follow [INSTALL.md](INSTALL.md)** (Windows, macOS, Linux; one-command start with `run_app.bat` / `run_app.sh`). The commands below are the Makefile route.
+**New teammate? Follow [INSTALL.md](INSTALL.md)** (PDF: [docs/Installation_and_Running_Guide.pdf](docs/Installation_and_Running_Guide.pdf)) (Windows, macOS, Linux; one-command start with `run_app.bat` / `run_app.sh`). The commands below are the Makefile route.
 
 ```bash
 git clone <repo> && cd procurement-vendor-risk-copilot
